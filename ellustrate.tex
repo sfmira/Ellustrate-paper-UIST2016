@@ -22,11 +22,21 @@
 \usepackage{graphics} % for EPS, load graphicx instead
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
-\usepackage{siunitx}
+
 \usepackage{multirow}
 \usepackage{ wasysym }
 \usepackage{ textcomp }
 \usepackage{tabularx}
+
+% \usepackage{siunitx}
+\usepackage[valuemode=math,unitmode=math]{siunitx}
+% \renewcommand{\textmu}{\ensuremath{\upmu}}
+% \renewcommand{\textohm}{\ensuremath{\Upomega}}
+% \renewcommand{\textmu}{\ensuremath{\upmu}}
+% \renewcommand{\textohm}{\ensuremath{\Upomega}}
+
+% \newcommand*{\ohm}[1]{\ensuremath{\Upomega}}
+
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -291,8 +301,7 @@ The physical creation of the designed circuit is often the most difficult step i
     
     \cesar{I really want to include a visual cue for path planning, similar to the "rails" circuit design pattern. This would a) cluster terminal pads as points in a Voronoi and find the dividing line, b) use shadows of the paths to designate forbidden zones (easier to distinguish with visual desnity). }
     
-     \\
-    \\
+    
     \noindent\fbox{%
     \parbox{0.465\textwidth}{%
        \textbf{Visual Rule II.}
@@ -392,7 +401,6 @@ Participants were given a bunch of funky circuits: continuity trace issues, comp
 \label{fig:fab_tool_results}
 \end{figure}
 
-\end{figure}
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\columnwidth]{figures/design_tool_results.png}
