@@ -69,8 +69,6 @@ breaklinks=true,
 \newcommand\tabhead[1]{\small\textbf{#1}}
 
 \input{macros}
-\newcommand*{\nt}[1]{{\textbf{\small{\fontfamily{cmss}\selectfont{#1}}}}}
-\newcommand*{\code}[1]{{\small{\fontfamily{cmss}\selectfont{#1}}}}
 
 % End of preamble. Here it comes the document.
 \begin{document}
@@ -403,41 +401,40 @@ The physical creation of the designed circuit is often the most difficult step i
         A user is provided with this template circuit which connects two traces to the a battery. A user can place the component of interest, such as an LED, and check the polarity of the component by placing it on the traces and observing changes in behavior. Should a user experience a non-working LED, they are encouraged to verify that the orientation of the LED be correct. Although we don't foresee these issues being of major concern since LEDs are housed in perceptually-identifiable packages, we recognize polarity being a common issue and provide a simple tool to address it. 
 
         
-    \section{Resistance as a site for design}
-        There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches. 
+    
         
 \section{EVALUATION}
-    Here we describe an overview of our usability study. We conducted an evaluation of user experience with our design tool, and a second experiment on the effectiveness of fabrication debugging of arbitrary circuits. 
+    Here we describe an overview of our formal user study. The goal of this study was to conduct a usability evaluation of the tool and extract principles for expressive circuit design. 
 
 \subsection{Participants}
-    The average age of participants was 28 years old. 
+    We conducted each experiment with 10 participants who had no prior experience with circuit design but were well versed in visual design. Design proficiency was self-reported. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist. 
+    
+\subsection{Procedure}
+    Participants were given a brief introduction to circuits. The introduction covered voltage, resistance, and current using the water metaphor, the basic rule of not connecting power lines to ground lines, polarity of electronic components, power requirements, how to lay traces with a silver ink pen, and simple debugging with a multimeter. The tutorial material was available as reference throughout the study. As a warm up exercise, participants were then guided by the researcher in fabricating a simple, one-LED circuit powered by a coin-cell battery.   
 
 
+% \subsection{Other evaluation not done}
+% (might add: Additionally, 10 participants from technical fields (i.e. computer sciences, mechanical engineering, material sciences) who had little to no prior experience with circuit design were recruited. Experience with circuit design was determined from self-reported feedback. Participants were recruited from a mailing list of technical departments.)% Participants were given a bunch of funky circuits: continuity trace issues, component connection issues, and polarity issues. They were asked to debug the circuits using our tool and without our tool. We timed the amount of time it took them to figure the problem out and fix it. 
 
-    % The same group of participants was used for both experiments. We conducted each experiment with 10 participants who had no prior experience with circuit design but were well versed in visual design. Visual design prowess was determined from self-reported expertise. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist. 
-    % (might add: Additionally, 10 participants from technical fields (i.e. computer sciences, mechanical engineering, material sciences) who had little to no prior experience with circuit design were recruited. Experience with circuit design was determined from self-reported feedback. Participants were recruited from a mailing list of technical departments.)
-    % A tutorial was presented in slideshow format to participants in the beginning of the study to familiarize them with introductory concepts of circuit design, topics include resistance, polarity of electronic components and power, and simple debugging with a multimeter. The tutorial  presentation was available as a reference throughout the study. The participants were then guided by the researcher to fabricate a simple, one-LED circuit powered by a coin cell battery as a warm up exercise.   
-\subsection{Study Procedure}
-Participants were given a brief intro to circuits, followed by a freeform design task with a 5 LED parallel circuit design. The goal of this experiment was to conduct a usability evaluation of the tool and extract principles for expressive circuit design. 
+\section{Results}
+\cesar{Overview goes here: All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}.} 
 
-The topics covered were the metaphor of current as water, the basic rule of not connecting power lines to ground lines, laying traces, and the polarity of LEDs. A brief overview of the design tool was given to users; each participant was
-
-Participants were given a bunch of funky circuits: continuity trace issues, component connection issues, and polarity issues. They were asked to debug the circuits using our tool and without our tool. We timed the amount of time it took them to figure the problem out and fix it. 
 
 \begin{figure}
 \centering
   \includegraphics[width=1\columnwidth]{figures/Users_in_action}
-  \caption{Users designing and fabricating their circuits with Ellustrate}~\label{fig:Users_in_action}
+  \caption{Users designing and fabricating their circuits with Ellustrate}~\label{fig:users-in-action}
 \end{figure}
 
 
 \begin{figure}
 \centering
   \includegraphics[width=1\columnwidth]{figures/Users_artwork}
-  \caption{Sketched circuits made by users}~\label{fig:Users_artwork}
+  \caption{Sketched circuits made by users}~\label{fig:user-artwork}
 \end{figure}
 
-\section{Results}
+
+
 
 \begin{figure}[t]
 \centering
@@ -454,13 +451,27 @@ Participants were given a bunch of funky circuits: continuity trace issues, comp
 \end{figure}
 
 \subsection{Balance Between Planning and Tinkering}
+  There was some balance between planning and tinkering that we don't see in these types of applications. 
+
 \subsection{Storytelling with Electronics}
-(cite Buechley storytelling with conductive ink)
-"The birds represent ying and yang, and the battery in the center represents the energy coming out of them"
-"The stars are tied together with twinkle light ropes, and the birds are flying towards the pretty lights."
+  \jlo{cite Buechley storytelling with conductive ink}
+  The composition represented more than just a visual stimuli; several participants expressed a story or motivation behind their design; stories that would evolve during the circuit design process. 
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#499}:
+    \quoted{The birds represent ying and yang, and the battery in the center represents the energy coming out of them ... the stars are tied together with twinkle light ropes, and the birds are flying towards the pretty lights.}
+    \vspace{-2pt}
+  \end{myquote} 
+  Fabricating the circuit represented physicalizing their story; in this manner user's felt much more attached to their designs. 
 
-\section {Discussion and Limitation}
+\section{Limitations}
+  We had a limited electronic component library; although we still got expressive designs. This just means it can only become more expressive. 
 
+
+\section {Discussion}
+
+  \subsection{Resistance as a site for design}
+    There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches. 
 \section {Conclusion}
 We make pretty circuits. 
 
