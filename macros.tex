@@ -1,0 +1,33 @@
+% set up tight list spacing
+\usepackage{enumitem} 
+\setlist{nolistsep,nosep}
+
+% for toggles
+\usepackage{etoolbox}
+
+
+% CHANGE FROM TOGGLE TRUE TO TOGGLE FALSE TO HIDE COMMENTS
+\newtoggle{comments}
+\toggletrue{comments}
+% \togglefalse{comments}
+
+% Comment region command (from Wesley Willett)
+\usepackage[usenames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\iftoggle{comments} {
+  %if we want to show comments
+  \newcommand {\jlo}[1]{{\color{magenta}\bf{JLO: #1}\normalfont}}
+  \newcommand {\cesar}[1]{{\color{NavyBlue}\bf{CAT: #1}\normalfont}}
+  \newcommand {\ep}[1]{{\color{violet}\bf{EP: #1}\normalfont}}
+  \newcommand {\mira}[1]{{\color{Orange}\bf{MD: #1}\normalfont}}
+  \newcommand {\wil}[1]{{\color{Blue}\bf{WL: #1}\normalfont}}
+  \newcommand {\danny}[1]{{\color{Red}\bf{DK: #1}\normalfont}}
+}{
+  %if we don't want to show comments
+  \newcommand {\jlo}[1]{}
+  \newcommand {\cesar}[1]{}
+  \newcommand {\ep}[1]{}
+  \newcommand {\mira}[1]{}
+  \newcommand {\wil}[1]{}
+  \newcommand {\danny}[1]{}
+}
