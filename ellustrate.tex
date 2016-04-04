@@ -88,7 +88,7 @@ breaklinks=true,
 \teaser{
   \vspace{0pt}
   \centering
-  \includegraphics[width=\linewidth]{figures/Copper_thread_silver.jpg}
+  \includegraphics[width=\linewidth]{figures/Ellustrate_figures_copper_thread_silver.jpg}
   \caption{
     a) A painting made with conductive silver ink, b) a copper tape object, c) a conductive thread embroidered pattern. }
     \vspace{-8pt}
@@ -120,7 +120,7 @@ Through these materials, users are enabled to explore different form-factors acr
 
 Circuit sketching, a fabrication process that enables the creation of physical circuits with craft materials first proposed by Qie et al., is a process popular among makers with skills in crafting but little experience with electronics. Sketching is a natural and intuitive step shared by professional electrical engineers and artists alike, and being able to create a functional circuit from sketching is empowering and gratifying especially for early learners of electronics. Moreover, the ability to transform circuits into artwork generates unexplored design opportunities and possibilities.  
 The sketching circuits process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Various research fields have taken notice of this trend as well; creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen (cite lewis pen-on-paper). Advances in materials have enabled a new class of circuits that are ``sketchable''. 
-Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented.
+Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented. (notes to be flushed out: Material exploration - the ability to think of atoms and bits as clay - traces are not just automatic connections but of varying resistance and other properties - device physics thinking...)
 % =======
 % Circuit sketching, a process that enables the creation of physical circuits with craft materials first proposed by Qie et al., is a process popular among makers with skills in crafting but little experience with electronics. Sketching is a natural and intuitive step shared by professional electrical engineers and artists alike, and being able to create a functional circuit from sketching is empowering and gratifying especially for early learners of electronics. Moreover, the ability to transform circuits into artwork generates unexplored design opportunities and possibilities.  Circuit sketching has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Various research fields have taken notice of this trend as well; creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen (cite lewis pen-on-paper). Advances in materials have enabled a new class of circuits that are "sketchable". Bare conductive =-04-01-0636
 
@@ -129,8 +129,8 @@ The three steps in creating a circuit sketch \textendash learn basic design rule
 We created Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit. 
 The design of Ellustrate is based on a series of formative interviews, education theories, and interaction design theories \cesar{I fill that in?}.
 An overview of the tool can be seen in Figure 1. Ellustrate has three modes \textendash Design, Validate, and Make \textendash representing the three stages of physical circuit creation.
-Within the Design mode, users can freely explore and sketch circuits alongside the artwork that they wish to incorporate their electronics into, with Ellustrate Design providing visual clues for electrical connections and immediate feedback for electrical design errors.
-Within Ellustrate Validate mode, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
+Within the Design cycle, users can freely explore and sketch circuits alongside the artwork that they wish to incorporate their electronics into, with Ellustrate Design providing visual clues for electrical connections and immediate feedback for electrical design errors.
+Within Ellustrate Validate cycle, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
 
 % commented out because added to MOTIVATION: To be appended to contributions section: Our design tool, Ellustrate,  was inspired by best practices from electrical circuit design and validation, art practice, and smart tutorial systems [peggy and mira]. Ellustrate differs from most circuit design tools in a number of ways: a) it balances concerns of electronic validity and expressive design, b) it integrates the human back into the fabrication process, shown in prior work to improve engagement with techniques and process, and c) provides debugging assistance to aid users with correcting improperly fabricated circuits.}
 \section{Motivation}
@@ -148,6 +148,8 @@ Even in design tools that focus on entry-level circuit making, such as 123D Circ
 While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed - something pedantic instead of creative. 
 %The ease of use of the conductive pen, copper tape, and conductive threads, has enabled many creative crafting projects.However, the complexity of the circuits these electronic crafts have remained stagnant. 
 
+
+\jlo{ Material fluency - in constrast to material literary - material fluency allows you to think of entire new interactions by manipulating materials in unexpected ways.}
 
 
 
@@ -167,16 +169,23 @@ Ellustrate was inspired by best practices from electrical circuit design and val
 
 
 \section{Related Work}
+\subsection{Aesthetics of Electronics}
+The landscape of electronics is rapidly changing. Devices are becoming smaller and thinner exponentially, often taking on unexpected form factors aong the way. With the advent of structural electronics, where the electronic circuit is often printed directly on the device housing, and wearable electronics, where the electronics on ultra-thin devices are transparent to the users, active and passive circuit elements are becoming part of the aesthetic design of electronic devices. Ellustrate was created to encourage participation of users of diverse backgrounds to explore and create circuits that could be vital in the future ecosystem of electronics. 
+
 \subsection{Sketching Electronics on Familiar Medium}
 The familiarity of a paper substrate lends itself to be a natural platform for story-telling with electronics. Augmenting a medium ubiquitous in our everyday life with power, lights, and motions, introduces a sense of wonder that resonates in people with diverse ages and backgrounds \cite{karagozler_paper_2013}(cite Jie Qi popup book, SMA augment). Buechley et al. and Qi et al. expanded upon the story-telling narrative of paper circuits by leveraging a common interaction with paper in the beginning of a creative ideation process - sketching. By replacing a regular pencil with silver pen or conductive tape, sketching circuits was able to combine the ideation process for both circuit and art design on one platform. (reword). In sketching circuits, the electronic traces and component placements take on a non-PCB-like, natural and organic form that complements the visual design of the work. Qi et al cited the expressive medium as a main reason for the success recruitment of a diverse population who participated in the sketching circuit workshop. By fabricating electronics on paper, a medium that most people are familiar with, users are much more willing to explore electronic design by bringing on their prior expertise. Various forms of sketching circuits continued to develop, utilizing a wide array of conductive and nonconductive materials - each with unique electronic properties and appearances.  Ellustrate aims to further promote the sketching circuit pratice by providing a digital design tool that encourages exploration of circuit aesthetic and material selections.
 \subsection{Digital Tools}
 
 \subsubsection{Digital Sketching Tools} 
-Since sketching is such an important element of early stage design, many digital tools have been created to facilitate this process. These tools transform sketches into some form of prototype for the final design by decomposing and recognizing domain-specific symbols and lines. In SILK and SATIN, Landy et al. and Hong et al. investigate a set of software support functions for sketching user interfaces, website design, and simple logic circuits. The two tools generate a final design by "cleaning up" imperfections in the hand-drawn sketches - short, overlapping lines are combined, strokes are straightened, and imperfect symbols of logic gates are corrected. The traces between the elements are oftent reduced to the the shortest straight path possible. With the goal of exploring the creative value in the sketches, Ellustrate does not correct or reduce the electrical traces (other than for electrical functional reasons) to maintain the sketche aesthetic. 
+Since sketching is such an important element of early stage design, many digital tools have been created to facilitate this process. These tools transform sketches into some form of prototype for the final design by decomposing and recognizing domain-specific symbols and lines. In SILK and SATIN, Landy et al. and Hong et al. investigate a set of software support functions for sketching user interfaces, website design, and simple logic circuits. The two tools generate a final design by "cleaning up" imperfections in the hand-drawn sketches - short, overlapping lines are combined, strokes are straightened, and imperfect symbols of logic gates are corrected. The traces between the elements are oftent reduced to the the shortest straight path possible. (talk about Kirchhoff pen too) With the goal of exploring the creative value in the sketches, Ellustrate does not correct or reduce the electrical traces (other than for electrical functional reasons) to maintain the sketch aesthetic. 
 
 \subsubsection{Digital Design Tools for Physical Designs}
+Digital tools offer tremendous benefits to the hardware prototyping process by allowing the user to digitally iterate a design before creating the physical version through simulations of the electric and mechanical properties. Moreover, digital tools could provide educational guidance for various aspects of the physical making process. \jlo{link to MCRpd Ullmer et al} In PaperPulse, users can connect program the behavior of a microcontroller, print out the design using a conductive ink printer, and fabricate the design with instructions provided by the tool. In d.tools, designers can design and iterate hardware interactions using microntroller and plus and play hardware (i.e. slider, LED) using statecharts. Within the AutoDesk CircuitScribe design tool, users can sketch and simulate circuit designs. The design can then be printed and a piece of paper and traced over with a silver pen. Ellustrate expands upon the aforementioned work by 1) building on a platform for tablet and stylus, thus promoting the feel of sketching within the tool, 2) augment the avaliable electronic component footprints and materials library to support a diverse sketching circuit aesthetics, and 3) integrate fabrication and debugging guidance to lower the barrier of entry for users with little circuit background.
 
-1)microcontroller-enabled designs -> 2) drag and drop electronic components (123D circuits "open electronics lab" "circuit scribe") -> 3) physical designs on paper
+
+%None of these tools can iterate, simulate, and digital master-apprentice (triple check this)
+
+%Hardware prototyping is challenges in many aspects - it is harder to iterate a physical design after it is made, the errors in a circuit is often invisible to the naked eyes
 
 
 
@@ -228,9 +237,13 @@ Since sketching is such an important element of early stage design, many digital
 
 
 \section{FORMATIVE INTERVIEWS}
+To learn about opportunities for supporting circuit sketching and fabrication with a digital design tool, we interviewed three circuit educators and seven potential users. The circuit educators were both experienced in teaching students with no prior knowledge in electronic design - one was an expert in designing Massive Open Online Course (MOOC) courses an introductory circuit course, one was an expert in teaching introductory electronic design in a Maker Faire setting, and one was an expert in conducting workshops in circuit sketching. The potential users that we surveyed were university students with little to no background in circuits and with varying level of design experience. We asked our interviewees to design and fabricate a simple circuit with three LED stickers (Chibitronics circuit stickers) and copper tape. The interviewees were instructed to think out loud during their design and fabrication process, and to ask for help from the interviewer when needed. Beyond  enabling users to iterate on their design, we discovered two major features that need to be integrated into the design tool to facilitate success. 
 
+\subsection{Immediate Feedback and Validation}
+In hardware design, there are two main types of error that user could encounter - one is electronic design rule violations (i.e. electrical shorting), and one is functional errors (i.e. parallel LED's routed as series). They are closely analgous to the classifications of syntax and semantic errors in software. Digital tools are immensely useful when it comes to catching syntax errors, but there are few hardware design tools that provide design feedback in a way that is accessible to learners. All experts we interviewed agreed that a electrical design check as immediate feedback during the design process would greatly benefit early learners. Their opinions were well supported by exisitng literature - according to Hattie et al. and Epstein et al., providing specific immediate feedback is crucial in early learning. Although Ellustrate is not structured as a tool specific for learning, it does aim to build lasting good electrical design habits. During the circuit sketching process, we observed that the design rule that most users have trouble with was keeping track of the ground and power pads and traces and making sure that they do not short out. 
 
-As much as these creative forms of circuits enable early exploration of the circuit design, there are a few areas that could be improved in order to facilitate creative exploration in circuit design. In order to articulate the common difficulties that users encounter in the early stage of circuit design, we performed a series of formative user studies and interviews. 
+\subsection{Expert Knowledge and Guidance in Fabrication and Debugging}
+During our interviews, we learned that the result of the fabrication step could be most rewarding if successful, but the most demoralizing and frustrating if not. Unfortunately, assistance in fabrication and circuit debugging are not provided in most circuit design tool, and instructions in this realm remain mostly restricted to in-person classroom/workshop setting(cite Klemmer Paper-mache). We feel that providing a debugging and fabrication guide is crucial to achieving our goal of empowering designers. One major difference in fabrication that we observed in experts and entry level circuit makers was the ability to separate the circuit into small sections, and they fabricate and test each section individually in a way that minimize the chances of error propagation. We formulated expert advice into rational steps that users can follow to fabricate their design. More detailed and in depth information and debugging suggestions can be accessed as desired by the user.  
 
 
 % \subsection{Digital Design Tools}
@@ -246,27 +259,25 @@ As much as these creative forms of circuits enable early exploration of the circ
 
 
 % Ellustrate is designed to be a holistic digital tool that guides users to explore and sketch physical circuits. By providing guidance throughout the entire process of sketching circuits, we wish to tackle the critical stumbling blocks that prevent users from succeeding in creating a functioning circuit at the end. We performed interviews with both two circuit educators to understand their experience in teaching introductory circuit design, particularly on what they believe students need the most help on. (add what we learned here) Moreover, we recruited four participants with no circuit experience, and instructed them to sketch a paper circuit. We then observed their design process through a think-out-loud exercise. 
-\subsection{Immediate Feedback and Validation}
 
-\subsection{The Importance of Debugging Guidance}
-(cite klemmer pen-and-paper) (hardware debugging currently relies heavily on in-person...master-apprentice model...knowledge needs to and can be formulated into rational steps to go into a digital tool) 
-\subsection{Modular Fabrication}
-Ellustrate is designed to be a holistic digital tool that guides users to explore and sketch physical circuits. By providing guidance throughout the entire process of sketching circuits, we wish to tackle the critical stumbling blocks that prevent users from succeeding in creating a functioning circuit at the end. We performed interviews with both two circuit educators to understand their experience in teaching introductory circuit design, particularly on what they believe students need the most help on.  Moreover, we recruited four participants with no circuit experience, and instructed them to sketch a paper circuit. We then observed their design process through a think-out-loud exercise. 
-Fabrication guide 
-the benefits of templates/examples in the early learning process of non-experts
-static template and their potential shortcoming 
-cite related step-by-step design tool work 
 
-Multimaterial prior research 
-fabric, silver….
+% \subsection{Modular Fabrication}
+% Ellustrate is designed to be a holistic digital tool that guides users to explore and sketch physical circuits. By providing guidance throughout the entire process of sketching circuits, we wish to tackle the critical stumbling blocks that prevent users from succeeding in creating a functioning circuit at the end. We performed interviews with both two circuit educators to understand their experience in teaching introductory circuit design, particularly on what they believe students need the most help on.  Moreover, we recruited four participants with no circuit experience, and instructed them to sketch a paper circuit. We then observed their design process through a think-out-loud exercise. 
+% Fabrication guide 
+% the benefits of templates/examples in the early learning process of non-experts
+% static template and their potential shortcoming 
+% cite related step-by-step design tool work 
+
+%Multimaterial prior research fabric, silver….
+
 \section{Formative User Study}
 \begin{figure}
 \centering
-  \includegraphics[width=1\columnwidth]{figures/formative_user_design}
-  \caption{Features Comparison}~\label{fig:formative_user_design}
+  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_formative_user_design}
+  \caption{Formative user designs with pen and pencil}~\label{fig:formative_user_design}
 \end{figure}
 
-As much as these creative forms of circuits enable early exploration of the circuit design, there are a few areas that could be improved in order to facilitate creative exploration in circuit design. In order to articulate the common difficulties that users encounter in the early stage of circuit design, we performed a series of formative user studies and interviews. 
+% As much as these creative forms of circuits enable early exploration of the circuit design, there are a few areas that could be improved in order to facilitate creative exploration in circuit design. In order to articulate the common difficulties that users encounter in the early stage of circuit design, we performed a series of formative user studies and interviews. 
 
 \subsection{Copper Tape Circuits}
 \subsection{Silver Paint Circuits}
@@ -459,14 +470,14 @@ The physical creation of the designed circuit is often the most difficult step i
 
 \begin{figure}
 \centering
-  \includegraphics[width=1\columnwidth]{figures/Users_in_action}
+  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_in_action}
   \caption{Users designing and fabricating their circuits with Ellustrate}~\label{fig:users-in-action}
 \end{figure}
 
 
 \begin{figure}
 \centering
-  \includegraphics[width=1\columnwidth]{figures/Users_artwork}
+  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_artwork}
   \caption{Sketched circuits made by users}~\label{fig:user-artwork}
 \end{figure}
 
@@ -508,6 +519,11 @@ The physical creation of the designed circuit is often the most difficult step i
 \section {Discussion}
 
   \subsection{Resistance as a site for design}
+   
+
+\subsection{Material properties for design}
+\jlo{low-level understanding of code...analog to understand of fundamental material properties - resistance, texture, interaction with substrate materials, interaction with heat. All important understand and intuition to learn in order to invent the next generation of interactive devices - biologic, 3d bioprinting...}
+    
     There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches. 
 \section {Conclusion}
 We make pretty circuits. 
