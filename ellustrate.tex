@@ -237,7 +237,8 @@ Digital tools offer tremendous benefits to the hardware prototyping process by a
 
 
 \section{FORMATIVE INTERVIEWS}
-To learn about opportunities for supporting circuit sketching and fabrication with a digital design tool, we interviewed three circuit educators and seven potential users. The circuit educators were both experienced in teaching students with no prior knowledge in electronic design - one was an expert in designing Massive Open Online Course (MOOC) courses an introductory circuit course, one was an expert in teaching introductory electronic design in a Maker Faire setting, and one was an expert in conducting workshops in circuit sketching. The potential users that we surveyed were university students with little to no background in circuits and with varying level of design experience. We asked our interviewees to design and fabricate a simple circuit with three LED stickers (Chibitronics circuit stickers) and copper tape. The interviewees were instructed to think out loud during their design and fabrication process, and to ask for help from the interviewer when needed. Beyond  enabling users to iterate on their design, we discovered two major features that need to be integrated into the design tool to facilitate success. 
+To learn about opportunities for supporting circuit sketching and fabrication with a digital design tool, we interviewed three circuit educators and seven potential users. The circuit educators were both experienced in teaching students with no prior knowledge in electronic design - one was an expert in designing Massive Open Online Course (MOOC) courses an introductory circuit course, one was an expert in teaching introductory electronic design in a Maker Faire setting, and one was an expert in conducting workshops in circuit sketching. The potential users that we surveyed were university students with little to no background in circuits and with varying level of design experience. We asked our interviewees to design and fabricate a simple circuit with three LED stickers (Chibitronics circuit stickers) and copper tape.
+The interviewees were instructed to think out loud during their design and fabrication process, and to ask for help from the interviewer when needed. Beyond  enabling users to iterate on their design, we discovered two major features that need to be integrated into the design tool to facilitate success. 
 
 \subsection{Immediate Feedback and Validation}
 In hardware design, there are two main types of error that user could encounter - one is electronic design rule violations (i.e. electrical shorting), and one is functional errors (i.e. parallel LED's routed as series). They are closely analgous to the classifications of syntax and semantic errors in software. Digital tools are immensely useful when it comes to catching syntax errors, but there are few hardware design tools that provide design feedback in a way that is accessible to learners. All experts we interviewed agreed that a electrical design check as immediate feedback during the design process would greatly benefit early learners. Their opinions were well supported by exisitng literature - according to Hattie et al. and Epstein et al., providing specific immediate feedback is crucial in early learning. Although Ellustrate is not structured as a tool specific for learning, it does aim to build lasting good electrical design habits. During the circuit sketching process, we observed that the design rule that most users have trouble with was keeping track of the ground and power pads and traces and making sure that they do not short out. 
@@ -284,9 +285,6 @@ During our interviews, we learned that the result of the fabrication step could 
 on paper
 
 
-\section{The Electronic Circuit Design Landscape}
-In order to understand the central concerns of circuit design, we draw from formative interviews with novice circuit designs, best practices from the literature on circuit design pedagogy, and best practices from visual design.
-
 \section{System Design}
 
 \subsection{Electronics and Materials Library}
@@ -294,6 +292,7 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
 
 \subsection{Circuit Design Guidance}
 Sketching circuits, especially when combine with visual design, can create complex circuit routing problems. When the electronic components are placed in a nonlinear fashion, powering all of them without shorting the circuit or creating excessively long traces become difficult. In Qi el al, a paper template is provided to workshop participants to guide them in placement of the copper tape. While this method is highly effective in aiding participants in creating a function circuits, it limits creativity in visual design (cite).  Within Ellustrate, users are encouraged to explore and iterate different placements of electronics components and traces to optimize the balance between visual design and circuit functionality. 
+
 \subsection{Fabrication and Debugging Guidance}
 The physical creation of the designed circuit is often the most difficult step in the process, as discovered in the Qi et al study ,our expert survey, and formative user study. Solving hardware problems can be In a workshop setting, guidance is provided to the participants to fabricate the circuit and debug any problems. However, in-person guidance is not easily scalable. 
 
