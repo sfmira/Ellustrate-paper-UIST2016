@@ -466,6 +466,7 @@ The physical creation of the designed circuit is often the most difficult step i
 
 \section{Results}
 \cesar{Overview goes here: All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}.}
+We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
 
 
 \begin{figure}
@@ -488,7 +489,6 @@ The physical creation of the designed circuit is often the most difficult step i
 \centering
 \includegraphics[width=1.0\columnwidth]{charts/boxplots_quant.pdf}
 \caption{Results from fab tool and design tool. }
-We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
 \label{fig:fab_tool_results}
 \end{figure}
 
@@ -505,22 +505,71 @@ We first report quantitative results and then discuss interview responses in the
   The scores for \factor{AGENCY PRE-} were $2.1 \pm 1.20$ for the design step and $2.4 \pm 1.26$ for the fabrication step. \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)}
   saw roughly the same increases, with means $4.0 \pm 1.73$ and $3.3 \pm 1.25$, respectively, for the fabrication step, along with
   means $4.0 \pm 1.22$ and $3.4 \pm 1.27$ for the design step. In both the fabrication and design steps, we observe strong increases in both agency
-  metrics, suggesting that the tool did its job in enabling users with various backgrounds in circuit design to create circuits with a high
+  metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high
   degree of agency.
 
-  Note that both \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)} have large overall ranges in score for both the fabrication and
-  design steps. This trend is especially visibile in the fabrication step, where both \factor{AGENCY POST-} metrics are skewed to lower scores.
-  The reason is this is that a minority of users ($n = 2$) \jasper{artist and cs/cogsci student} reported feeling little agency in their design process after using the tool.
-
-\subsection{Quantitative Analysis}
+\subsection{Observations and Insights}
   Observing subjects' Likert score responses, qualitative responses, and behaviors during design and fabrication, we extract insights
   that may prove useful for future circuit design tools.
 
-  \textit{Theme 1}
-  Text goes here
+  \textit{Step-by-step Fabrication Can Overconstrain}\\
+  Note that both \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)} have large overall ranges in score for both the fabrication and
+  design steps. This trend is especially visibile in the fabrication step, where both \factor{AGENCY POST-} metrics are skewed to lower scores.
+  In particular, \participant{Participant \#72} and \participant{Participant 159}, who both self-identified as artists, reported an \factor{AGENCY POST- (WITH TOOL)} of 1,
+  even though \participant{Participant \#159} reported an \factor{AGENCY POST- (WITHOUT TOOL)} of 4. When asked about what they disliked about the fabrication tool, both
+  reported a reduced sense of agency in the artistic sense, instead being constrained to the interface's pipeline.
+
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#159}:
+    \quoted{There should be more options for shapes, and color as well as a grid. Validate mode is hard to get to... I kept forgetting to check the steps to complete them. It didn’t exactly click for me.}
+    \vspace{-2pt}
+  \end{myquote}
+
+  Conversely, different users relied more heavily on the procedural nature of the fabrication tool. \participant{Participant \#554} and \participant{Participant \#857}, who self-identified as students
+  with design experience, were both satisfied with designing a paper circuit with a step-by-step checklist.
+
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#554}:
+    \quoted{The checklist helps catch mistakes. My design is simple, so the problems are simple. The instructions were good.}
+    \vspace{-2pt}
+  \end{myquote}
+  Nonetheless, the other student, after following the fabrication steps and using the debug feature several times, became frustrated with the methodical process.
+
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#857}:
+    \quoted{Maybe have more explanation of why the circuit should be the way it is--more details to understand why something went wrong.}
+    \vspace{-2pt}
+  \end{myquote}
+
+  Overall, in both cases, we see that the step-by-step nature of the fabrication step, if left unchecked, can reduce the user's ability to adapt
+  to drawing paper circuits as a medium.
+
+  \textit{Qualitative point 2}\\
+
+\subsection{Analysis of Users' Designs}
+  To-do
+
 
 \subsection{Balance Between Planning and Tinkering}
   There was some balance between planning and tinkering that we don't see in these types of applications.
+  \jasper{Incorporate students' responses about wanting to understand the process so they could tinker more}
+
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#554}:
+    \quoted{Ideally, it would be more useful to fundamentally understand the concept, then I can figure out the steps on my own.}
+    \vspace{-2pt}
+  \end{myquote}
+
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#81}:
+    \quoted{To do.}
+    \vspace{-2pt}
+  \end{myquote}
 
 \subsection{Storytelling with Electronics}
   \jlo{cite Buechley storytelling with conductive ink}
