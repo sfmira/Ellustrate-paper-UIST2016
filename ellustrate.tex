@@ -52,7 +52,7 @@
 % since its job is to redefine many LaTeX commands.
 \usepackage[pdftex]{hyperref}
 \hypersetup{
-pdftitle={Ellustrate: Enabling Visual Circuit Design and Fabrication for Multiple Materials},
+pdftitle={Ellustrate: Enabling Visual Circuit Design and Fabrication for Multimaterial Paper Circuits},
 pdfauthor={LaTeX},
 pdfkeywords={SIGCHI, proceedings, archival format},
 bookmarksnumbered,
@@ -73,7 +73,7 @@ breaklinks=true,
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{Ellustrate: Enabling Aesthetic Design and Fabrication for Paper and Textile Circuits}
+\title{Ellustrate: Enabling Aesthetic Design and Fabrication for Multimaterial Paper Circuits}
 
 % \title{Ellustrate: Enabling Aesthetic Design and Fabrication for Silver, Copper, and Conductive Thread Circuits}
 % \title{Ellustrate: Enabling Visual Circuit Design and Fabrication for Multiple Materials}
@@ -98,8 +98,13 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-In this paper, we present Ellustrate, a digital design tool that enables the functional and aesthetic design and fabrication of electronic circuits.
-Ellustrate is separated into three modes - Design, Validate, and Make - to guide users in all essential steps of bringing their electronic artwork to life.
+
+Circuit sketching has gained traction in making communities as a method of democratizing circuit creation, diversifying the materials and techniques used to make unique, interactive artifacts. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design and fabrication of electronic circuits.
+
+Ellustrate provides designers with a digital artboard which aids with circuit building through a set of visual rules. Internally, the drawing is validated from a graph representation using circuit rules, and then step-by-step material-specific instructions are provided for each design.
+
+
+This cycle guides users in all essential steps of bringing their electronic artwork to life.
 The resources and tools provided within Ellustrate, including multi-material support and design-focused drawing tools, are specially tailored for aesthetically-driven functional circuit design. Within the Ellustrate design tool, designers receive immediately feedback and corrections on their circuit design as they create their electronic artwork.
 Beyond the electrical and visual design, Ellustrate also offers step-by-step guidance on fabricating and debugging.
 By providing a design platform that assists in electronic sketching and fabrication, Ellustrate aims to democratize electronic design to include designers and artists and examine the aesthetic value of circuit design beyond the optimization of efficiency.
@@ -118,12 +123,13 @@ Circuit design and prototyping has expanded from breadboarding and printing circ
 Through these materials, users are enabled to explore different form-factors across fabric, paper, and plastic.
 
 
-Circuit sketching, a fabrication process that enables the creation of physical circuits with craft materials first proposed by Qie et al., is a process popular among makers with skills in crafting but little experience with electronics. Sketching is a natural and intuitive step shared by professional electrical engineers and artists alike, and being able to create a functional circuit from sketching is empowering and gratifying especially for early learners of electronics. Moreover, the ability to transform circuits into artwork generates unexplored design opportunities and possibilities.  
+Circuit sketching, a fabrication process that enables the creation of physical circuits with craft materials first proposed by Qie et al., is a process popular among makers with skills in crafting but little experience with electronics~\cite{qi_sketching_2014, qi_stickers_2015}.
+Sketching is a natural and intuitive step shared by professional electrical engineers and artists alike, and being able to create a functional circuit from sketching is empowering and gratifying especially for early learners of electronics. Moreover, the ability to transform circuits into artwork generates unexplored design opportunities and possibilities.  
 The sketching circuits process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Various research fields have taken notice of this trend as well; creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen (cite lewis pen-on-paper). Advances in materials have enabled a new class of circuits that are ``sketchable''. 
 Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented. (notes to be flushed out: Material exploration - the ability to think of atoms and bits as clay - traces are not just automatic connections but of varying resistance and other properties - device physics thinking...)
+
 % =======
 % Circuit sketching, a process that enables the creation of physical circuits with craft materials first proposed by Qie et al., is a process popular among makers with skills in crafting but little experience with electronics. Sketching is a natural and intuitive step shared by professional electrical engineers and artists alike, and being able to create a functional circuit from sketching is empowering and gratifying especially for early learners of electronics. Moreover, the ability to transform circuits into artwork generates unexplored design opportunities and possibilities.  Circuit sketching has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Various research fields have taken notice of this trend as well; creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen (cite lewis pen-on-paper). Advances in materials have enabled a new class of circuits that are "sketchable". Bare conductive =-04-01-0636
-
 Despite the tremendous benefits brought to electronic creation and learning circuit sketching, the process has remained restricted to a physical classroom setting.
 The three steps in creating a circuit sketch \textendash learn basic design rules, design the circuit with incorporated visual design, and fabricate the design \textendash are dynamic processes that cannot be addressed by a static set of instructions.
 We created Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
@@ -160,7 +166,7 @@ Drawing and sketching play a critical role within the development of user interf
 %As electronic devices become more intertwined and intimate with users, the internal making of them becomes more naked and transparent. Along with the advent of structural electronics, where circuit traces and components are printed on housing of an electronic device, and wearable electronics, where electronics and active components are part of the fashion aesthetics, the ability to inject visual design into functional electronics become increasing important.
 \begin{figure}[t]
 \centering
-  \includegraphics[width=1\columnwidth]{figures/Table_1}
+  \includegraphics[width=1\columnwidth]{figures/comparative_table.pdf}
   \caption{A comparison of design tool features. Ellustrate provides coverage for both digital design and circuit design concerns. }~\label{fig:comparison_table}
   \vspace{-16pt}
 \end{figure}
@@ -466,7 +472,7 @@ The physical creation of the designed circuit is often the most difficult step i
     Here we describe an overview of our formal user study. The goal of this study was to conduct a usability evaluation of the tool and extract principles for expressive circuit design.
 
 \subsection{Participants}
-    We conducted each experiment with 10 participants (6F, 4M) who had no prior experience with circuit design but were well versed in visual design. Design proficiency was self-reported. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
+    We conducted each experiment with 10 participants (7F, 3M) who had no prior experience with circuit design but were well versed in visual design. Design proficiency was self-reported. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
 
 \subsection{Procedure}
     Participants were given a brief introduction to circuits. The introduction covered voltage, resistance, and current using the water metaphor, the basic rule of not connecting power lines to ground lines, polarity of electronic components, power requirements, how to lay traces with a silver ink pen, and simple debugging with a multimeter. The tutorial material was available as reference throughout the study. As a warm up exercise, participants were then guided by the researcher in fabricating a simple, one-LED circuit powered by a coin-cell battery.
@@ -530,11 +536,15 @@ We first report quantitative results and then discuss interview responses in the
   metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high
   degree of agency.
 
-\subsection{Observations and Insights}
+\section{Observations and Insights}
   Observing subjects' Likert score responses, qualitative responses, and behaviors during design and fabrication, we extract insights
   that may prove useful for future circuit design tools.
+  
+  
+  \subsection{Polarity Color Synesthesia}
+  People saw colors when there was no colors!
 
-  \textit{Step-by-step Fabrication Can Overconstrain}\\
+  \subsection{Step-by-step Fabrication Can Overconstrain}\\
   Note that both \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)} have large overall ranges in score for both the fabrication and
   design steps. This trend is especially visibile in the fabrication step, where both \factor{AGENCY POST-} metrics are skewed to lower scores.
   In particular, \participant{Participant \#72} and \participant{Participant 159}, who both self-identified as artists, reported an \factor{AGENCY POST- (WITH TOOL)} of 1,
@@ -616,9 +626,16 @@ We first report quantitative results and then discuss interview responses in the
 
 \subsection{Material properties for design}
 \jlo{low-level understanding of code...analog to understand of fundamental material properties - resistance, texture, interaction with substrate materials, interaction with heat. All important understand and intuition to learn in order to invent the next generation of interactive devices - biologic, 3d bioprinting...}
-    
-    There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches. 
 
+
+
+Technological fluency, defined as "the ability to understand, use, and assess technology beyond its rote application", is seen as one of the fundamental quality that affords creativity (cite Lukens). As the landscape of interaction designs broaden to include a wide range of materials, including living cells in BioLogic, thermoplastic in ShrinkyCircuits, and polymer and air in Pneuduino, a fluency in material properties becomes increasing important in creating innovative tangible interactive platforms. Ellustrate 
+
+
+
+    There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches. 
+\subsection{Online Community}
+\jlo{upload designs, ask community to contribute debug, fabrication instructions, tips, and questions} 
 \section {Conclusion}
 We make pretty circuits.
 
