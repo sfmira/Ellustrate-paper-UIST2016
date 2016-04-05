@@ -613,7 +613,18 @@ We first report quantitative results and then discuss interview responses in the
   % In both the fabrication and design steps, we observe strong increases in both agency metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high degree of agency.
   
   % \jasper{More quantitative analysis needed?}
+\subsection{Analysis of Users' Designs}
+  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. For example, with the birthday cake-type designs, participants often saw the SVG in terms of both its aesthetic and its favorable ``branching-factor'' in terms of wiring.
   
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#156}:
+    \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
+    \vspace{-2pt}
+  \end{myquote}
+  
+  \jasper{Todo: upload figures and more commentary}
+ 
 
 \section{Observations and Insights}
   We report observations of subjects experience designing and fabricating aesthetic circuits and draw design principles for the design of smart design and fabrication tools. 
@@ -623,18 +634,17 @@ We first report quantitative results and then discuss interview responses in the
 
 
   \subsection{Step-by-step Fabrication Can Overconstrain}
-
-  Even though the fabrication step enabled many participants fabricate a circuit with little prior circuit experience, the step-by-step or ``checklist'' style fabrication pipeline sometimes inhibited participant's ability to develop a creative mental model of the circuit. Both \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)} have large overall ranges in score for both the fabrication and design steps, but the trend is especially visibile in the fabrication step, where both \factor{AGENCY POST-} metrics are skewed to lower scores.
-  
-  In particular, participants who self identified as artists found that the fabrication tool restricted their sense of creativity. These participants reported a lower average \factor{AGENCY POST- (WITH TOOL)} of $1$, even though they reported an average \factor{AGENCY POST- (WITHOUT TOOL)} of $4$. When asked about what they disliked about the fabrication tool, both reported a reduced sense of agency in the artistic sense due to the constraints interface's pipeline.
-
+  Although constraints are well-documented in HCI research to improve creative thinking in design tasks, we found that the constraint of an instruction set during the physical fabrication of participant circuits inhibited participant's ability to develop a creative mental model of the circuit. The step-by-step or ``checklist'' style fabrication pipeline was the primary reason why users that reported low agency (\factor{Ap, ApT}) after completing the task with the tool. In particular, participants who self identified as artists found that the fabrication tool restricted their sense of creativity. These participants felt more empowered without the tool, wanted to generate their own methods of making versus fall into the regimen of the machine.  
+  % These participants reported a lower average \factor{AGENCY POST- (WITH TOOL)} of $1$, even though they reported an average \factor{AGENCY POST- (WITHOUT TOOL)} of $4$. When asked about what they disliked about the fabrication tool, both reported a reduced sense of agency in the artistic sense due to the constraints interface's pipeline.
   \begin{myquote}
    \vspace{-2pt}
     \participant{Participant \#159}:
-    \quoted{There should be more options for shapes, and color as well as a grid. Validate mode is hard to get to... I kept forgetting to check the steps to complete them. It didn’t exactly click for me.}
+    \quoted{There should be more options for shapes, and color as well as a grid. Validate mode is hard to get to... I kept forgetting to check the steps to complete them. It didn't exactly click for me.}
     \vspace{-2pt}
   \end{myquote}
+  The underscores that pipeline processes did not adhere to creative thinking in the hollistic design process. 
 
+  \subsection{Ellustrate as a Stimuli for Circuit Education}
   On the other hand, participants with little circuit design background relied on the procedural nature of the tool to take their first steps in fabricating their designs. Nonetheless, these participants often reported the need to learn more about how their circuits functioned, but claimed to be limited by the step-by-step interface.
   
   \begin{myquote}
@@ -673,18 +683,7 @@ We first report quantitative results and then discuss interview responses in the
   
   Many users, after becoming acquainted with basic steps for designing and fabricating, moved from wanting to plan everything out in the beginning, to wanting to be able to tinker and tweak their designs as they went along. This is a favorable iterative design process that distinguishes coarse- and fine-grain.
 
-\subsection{Analysis of Users' Designs}
-  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. For example, with the birthday cake-type designs, participants often saw the SVG in terms of both its aesthetic and its favorable ``branching-factor'' in terms of wiring.
-  
-  \begin{myquote}
-   \vspace{-2pt}
-    \participant{Participant \#156}:
-    \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
-    \vspace{-2pt}
-  \end{myquote}
-  
-  \jasper{Todo: upload figures and more commentary}
- 
+
 
 \subsection{Storytelling with Electronics}
   \jlo{cite Buechley storytelling with conductive ink}
@@ -705,7 +704,7 @@ We first report quantitative results and then discuss interview responses in the
 
 \subsection{Material properties for design}
 
-Technological fluency, defined as "the ability to understand, use, and assess technology beyond its rote application", is seen as one of the fundamental quality that affords creativity (cite Lukens). As the landscape of interaction designs broaden to include a wide range of materials, including living cells in BioLogic, thermoplastic in ShrinkyCircuits, and polymer and air in Pneuduino, a fluency in material properties becomes increasing important in creating innovative tangible interactive platforms. Ellustrate aims to play a role in promoting the exploration of fundamental material properties by providing a digital platform for users to alter the electrical and visual properties of conductive materials - something most commonly thought of as digital in function (i.e. connected vs. not connected) by non-experts. Within Ellustrate, users can explore the change in resistance and visual aesthetics as the they widen and length the conductive trace and change the material used. Beyond understanding the nature of conductive materials, we hope to start a design conversation by disrupting the perception of an object that is well-defined - an electrical connection does not necessary take on the shape of a wire, but it could be made with something that has many variables that can be manipulated. We believe that Ellustrate could be used as a tool to democratize the critical thinking about materials, enabling the exploration of the next creative tangible interface. 
+Technological fluency, defined as ``the ability to understand, use, and assess technology beyond its rote application'', is seen as one of the fundamental quality that affords creativity (cite Lukens). As the landscape of interaction designs broaden to include a wide range of materials, including living cells in BioLogic, thermoplastic in ShrinkyCircuits, and polymer and air in Pneuduino, a fluency in material properties becomes increasing important in creating innovative tangible interactive platforms. Ellustrate aims to play a role in promoting the exploration of fundamental material properties by providing a digital platform for users to alter the electrical and visual properties of conductive materials - something most commonly thought of as digital in function (i.e. connected vs. not connected) by non-experts. Within Ellustrate, users can explore the change in resistance and visual aesthetics as the they widen and length the conductive trace and change the material used. Beyond understanding the nature of conductive materials, we hope to start a design conversation by disrupting the perception of an object that is well-defined - an electrical connection does not necessary take on the shape of a wire, but it could be made with something that has many variables that can be manipulated. We believe that Ellustrate could be used as a tool to democratize the critical thinking about materials, enabling the exploration of the next creative tangible interface. 
 
 
 % \subsection{Resistance as a site for design}
