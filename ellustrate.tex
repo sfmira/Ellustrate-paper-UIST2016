@@ -469,13 +469,24 @@ The physical creation of the designed circuit is often the most difficult step i
 
 
 \section{EVALUATION}
-    Here we describe an overview of our formal user study. The goal of this study was to conduct a usability evaluation of the tool and extract principles for expressive circuit design.
+    Here we describe an overview of our formal user study. The goal of this study was to conduct a usability evaluation of the tool, specifically observing at how circuit design contraints influence the visual aesthetic and how fabrication assistance influences agency. 
 
 \subsection{Participants}
-    We conducted each experiment with 10 participants (7F, 3M) who had no prior experience with circuit design but were well versed in visual design. Design proficiency was self-reported. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
+    We recruited 10 participants (avg. 28 years, 7F, 3M) well-versed in visual design, but with no prior experience with circuit design. Proficiency was self-reported in a preliminary survey. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
 
-\subsection{Procedure}
-    Participants were given a brief introduction to circuits. The introduction covered voltage, resistance, and current using the water metaphor, the basic rule of not connecting power lines to ground lines, polarity of electronic components, power requirements, how to lay traces with a silver ink pen, and simple debugging with a multimeter. The tutorial material was available as reference throughout the study. As a warm up exercise, participants were then guided by the researcher in fabricating a simple, one-LED circuit powered by a coin-cell battery.
+\subsection{Materials}
+    We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor to have analogous tangible input with the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: $<= 5$ Chibitronics LED stickers, and a single CR2032 coin-cell battery. A set of SVG graphics with different layout compositions (figurative, linear, radial, and random placement) to evaluate how users navigate circuit rules with spatial constraints. 
+
+\subsection{Study Design}
+    Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a warm-up tutorial, a digital design task, a physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to reflect out-loud their reflections on tools and design process, specifically vocalizing their design choices and shifts, as they went through the workshop. Due to the visual complexity of the circuits, the experimenters aided with interface and fabrication issues when they arose. We report such occurrences for future work to support a larger corpus of visual styles. 
+
+    % power requirements
+    \textit{Warmup}. We provided praticipants with relevant background information for understanding the primary concerns of circuit design and building. A brief introduction covered electricity basics (voltage, resistance, and current using the water metaphor ~\cite{gentner_flowing_1982}), polarity (e.g. preventing shorts, directionality of components), and operation of equipment (laying traces with a silver ink pen, resistance and voltage checks with a multimeter). To ground the concepts, participants were guided by the researcher in fabricating a simple, one-LED circuit powered by a coin-cell battery. Tutorial material was available as reference throughout the study. 
+
+    \textit{Design Task}. Participants were then given a design task to design a circuit with any or all of the available materials for a period of \cesar{BLAH}.  Participants were then shown the validation of their circuit. If there were issues, they were asked to attempt to fix and iterate on their circuit design. 
+
+    \textit{Fabrication Task}. Once successfully validated, our system produced fabrication instructions. A to-scale schematic was printed. Users were asked to fabricate their circuits. They were given \cesar{BLAH} time to complete the task.  
+
 
 \subsection{Metrics}
     \jasper{Justification for metrics goes here.} We asked participants to rate their experience with the tool using five-point semantically anchored Likert questions (1=Strongly Disagree, 5=Strongly Agree):
@@ -492,9 +503,6 @@ The physical creation of the designed circuit is often the most difficult step i
 % \subsection{Other evaluation not done}
 % (might add: Additionally, 10 participants from technical fields (i.e. computer sciences, mechanical engineering, material sciences) who had little to no prior experience with circuit design were recruited. Experience with circuit design was determined from self-reported feedback. Participants were recruited from a mailing list of technical departments.)% Participants were given a bunch of funky circuits: continuity trace issues, component connection issues, and polarity issues. They were asked to debug the circuits using our tool and without our tool. We timed the amount of time it took them to figure the problem out and fix it.
 
-\section{Results}
-\cesar{Overview goes here: All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}.}
-We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
 
 
 \begin{figure}
@@ -526,6 +534,10 @@ We first report quantitative results and then discuss interview responses in the
 % \caption{Results from design too. }
 % \label{fig:design_tool_results}
 % \end{figure}
+\section{Results}
+\cesar{Overview goes here} 
+All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}. 
+We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
 
 \subsection{Quantitative Analysis}
   Subjects reported a mean \factor{ASSISTANCE} of $ 4.4 \pm 0.52$ for the fabrication step, and and a mean of $4.2 \pm 0.42$ for the design step.
@@ -537,14 +549,13 @@ We first report quantitative results and then discuss interview responses in the
   degree of agency.
 
 \section{Observations and Insights}
-  Observing subjects' Likert score responses, qualitative responses, and behaviors during design and fabrication, we extract insights
-  that may prove useful for future circuit design tools.
+  Observing subjects' Likert score responses, qualitative responses, and behaviors during design and fabrication, we extract insights that may prove useful for future circuit design tools.
   
   
   \subsection{Polarity Color Synesthesia}
   People saw colors when there was no colors!
 
-  \subsection{Step-by-step Fabrication Can Overconstrain}\\
+  \subsection{Step-by-step Fabrication Can Overconstrain}
   Note that both \factor{AGENCY POST- (WITH TOOL)} and \factor{AGENCY POST- (WITHOUT TOOL)} have large overall ranges in score for both the fabrication and
   design steps. This trend is especially visibile in the fabrication step, where both \factor{AGENCY POST-} metrics are skewed to lower scores.
   In particular, \participant{Participant \#72} and \participant{Participant 159}, who both self-identified as artists, reported an \factor{AGENCY POST- (WITH TOOL)} of 1,
