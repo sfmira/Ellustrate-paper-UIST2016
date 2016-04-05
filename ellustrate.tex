@@ -478,7 +478,7 @@ The physical creation of the designed circuit is often the most difficult step i
     We recruited 10 participants (avg. 28 years, 7F, 3M) well-versed in visual design, but with no prior experience with circuit design. Proficiency was self-reported in a preliminary survey. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
 
 \subsection{Materials}
-    We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor to have analogous tangible input with the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: $<= 5$ Chibitronics LED stickers, and a single CR2032 coin-cell battery. A set of SVG graphics with different layout compositions (figurative, linear, radial, and random placement) to evaluate how users navigate circuit rules with spatial constraints. 
+    We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor to have analogous tangible input with the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: $<= 5$ Chibitronics LED stickers, and a single CR2032 coin-cell battery.We also exposed a set of SVG graphics with different layout compositions (figurative, linear, radial, and random placement) in order to evaluate how users navigate circuit rules with spatial constraints. 
 
 \subsection{Study Design}
     Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a warm-up tutorial, a digital design task, a physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to reflect out-loud their reflections on tools and design process, specifically vocalizing their design choices and shifts, as they went through the workshop. Due to the visual complexity of the circuits, the experimenters aided with interface and fabrication issues when they arose. We report such occurrences for future work to support a larger corpus of visual styles. 
@@ -494,10 +494,10 @@ The physical creation of the designed circuit is often the most difficult step i
 \subsection{Metrics}
     \jasper{Justification for metrics goes here.} We asked participants to rate their experience with the tool using five-point semantically anchored Likert questions (1=Strongly Disagree, 5=Strongly Agree):
     \begin{itemize}
-      \item \factor{ASSISTANCE}: The tool has helped my physical circuit debugging process.
-      \item \factor{AGENCY PRE-}: I feel capable of fabricating a circuit like this before using the tool.
-      \item \factor{AGENCY POST- (WITH TOOL)}: I feel capable of fabricating a circuit like this after using the tool (with the tool).
-      \item \factor{AGENCY POST- (WITHOUT TOOL)}: I feel capable of fabricating a circuit like this after using the tool (without the tool).
+      \item \factor{ASSISTANCE (As)}: The tool has helped my physical circuit debugging process.
+      \item \factor{AGENCY PRE- (pA)}: I feel capable of fabricating a circuit like this before using the tool.
+      \item \factor{AGENCY POST- WITH TOOL (ApT)}: I feel capable of fabricating a circuit like this after using the tool with the tool.
+      \item \factor{AGENCY POST- WITHOUT TOOL (Ap)}: I feel capable of fabricating a circuit like this after using the tool without the tool.
     \end{itemize}
     In particular,  \factor{AGENCY POST- (WITH TOOL)} describes the subject's experience of designing a circuit specifically with Ellustrate, while
     \factor{AGENCY POST- (WITHOUT TOOL)} generalizes how Ellustrate may serve as an educational tool.
@@ -538,18 +538,46 @@ The physical creation of the designed circuit is often the most difficult step i
 % \label{fig:design_tool_results}
 % \end{figure}
 \section{Results}
+  % For the design step, participants generally viewed the tool as useful, reporting a \factor{ASSISTANCE} of $4.2 \pm 0.42$. 
+  % The data suggest that the tool increased participants' agency in designing a paper circuit.  in constructi \factor{AGENCY PRE-} of $2.4 \pm 1.26$ 
+
+
+  % and found increased agencies after using the tool. Participants self-reported an \factor{AGENCY POST- (WITH TOOL)} of $4.0 \pm 1.22$ 
 \cesar{Overview goes here} 
 All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}. 
 We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
 
 \subsection{Quantitative Analysis}
-  For the design step, participants generally viewed the tool as useful, reporting a \factor{ASSISTANCE} of $4.2 \pm 0.42$. The data suggest that the tool increased participants' agency in designing a paper circuit. We obtained an \factor{AGENCY PRE-} of $2.4 \pm 1.26$ an found increased agencies after using the tool. Participants self-reported an \factor{AGENCY POST- (WITH TOOL)} of $4.0 \pm 1.22$ and an \factor{AGENCY POST- (WITHOUT TOOL)} of $3.4 \pm 1.27$.
-  
+  At the onset, participants expressed uncertainty and apprehension when asked to produce a visual circuit design (\factor{A} $2.4 \pm 1.26$), specifically noting \cesar{the large amount of information presented to them created a large cognitive block to what they were going to draw}
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#???}:
+    \quoted{ I wish I could say I could make that circuit. But with all those constraints, its hard for me to even think creatively. I'd rather try to make a simple circuit, get that working, and alter my design little by little from my known threshold of skill.}
+    \vspace{-2pt}
+  \end{myquote}
+  \cesar{Jasper: verify the below}
+  All participants reported feeling that the design interface assisted them in creating the design (\factor{A} $4.2 \pm 0.42$). They felt the assistance non-intruding, citing the visual rules as fun and interesting. Many participants expressed the design to make visual compositions with the black and red as design elements and noted that the constraint of color opened their compositions to be more explorative. 
+    \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#???}:
+    \quoted{ I know that the red and black are electrically important, but I just like how they look in my composition.}
+    \vspace{-2pt}
+  \end{myquote}
+  Participants expressed a heightened caution from accidentally overlapping colored paths; few participants triggered the warning. Those who did expressed surprise and immediate recognition of their error. 
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#???}:
+    \quoted{ I dozed off, but its okay. I know exactly what I did wrong; I realize I have to keep these elements on separate sides of the page. It causes my to think and plan, but I find that interesting and stimulating.}
+    \vspace{-2pt}
+  \end{myquote}
+  All participants felt that with the tool, they feel empowered to visually create their own circuits (\factor{ApT} $4.0 \pm 1.22$). Several expressed agency to even create designs without the tool (\factor{Ap} of $3.4 \pm 1.27$), noting the simple coloring scheme as the most valuable in aiding their visual design practice. Several noted that the digital form factor, although more fluid than expected, left much to be desired from pen and paper, citing resolution and accidental markings (from digital artifacts). 
+
+
   Similarly, for the fabrication step, particpants reported an \factor{ASSISTANCE} factor of $4.4 \pm 0.52$. Given an overall \factor{AGENCY PRE-} of $2.1 \pm 1.2$, we observed an increase in agency after using the tool with an \factor{AGENCY POST- (WITH TOOL)} of $4 \pm 1.73$ and an \factor{AGENCY POST- (WITHOUT TOOL)} of $3.3 \pm 1.25$
 
   In both the fabrication and design steps, we observe strong increases in both agency metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high degree of agency.
   
-    \jasper{More quantitative analysis needed?}
+  \jasper{More quantitative analysis needed?}
   
 
 \section{Observations and Insights}
