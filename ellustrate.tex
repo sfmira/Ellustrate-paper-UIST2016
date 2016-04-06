@@ -672,19 +672,41 @@ We first report quantitative results and then discuss interview responses in the
   Another planning thing was how participants learned to extended trace past the LED footprints, thinking ahead of how they would later need the extended portion to continue the trace in the next step.
   
   Many users, after becoming acquainted with basic steps for designing and fabricating, moved from wanting to plan everything out in the beginning, to wanting to be able to tinker and tweak their designs as they went along. This is a favorable iterative design process that distinguishes coarse- and fine-grain.
+  
+  \jasper{To Cesar: new result section?}
+  For many, their initial designs were just exploration of the constraints, many, althought they could modify their designs a little bit to adjust to the red and black constrains (e.g. 449), many felt the need to start from scratch after they learned about the domain.
 
 \subsection{Analysis of Users' Designs}
-  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. For example, with the birthday cake-type designs, participants often saw the SVG in terms of both its aesthetic and its favorable ``branching-factor'' in terms of wiring.
+  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. We noted that participants generally tackled the problematic of balancing form and functiion in a) certain trends described below and b) with use of the pen tool and types of lines.
   
-  \begin{myquote}
-   \vspace{-2pt}
-    \participant{Participant \#156}:
-    \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
-    \vspace{-2pt}
-  \end{myquote}
+  \subsection{Trends}
   
-  \jasper{Todo: upload figures and more commentary}
+  We identify two trends: a) emulating SVG design language and b) ???. They noted the visual properties of the lines/tools, they knew they could produce uniform lines. They tried to leverage the visual properties of the line and the visual properties of the SVG and emulate the same aesthetic as the SVG. For example, there's the icing on the cake, and the user's traces mimic the same round, repetitive style for Participant 499. \jasper{other trend goes here}
  
+  
+  \subsection{Types of Lines}
+   We distinguishedthree types of lines that characterize how participants navigated around circuit rules to create their visual design. 
+   ability to recognize the immediate demands of the circuit, but also to depart from concreteness into and use the circuit as a more artistic, higher-level medium for narrative etc.
+  We can classify lines drawn by the conductive ink pen into three types: \textit{adherent}, \textit{constructive}, and \textit{metaphorical}. Adherent lines follow existing SVG paths, constructive lines are used to ``create'' new objects in the circuit (), and metaphorical lines establish semiotic meaning, and are the beginnings of narritive design.
+%   Metaphorical: discussion of narrative (example, yin yang birds). Constructive: the line is the object (example, in tree, with flowers). Adherent: follows existing SVG paths (one of the suns).
+
+  
+  \textbf{Adherent:} \jasper {Evidence first:} There were a predominant amount of users who followed the SVGs, not just in how they drew lines, but also in how they placed their components. While all users chose semiotically relevant places to place the LED footprints, users who drew primarily adherent lines more strictly followed the SVG when placing footprints. Yet, all participants, when placing LEDs, did try to place them in semiotically relevant places and let those LED placements guide the design. This is relevant in matching the triangular shape of the LED footprint with the candle flames (e.g. \participant{Participant \#159}), or in aligning the footprints to the rays of the sun (\participant{Participant \#890}). We noticed that parcipants with high prior circuit experience were more constrained to a functionalist aesthetic. These are people who are more well-versed in circuit design who also drew many adherent lines.
+  
+  \textbf{Constructive:} We observed parcipants using traces to draw objects outside of existing SVG scaffolding. For example, \participant{Participant \#156}, drew the main circuit as a tree, given only the bird SVG. They saw a clear correspondence between the bird and the tree, a semantic correspondence with branching of wire (EE term) with branches of a tree.
+  
+%   \begin{myquote}
+%   \vspace{-2pt}
+%     \participant{Participant \#156}:
+%     \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
+%     \vspace{-2pt}
+%   \end{myquote}
+  
+  We see a similar effect with leveraging the visual density of the star field where \participant{Participant \# 335} drew a trace of additional stars which added an ethereal texturing to the design.
+  
+  \textbf{Metaphorical:} Some participants used to tool to go beyond lines as a means of connecting wires, but instead as a means of ascribing meaning to lines. For example, \participant{Participant \#449} established a ``yin-yang'' formed by the two birds, and then all other traces and footprints conform to the meaning ascribed to traces. With metaphorical lines, participants satisfied not just two criteria: a) functional requirements of a trace in a circuit and b) aesthetic considerations but also c) developing a ``language'' or a system of meaning based on the traces.
+  %This is semiotics, the emergence of artistic talent in a new circuit-drawing medium. 
+  This is the building blocks of narrative or \textit{electronic storytelling}, which we describe below.
 
 \subsection{Storytelling with Electronics}
   \jlo{cite Buechley storytelling with conductive ink}
@@ -696,6 +718,8 @@ We first report quantitative results and then discuss interview responses in the
     \vspace{-2pt}
   \end{myquote}
   Fabricating the circuit represented physicalizing their story; in this manner user's felt much more attached to their designs.
+  
+  \jasper{Going to add something here based on designs}
 
 \section{Limitations}
   We had a limited electronic component library; although we still got expressive designs. This just means it can only become more expressive. We were working with relatively simple designs, the tool in its current form doesn't scale for really complicated circuits. Participants who treated the ink traces as coloring (completely aesthetic) rather than as wires were unable to validate their circuits due to the high number of intersections.
