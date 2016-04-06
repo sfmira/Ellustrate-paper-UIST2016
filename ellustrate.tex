@@ -52,7 +52,7 @@
 % since its job is to redefine many LaTeX commands.
 \usepackage[pdftex]{hyperref}
 \hypersetup{
-pdftitle={Ellustrate: Enabling Visual Circuit Design and Fabrication for Multimaterial Paper Circuits},
+pdftitle={Ellustrate: Designing, Sketching, and Fabricating Aesthetic Electronics through Digital Exploration},
 pdfauthor={LaTeX},
 pdfkeywords={SIGCHI, proceedings, archival format},
 bookmarksnumbered,
@@ -73,7 +73,7 @@ breaklinks=true,
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{Ellustrate: Enabling Aesthetic Design and Fabrication for Multimaterial Paper Circuits}
+\title{Ellustrate: Designing, Sketching, and Fabricating Aesthetic Electronics through Digital Exploration}
 
 % \title{Ellustrate: Enabling Aesthetic Design and Fabrication for Silver, Copper, and Conductive Thread Circuits}
 % \title{Ellustrate: Enabling Visual Circuit Design and Fabrication for Multiple Materials}
@@ -120,15 +120,10 @@ We discuss how such tools that enable material-first exploration can support gro
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 
 \section{Introduction}
-Circuit design is no longer just for electrical engineers. An increasing number of crafters, artists, and designers are embedding computational circuits in everyday objects.
-Once the domain of breadboards and etched copper, circuit design and prototyping has expanded to include a wide range of conductive and non-conductive materials ranging from copper tapes, conductive thread, silver ink pens, and graphite paint.
-Through these materials, users are enabled to explore different form-factors across fabric, paper, and plastic.
+The landscape of electronics is rapidly changing - devices are becoming smaller and thinner exponentially, often taking on unexpected form factors. Electronic circuits are now being printed directly on the device housing to converse internal space, and electronics on ultra-thin wearables devices are directly visible to the user. 
+The sentiment of the blending of functional and structural materials are echoed by the Radical Atoms vision, which calls for “new material design principles” that “treat objects as homogeneous entities with the ability to change their properties” (cite radiacal atoms).  Aesthetic electronics, defined as a class of electronics that enhance and facilitate interactive experience by taking aesthetics and electronic functions as intercorrelated design variables. \jlo{not entirely sure about the way to present a new term in a paper...}A set of capacitors with shapes of interdigitated ocean waves could be used as a capacitive slider, and electrical traces that appears to be tree branches could be appreciated as an augmented painting. Modifying shapes, lengths, and material used are going to affect traditional electrical design variables such as resistance, resistance, and inductance. Having the fluency over the affordance of materials is paramount in creating the aesthetic electronic design that addresses all the function and aesthetic requirement in a well-balanced way. 
 
-
-
-% first proposed by Qie et al.
-Circuit sketching, a fabrication process which utilizes common craft materials to create physical circuits, has become popular among makers with skills in crafting but little experience with electronics ~\cite{qi_sketching_2014, qi_stickers_2015}.
-On of the greatest strengths of sketching lies in its natural and intuitive process shared by professional electrical engineers and artists alike and has large implications for early learners of electronics for empowering them to create function circuits. The sketching circuits process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Moreover, the ability to incorporate these circuits into their own craft generates unexplored design opportunities and possibilities. 
+In Ellustrate, we focus on the creation of aesthetic circuits, which we believe is the design element that is currently the most restricted by traditional aesthetic guideline. Aesthetic circuits can be prototyped with a process named sketching circuit, a fabrication process that enables the creation of physica circuit with craft materials first proposed by Qie el al. It is popular among makers and designers with skills in sketching and crafting but little experience with electronics, and we believe it to be the best first step to broaden the definition of electronic design~\cite{qi_sketching_2014, qi_stickers_2015}. On of the greatest strengths of sketching lies in its natural and intuitive process shared by professional electrical engineers and artists alike and has large implications for early learners of electronics for empowering them to create function circuits. The sketching circuits process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Moreover, the ability to incorporate these circuits into their own craft generates unexplored design opportunities and possibilities. 
 Drawing and sketching play a critical role within the development of user interfaces. Sketching has shown to bring interesting elements to hardware prototyping, sparking creative innovations within the Maker community.
 Although sketching circuit has many benefits in initial design and early electronic education, it is not explored by supported by many electrical digital design tools.
 
@@ -138,8 +133,7 @@ In most circuit design tool, the final layout of the circuitalways create the st
 Even in design tools that focus on entry-level circuit making, such as 123D Circuits and Fritzing, the functions for drawing the final printed circuit board layout still favor the traditional straight-line aesthetics.
 While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed - something pedantic instead of creative. Despite the tremendous benefits brought to electronic creation and learning circuit sketching, the process has remained restricted to a physical classroom setting.
 
-
-\jlo{Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented. (notes to be flushed out: Material exploration - the ability to think of atoms and bits as clay - traces are not just automatic connections but of varying resistance and other properties - device physics thinking...)}
+% \jlo{Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented. (notes to be flushed out: Material exploration - the ability to think of atoms and bits as clay - traces are not just automatic connections but of varying resistance and other properties - device physics thinking...)}
 
 As electronic devices become more intertwined and intimate with users, the internal making of them becomes more naked and transparent. Along with the advent of structural electronics, where circuit traces and components are printed on housing of an electronic device, and wearable electronics, where electronics and active components are part of the fashion aesthetics, the ability to inject visual design into functional electronics become increasing important.
 
@@ -333,7 +327,7 @@ The physical creation of the designed circuit is often the most difficult step i
 \end{figure}
     Should such elements cross, our tool signals offending paths to the user and are removed. If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). This ensures that at any given time, no shorts exist within a circuit design.
 
-    \cesar{I really want to include a visual cue for path planning, similar to the "rails" circuit design pattern. This would a) cluster terminal pads as points in a Voronoi and find the dividing line, b) use shadows of the paths to designate forbidden zones (easier to distinguish with visual desnity). }
+    \cesar{I really want to include a visual cue for path planning, similar to the "rails" circuit design pattern. This would a) cluster terminal pads as points in a Voronoi and find the dividing line, b) use shadows of the paths to designate forbidden zones (easier to distinguish with visual desnity).}
 
 
     \noindent\fbox{%
@@ -580,8 +574,29 @@ We first report quantitative results and then discuss interview responses in the
   \end{myquote}
   
   In both cases, we note that the step-by-step nature of the fabrication step is important for users to begin their fabrication on the right track. However, if left unchecked, it can reduce the user's ability to adapt to drawing paper circuits as a medium. Future interfaces for fabricating circuits may benefit from having checklists that considers how users learn to debug their circuits after practice.
+  
+  \subsection{Balance Between Visual Design, Electrical Routing, and Exisiting Mental Model}
+  As Ellustrate was designed to facilitate the visual aesthetics of circuits, it was important to observe how users incoroporate electronic compoenents and traces into the background visual design. 
+  
+  \jlo{ease of routing was a big factor that drove many designs, which was to be expected for people with no background in circuit design. users with some circuit background was able to use electronic elements as part of the design much more freely. This highlights the importance of technological fluency in creativity.}
+  
+  
+  
+  \participant{Participant \#72}: 
+  \quoted{I thought grouping the LEDs in a geometrically symmetric way, they would be easier to route}\\
+  \participant{Participant \#335}: 
+  \quoted{I didn't understand that the wires don't need to be hidden. Now that I know, I am going to make them into twinkle lights that tie to the LED}
 
-  \subsection{Balance Between Planning and Tinkering}
+
+
+   \subsection{Balance Between Planning and Tinkering}
+  
+  
+  
+  \subsection{Desire for In-Depth Exploration}
+  \jlo{want to understand why the resistance value for checking changes}
+  \jlo{while some users appreciate the step-by-step guide, some questioned the format. When the researcher explained that this was a method provided by other experts for easier debugging, they were much more likely to be accepting of the guide. Some of them continued to brainstorm for a better way to fabricate such that the process is more free-flowing but still allows for easy debug. We were excited to see that users move beyond an information absorbing stage and try to synthesize ways to become more expert like. Everyone learns the process differently, so this also inspire us to enable people to post their own fabrication and debug guides. }
+  
   There was some balance between planning and tinkering that we don't see in these types of applications.
   
   In the initial stages, users based everything around a plan. In the design step, they thought of their circuit in terms of a plan and were able to abstract away many non-essential practical considerations, and this proved useful for enabling participants to quickly develop a prototype without worrying about the implementation details.
