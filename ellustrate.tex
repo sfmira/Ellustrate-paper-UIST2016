@@ -208,24 +208,6 @@ During our interviews, we learned that the result of the fabrication step could 
 \section{Design Objectives}
 Ellustrate was inspired by best practices from electrical circuit design and validation, art practice, and smart tutorial systems [peggy and mira].
 These are the design objectives we set before designing our system that people should use when trying to make a good circuit sketching system. 
-   \cesar{A list of circuit concerns}
-    \begin{itemize}
-        \item Electrical validity: Preventing shorts, forward-voltage load
-        \item Legibility:
-        \item Fabricability:
-    \end{itemize}
-
-    \cesar{A list of aesthetic/experience concerns}
-    \begin{itemize}
-        \item Craft: mechanical processes with constant interaction with the ``material" (Diderot), flow, ``Continuum of states'' (McCullough 173)
-        \item Constraints as creative versus inhibatory
-    \end{itemize}
-And here is our attempt at doing that. 
-
-
-\section{System Design}
-The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd) as proposed by Ullmer et al. Ellustrate provides a digital representation of the physical system - the circuit design and the fabrication process - and allows users to iterate their design and modify their fabrication (i.e. debug). 
-
 The three steps in creating a circuit sketch \textendash learn basic design rules, design the circuit with incorporated visual design, and fabricate the design \textendash are dynamic processes that cannot be addressed by a static set of instructions.
 We created Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
 The design of Ellustrate is based on a series of formative interviews, education theories, and interaction design theories \cesar{I fill that in?}.
@@ -247,6 +229,23 @@ Sketching circuits, especially when combine with visual design, can create compl
 The physical creation of the designed circuit is often the most difficult step in the process, as discovered in the Qi et al study ,our expert survey, and formative user study. Solving hardware problems can be In a workshop setting, guidance is provided to the participants to fabricate the circuit and debug any problems. However, in-person guidance is not easily scalable.
 
 \section{Example Physical Circuits}
+   \cesar{A list of circuit concerns}
+    \begin{itemize}
+        \item Electrical validity: Preventing shorts, forward-voltage load
+        \item Legibility:
+        \item Fabricability:
+    \end{itemize}
+
+    \cesar{A list of aesthetic/experience concerns}
+    \begin{itemize}
+        \item Craft: mechanical processes with constant interaction with the ``material" (Diderot), flow, ``Continuum of states'' (McCullough 173)
+        \item Constraints as creative versus inhibatory
+    \end{itemize}
+And here is our attempt at doing that. 
+
+
+\section{System Design}
+The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd) as proposed by Ullmer et al. Ellustrate provides a digital representation of the physical system - the circuit design and the fabrication process - and allows users to iterate their design and modify their fabrication (i.e. debug). 
 
 \section{Systems Details}
     As an overview, the tool was designed on an Apple iPad Pro and Pencil, chosen to best emulate a pen and paper design environment.  Ellustrate exposes to users common vector editing operations; this was intended to expose a common vocabulary to our target users, who are expected to be familiar with the vector graphics. The tool is built using the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} and follows noun-verb drawing application conventions (e.g. click on action icon, carry out action). At a high level, the tool allows users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials.
@@ -532,17 +531,53 @@ We first report quantitative results and then discuss interview responses in the
   % In both the fabrication and design steps, we observe strong increases in both agency metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high degree of agency.
   
   % \jasper{More quantitative analysis needed?}
-\subsection{Analysis of Users' Designs}
-  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. For example, with the birthday cake-type designs, participants often saw the SVG in terms of both its aesthetic and its favorable ``branching-factor'' in terms of wiring.
-  
+\subsection{Visual Analysis of Users' Designs}
+  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations. We extract some notable trends in how participants chose to navigate this constrained design space. We distinguished three types of lines that characterize how participants navigated around circuit rules to create their visual design, as detailed below: 
+
+  \textbf{Functionalist:} Participants with more prior circuit experience were more constrained to a functionalist aesthetic, drawing lines that minimized distance and distractors. These participants desired the ability to mask portions of the line using a paper mask. 
+
+
+  \textbf{Mimetic:} \jasper {Evidence first:} There were a predominant amount of users who followed the forms of visual elements on the canvas, not just in how they drew lines, but also in how they placed their components. While all users chose semiotically relevant places to place the LED footprints (e.g. matching the triangular shape of the LED footprint with the candle flames or in aligning the footprints to the rays of the sun). 
+  They noted the visual properties of the lines/tools, they knew they could produce uniform lines. They tried to leverage the visual properties of the line and the visual properties of the SVG and emulate the same aesthetic as the SVG. For example, there's the icing on the cake, and the user's traces mimic the same round, repetitive style for Participant 499.   
+  We see a similar effect with leveraging the visual density of the star field where \participant{Participant \# 335} drew a trace of additional stars which added an ethereal texturing to the design.
+
+  % users who drew primarily adherent lines more strictly followed the SVG when placing footprints. Yet, all participants, when placing LEDs, did try to place them in semiotically relevant places and let those LED placements guide the design. This is relevant in . 
+
+  \textbf{Constructive:} We observed parcipants using traces to draw objects outside of existing SVG scaffolding. For example, \participant{Participant \#156}, drew the main circuit as a tree, given only the bird SVG. They saw a clear correspondence between the bird and the tree, a semantic correspondence with branching of wire (EE term) with branches of a tree.
+
   \begin{myquote}
-   \vspace{-2pt}
+  \vspace{-2pt}
     \participant{Participant \#156}:
     \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
     \vspace{-2pt}
   \end{myquote}
   
-  \jasper{Todo: upload figures and more commentary}
+  \textbf{Metaphorical:} Some participants used to tool to go beyond lines as a means of connecting wires, but instead as a means of ascribing meaning to lines. For example, \participant{Participant \#449} established a ``yin-yang'' formed by the two birds, and then all other traces and footprints conform to the meaning ascribed to traces. With metaphorical lines, participants satisfied not just two criteria: a) functional requirements of a trace in a circuit and b) aesthetic considerations but also c) developing a ``language'' or a system of meaning based on the traces.
+  %This is semiotics, the emergence of artistic talent in a new circuit-drawing medium. 
+  This is the building blocks of narrative or \textit{electronic storytelling}, which we describe below.
+
+
+\subsection{Storytelling with Electronics}
+  \jlo{cite Buechley storytelling with conductive ink}
+  The composition represented more than just a visual stimuli; several participants expressed a story or motivation behind their design; stories that would evolve during the circuit design process.
+  \begin{myquote}
+   \vspace{-2pt}
+    \participant{Participant \#499}:
+    \quoted{The birds represent ying and yang, and the battery in the center represents the energy coming out of them ... the stars are tied together with twinkle light ropes, and the birds are flying towards the pretty lights.}
+    \vspace{-2pt}
+  \end{myquote}
+  Fabricating the circuit represented physicalizing their story; in this manner user's felt much more attached to their designs.
+  
+  \jasper{Going to add something here based on designs}
+
+  
+  % , often in highly creative manners. For example, with the birthday cake-type designs, participants often saw the SVG in terms of both its aesthetic and its favorable ``branching-factor'' in terms of wiring.
+  % \jasper{Todo: upload figures and more commentary}
+
+   % ability to recognize the immediate demands of the circuit, but also to depart from concreteness into and use the circuit as a more artistic, higher-level medium for narrative etc.
+  % We can classify lines drawn by the conductive ink pen into three types: \textit{adherent}, \textit{constructive}, and \textit{metaphorical}. Adherent lines follow existing SVG paths, constructive lines are used to ``create'' new objects in the circuit (), and metaphorical lines establish semiotic meaning, and are the beginnings of narritive design.
+%   Metaphorical: discussion of narrative (example, yin yang birds). Constructive: the line is the object (example, in tree, with flowers). Adherent: follows existing SVG paths (one of the suns).
+
  
 
 \section{Observations and Insights}
@@ -626,52 +661,6 @@ We first report quantitative results and then discuss interview responses in the
   \jasper{To Cesar: new result section?}
   For many, their initial designs were just exploration of the constraints, many, althought they could modify their designs a little bit to adjust to the red and black constrains (e.g. 449), many felt the need to start from scratch after they learned about the domain.
 
-
-\subsection{Analysis of Users' Designs}
-  Participants' designs demonstrate how users balanced electrical requirements with aesthetic considerations, often in highly creative manners. We noted that participants generally tackled the problematic of balancing form and functiion in a) certain trends described below and b) with use of the pen tool and types of lines.
-  
-  \subsection{Trends}
-  
-  We identify two trends: a) emulating SVG design language and b) ???. They noted the visual properties of the lines/tools, they knew they could produce uniform lines. They tried to leverage the visual properties of the line and the visual properties of the SVG and emulate the same aesthetic as the SVG. For example, there's the icing on the cake, and the user's traces mimic the same round, repetitive style for Participant 499. \jasper{other trend goes here}
- 
-  
-  \subsection{Types of Lines}
-   We distinguishedthree types of lines that characterize how participants navigated around circuit rules to create their visual design. 
-   ability to recognize the immediate demands of the circuit, but also to depart from concreteness into and use the circuit as a more artistic, higher-level medium for narrative etc.
-  We can classify lines drawn by the conductive ink pen into three types: \textit{adherent}, \textit{constructive}, and \textit{metaphorical}. Adherent lines follow existing SVG paths, constructive lines are used to ``create'' new objects in the circuit (), and metaphorical lines establish semiotic meaning, and are the beginnings of narritive design.
-%   Metaphorical: discussion of narrative (example, yin yang birds). Constructive: the line is the object (example, in tree, with flowers). Adherent: follows existing SVG paths (one of the suns).
-
-  
-  \textbf{Adherent:} \jasper {Evidence first:} There were a predominant amount of users who followed the SVGs, not just in how they drew lines, but also in how they placed their components. While all users chose semiotically relevant places to place the LED footprints, users who drew primarily adherent lines more strictly followed the SVG when placing footprints. Yet, all participants, when placing LEDs, did try to place them in semiotically relevant places and let those LED placements guide the design. This is relevant in matching the triangular shape of the LED footprint with the candle flames (e.g. \participant{Participant \#159}), or in aligning the footprints to the rays of the sun (\participant{Participant \#890}). We noticed that parcipants with high prior circuit experience were more constrained to a functionalist aesthetic. These are people who are more well-versed in circuit design who also drew many adherent lines.
-  
-  \textbf{Constructive:} We observed parcipants using traces to draw objects outside of existing SVG scaffolding. For example, \participant{Participant \#156}, drew the main circuit as a tree, given only the bird SVG. They saw a clear correspondence between the bird and the tree, a semantic correspondence with branching of wire (EE term) with branches of a tree.
-  
-%   \begin{myquote}
-%   \vspace{-2pt}
-%     \participant{Participant \#156}:
-%     \quoted{I thought of something where I can branch out the wires, and I thought ``bird and branches.''}
-%     \vspace{-2pt}
-%   \end{myquote}
-  
-  We see a similar effect with leveraging the visual density of the star field where \participant{Participant \# 335} drew a trace of additional stars which added an ethereal texturing to the design.
-  
-  \textbf{Metaphorical:} Some participants used to tool to go beyond lines as a means of connecting wires, but instead as a means of ascribing meaning to lines. For example, \participant{Participant \#449} established a ``yin-yang'' formed by the two birds, and then all other traces and footprints conform to the meaning ascribed to traces. With metaphorical lines, participants satisfied not just two criteria: a) functional requirements of a trace in a circuit and b) aesthetic considerations but also c) developing a ``language'' or a system of meaning based on the traces.
-  %This is semiotics, the emergence of artistic talent in a new circuit-drawing medium. 
-  This is the building blocks of narrative or \textit{electronic storytelling}, which we describe below.
->>>>>>> origin/sharelatex-2016-04-06-0021
-
-\subsection{Storytelling with Electronics}
-  \jlo{cite Buechley storytelling with conductive ink}
-  The composition represented more than just a visual stimuli; several participants expressed a story or motivation behind their design; stories that would evolve during the circuit design process.
-  \begin{myquote}
-   \vspace{-2pt}
-    \participant{Participant \#499}:
-    \quoted{The birds represent ying and yang, and the battery in the center represents the energy coming out of them ... the stars are tied together with twinkle light ropes, and the birds are flying towards the pretty lights.}
-    \vspace{-2pt}
-  \end{myquote}
-  Fabricating the circuit represented physicalizing their story; in this manner user's felt much more attached to their designs.
-  
-  \jasper{Going to add something here based on designs}
 
 \section{Limitations}
   We had a limited electronic component library; although we still got expressive designs. This just means it can only become more expressive. We were working with relatively simple designs, the tool in its current form doesn't scale for really complicated circuits. Participants who treated the ink traces as coloring (completely aesthetic) rather than as wires were unable to validate their circuits due to the high number of intersections.
