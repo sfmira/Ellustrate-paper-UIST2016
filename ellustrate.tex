@@ -27,6 +27,7 @@
 \usepackage{ wasysym }
 \usepackage{ textcomp }
 \usepackage{tabularx}
+\usepackage{mathtools}
 \usepackage[valuemode=math,unitmode=math]{siunitx}
 
 
@@ -223,32 +224,27 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
 
 
 \section{Design Objectives}
-   \cesar{A list of circuit concerns}
+  We synthesize the aesthetic circuit design landscape into the following objectives for a design tool. 
+    
     \begin{itemize}
-        \item Electrical validity: Preventing shorts, forward-voltage load
-        \item Legibility:
-        \item Fabricability:
+        \item Electrical validity: Circuits need to be electrically valid, prevent common mistakes.
+        \item Legibility: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing. 
+        \item Fabricability: Circuits need to be makeable given a subset of materials. The tool needs to be aware of the materials available to the user. 
+        \item Craft: The tool should incorporate a direct manipulation feel, with mechanical processes with constant interaction with the ``material" (Diderot) with a  ``continuum of states'' (McCullough 173)
+        \item Expressivity: Users should be able to express their own creative styles and ideas. 
+        \item Scaffolds: Designs should support users in creative thinking. 
     \end{itemize}
-
-    \cesar{A list of aesthetic/experience concerns}
-    \begin{itemize}
-        \item Craft: mechanical processes with constant interaction with the ``material" (Diderot), flow, ``Continuum of states'' (McCullough 173)
-        \item Constraints as creative versus inhibatory
-    \end{itemize}
-And here is our attempt at doing that. 
-
+We use these objectives to guide the design Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
 
 \section{System Design}
-The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd) as proposed by Ullmer et al. Ellustrate provides a digital representation of the physical system - the circuit design and the fabrication process - and allows users to iterate their design and modify their fabrication (i.e. debug). 
-
-% We created Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
-% The design of Ellustrate is based on a series of formative interviews, education theories, and interaction design theories \cesar{I fill that in?}.
-% An overview of the tool can be seen in Figure 1. Ellustrate has three design phases \textendash Design, Fabricate, and Debug \textendash representing the three stages of physical circuit creation.
-
-% Within the Design cycle, users can freely explore and sketch circuits alongside the artwork that they wish to incorporate their electronics into, with Ellustrate Design providing visual clues for electrical connections and immediate feedback for electrical design errors.
-% Within Ellustrate Validate cycle, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
+The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd)~\cite{ullmer2000emerging}. Ellustrate provides a digital representation of the physical system - the circuit design and the fabrication process - and allows users to iterate their design and modify their fabrication (i.e. debug). 
 
 \section{Systems Details}
+  % An overview of the tool can be seen in Figure 1. Ellustrate has three design phases \textendash Design, Fabricate, and Debug \textendash representing the three stages of physical circuit creation.
+  % Within the Design cycle, users can freely explore and sketch circuits alongside the artwork that they wish to incorporate their electronics into, with Ellustrate Design providing visual clues for electrical connections and immediate feedback for electrical design errors.
+  % Within Ellustrate Validate cycle, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
+
+
     As an overview, the tool was designed on an Apple iPad Pro and Pencil, chosen to best emulate a pen and paper design environment.  Ellustrate exposes to users common vector editing operations; this was intended to expose a common vocabulary to our target users, who are expected to be familiar with the vector graphics. The tool is built using the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} and follows noun-verb drawing application conventions (e.g. click on action icon, carry out action). At a high level, the tool allows users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials.
 
     We chose to restrict vector operations to path drawing and affine transformations of objects. This was largely motivated by an interest in reducing the tool's complexity and exposing the hand-drawn line, as opposed to ``perfect'' machine curves, to achieve a sketching-with-pen feel.
@@ -258,40 +254,53 @@ The structure of Ellustrate follows the model-control-representation (physical a
     \begin{itemize}
         \item \textbf{Ellustrate Header} (\code{EL}): Used to demarcate the topmost layers of an SVG file that should be processed.
         \item \textbf{Material channels} (e.g. \code{SI} silver-ink) At this level, the type of material used to render marks is specified. This allows for these marks to be separated easily to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
-        \item \textbf{Components} (\code{CP}) Used to specify a set of conductive elements that conceptually belong together (e.g. LED, + / – terminal, footprint).
+        \item \textbf{Components} (\code{CP}) Used to specify a set of conductive elements that conceptually belong together (e.g. LED, + / – terminals, footprint).
         \item \textbf{Elementary components} \code{C(N\textbar G\textbar V)(P\textbar B), NC, C(V\textbar G)TB}.
-        The N\textbar G\textbar V selector designates the accepted polarity (neutral, ground, or powered). The P\textbar B selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The TB suffix is used to mark voltage sources.
+        The N\textbar G\textbar V selector designates the accepted polarity of the mark (neutral, ground, or powered). The P\textbar B selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The TB suffix is used to mark voltage sources.
     \end{itemize}
 
-    This representation allows us to create custom components with accurate footprints and logic specification from off-the-shelf SVG editing software. We can readily export and import representations without affecting the operation of the artwork.
+    This representation allows us to create custom components with accurate footprints and logic specification from off-the-shelf SVG editing software.We can readily export and import representations without affecting the operation of the artwork. 
 
     \subsection{Circuit representation}
+    % \cesar{The biggest insight here that I want to convey here is as follows: 
+    %   Yes, at a high level, this graph is simply us traversing the paths like a visual tree. Connections are vertexes. 
+    %   However, when you do this with a drawing, the ``branches'' of the tree are tiny. Imagine an intersection of two paths end-to-end.
+    %   This yields tiny branches, although we understand this to be a single connection. By doing the above, we use a visual property of closeness to abstract away these tiny branches. 
+    %   }
+      One of the largest challenges of extracting a circuit representation is the visual complexity from a simple sketch. Human visual-processing does an excellent job of grouping elements together, however if we extract a graph true-to-the-form of the digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\~30ms). As such, we capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in our graph (Figure \ref{fig:gestalt}). 
 
-    Once a user draws their Ellustrate circuit, we pass the design through some post-processing steps detailed below in order to extract a graph representation of the circuit:
-    \begin{itemize}
-        \item \textit{Decompose self-intersecting path}:  (e.g., a user has drawn a loop (l-shape) with a single stroke, then this stroke needs to be decomposed into three separate parts).
-        \item \textit{Decompose intersecting path}:  (e.g. a user has drawn to paths that overlap, then these paths are split at the intersection point). Intersections are disregarded is they occur at the start or end of the path, or if the two paths in question are collinear.
-        \item \textit{Blob linearization}: For each blob and intersection with a blob, we draw a line from the blob center to the inside point.
-        \item \textit{Build a undirected graph}: $G$ using an adjacency list $\langle V, E \rangle$. A vertex on the graph is every start and end of each path. An edge is defined as a connection where two vertices are connected by a path or an intersection with another vertex; each edge is encoded with its material composition and cross-sectional area.
-        \item \textit{Optimization step}: Vertices that are close together (e.g. four vertices at an intersection between two paths) are joined.
-    \end{itemize}
-    Once this graph is extracted, we use breadth-first search to find the path of least resistance \cesar{Path of least resistance is an ironic pun to Mitch Resnick's work} between two points. In order to provide a more accurate model of conductivity, we use derive a model from a set of basic electronic rules. Sheet resistance $S_r$ is the measure of resistance of thin films with uniform thickness; conductivity is modeled as the ratio of cross-sectional area and the length of the path. Thus, a path consists of a collection of edges $E$, where each edge $e$ has an associated material sheet resistivity $\rho_e$ and a sheet thickness $t_e$, which is simplified to sheet resistance $R_s = \frac{\rho_e}{t_e}$. We derive the resistance $R$ of a set of edges $E$ as:
-    \begin{equation}
-        R =  \sum^{E}_e R_s \int_{i=0}^{n}  \frac{1}{w_i} dl
-    \label{eq:resistance}
-    \end{equation}
-    where $n$ is the euclidean length of an edge. Under this model, a uniform line \SI{2}{\milli\metre} thick and \SI{20}{\milli\metre} in length made with silver ink ($R_s = 0.5$) has a resistance of \SI{5}{\ohm} whereas a similar mark made with conductive thread (W = \SI{15}{\micro\metre}, $R_s = 2400$) has a resistance of \SI{1.8}{\ohm}.
+      \begin{figure}[t]
+        \centering
+        \includegraphics[width=1.0\columnwidth]{figures/gestalt.pdf}
+        \caption{The complexity of a simple drawing, such as a scribble, adds significant computational complexity to a graph representation of a circuit. Ellustrate groups physically-close clusters of vertices together, reducing the complexity of the graph. }
+        \label{fig:gestalt}
+      \end{figure}
+      \textit{Graph Extraction}.
+      At the point when a user finishes drawing their Ellustrate circuit, we have an unconstrained number of SVG paths $p$. 
+      Through a set of post-processing steps, we extract a graph representation of the circuit. We use $n$ to refer to the number of paths post-processed.
+      % (e.g. loops $\ell$, crosses)
+      For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at that intersection yielding $2(s + t)$ new paths. Intersections are disregarded is they occur at the start or end of the path, or if the two paths in question are collinear.
+      For each blob intersection $b$, we draw a line from the blob center to the boundary intersection point yielding $b$ new paths.
+      We then build an undirected $G$ using an adjacency list $\langle V, E \rangle$. A vertex on the graph is every start and end of each path ($v = 2n = 4(s + t) + 2p + 2b $). An edge is defined as a connection where two vertices are connected by a path or an intersection with another vertex; each edge is encoded with its position on the canvas, material composition, and cross-sectional area.
+          % TOTAL VERTICES V = 4(s+t) + 2p + 2b
+          % AFTER OPTIMIZATION V = s + t + b + 2p
 
-    \cesar{ This would be nice to do... Traces are reduced based on resistor equivalency rules.}
+      \textit{Optimization step}. We uses the physical proximity of each vertex to simplify the graph. Vertices which are close together (e.g. four vertices at an intersection between two paths) are joined, reducing the total number of vertices by at most $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. To give context, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a (b = 32, s = 9, t = 17, p = 14) compared to a 196 vertex graph.
 
+      
+      Once this graph is extracted, we use breadth-first traversal to enumerate all paths between two points. In order to provide a more accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. Sheet resistance $S_r$ is the measure of resistance of thin films with uniform thickness; conductivity is modeled as the ratio of cross-sectional area and the length of the path. Thus, a path consists of a collection of edges $E$, where each edge $e$ has an associated material sheet resistivity $\rho_e$ and a sheet thickness $t_e$, which is simplified to sheet resistance $R_s = \frac{\rho_e}{t_e}$. We derive the resistance $R$ of a set of edges $E$ as:
+        \begin{equation}
+            R =  \sum^{E}_e R_s \int_{i=0}^{n}  \frac{1}{w_i} dl
+        \label{eq:resistance}
+        \end{equation}
+      where $n$ is the euclidean length of an edge, and $w_i$ is the width of the path at offset $i$. Under this model, a uniform line \SI{2}{\milli\metre} thick and \SI{20}{\milli\metre} in length made with silver ink ($R_s = 0.5$) has a resistance of \SI{5}{\ohm} whereas a similar mark made with conductive thread (W = \SI{15}{\micro\metre}, $R_s = 2400$) has a resistance of \SI{1.8}{\ohm}.
 
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=1.0\columnwidth]{figures/designtool.pdf}
-\caption{Ellustrate design tool. }
-\label{fig:design_tool}
-\end{figure}
+    \begin{figure}[t]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{figures/designtool.pdf}
+    \caption{Ellustrate design tool. }
+    \label{fig:design_tool}
+    \end{figure}
 \section{Digital Design Tool}
     Ellustrate aims to alter the circuit aesthetic to allow for more expressive design and fabrication of circuits, balancing visual design with circuit constraints. In this section we detail common concerns of traditional circuit design, and how Ellustrate approaches these circuit constraints.
 
@@ -304,7 +313,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     \noindent\fbox{%
     \parbox{0.465\textwidth}{%
        \textbf{Visual Rule I.}
-       Connections can only be made from/to similarly-colored (e.g. red\textbar red) elements or from/to neutral elements (e.g. red\textbar gray).
+       Connections can only be made from/to similarly-colored (i.e. red\textbar red) elements or from/to neutral elements (i.e. gray).
         }%
     }
     \\
@@ -317,7 +326,6 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \end{figure}
     Should such elements cross, our tool signals offending paths to the user and are removed. If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). This ensures that at any given time, no shorts exist within a circuit design.
 
-    \cesar{I really want to include a visual cue for path planning, similar to the "rails" circuit design pattern. This would a) cluster terminal pads as points in a Voronoi and find the dividing line, b) use shadows of the paths to designate forbidden zones (easier to distinguish with visual desnity).}
 
 
     \noindent\fbox{%
@@ -647,6 +655,10 @@ We first report quantitative results and then discuss interview responses in the
 
 
 \section {Discussion and Future Work}
+\cesar{I really want to include a visual cue for path planning, similar to the "rails" circuit design pattern. This would a) cluster terminal pads as points in a Voronoi and find the dividing line, b) use shadows of the paths to designate forbidden zones (easier to distinguish with visual desnity).}
+
+\cesar{ This would be nice to do... Traces are reduced based on resistor equivalency rules.}
+
 
 \subsection{Material properties for design}
 
