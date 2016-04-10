@@ -419,13 +419,6 @@ The structure of Ellustrate follows the model-control-representation (physical a
       \item \factor{Post-Agency without Tool (Ap)}: I feel capable of [designing/fabricating] future circuits without the tool.
     \end{itemize}
     In particular, \factor{ApT} describes the experience of designing a circuit with Ellustrate, while \factor{Ap} generalizes to how Ellustrate may serve as a tool that enables lasting skills in aesthetic electronics design and fabrication.
-    
-\begin{figure}[h]
-\centering
-  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_artwork}
-  \caption{Sketched circuits made by users}~\label{fig:user-artwork}
-  \vspace{-20pt}
-\end{figure}
 
 \section{Results}
 All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}. 
@@ -462,11 +455,11 @@ We first report quantitative results and then discuss interview responses in the
 %     \quoted{ I dozed off, but its okay. I know exactly what I did wrong; I realize I have to keep these elements on separate sides of the page. It causes my to think and plan, but I find that interesting and stimulating.}
 %     \vspace{-2pt}
 %   \end{myquote}
-  All participants felt that with the tool, they feel empowered to visually create their own circuits (\factor{ApT} $4.0 \pm 1.22$). Several expressed agency to even create designs without the tool (\factor{Ap} of $3.4 \pm 1.27$), noting the simple coloring scheme as the most valuable in aiding their visual design practice.
+  Many felt the tool empowered them to visually create their own circuits (\factor{ApT} $4.0 \pm 1.22$). Several expressed agency to even create designs without the tool (\factor{Ap} of $3.4 \pm 1.27$), noting the simple coloring scheme as the most valuable in aiding their visual design practice.
 
-  \cesar{Some note about validation and them going back to fix designs. Insert fatal errors here. People are too *** creative.... Number of vertices on a design was v= 10000000, compared to its stale circuit equivalent of v=8, e=30. Optimization steps need to be taken to prune the electrical tree during drawing time. }
+  \cesar{Some note about validation and them going back to fix designs. Insert fatal errors here. People are too *** creative.... Number of vertices on a design was v= 10000000, compared to its stale circuit equivalent of v=8, e=30. Optimization steps need to be taken to prune the electrical tree during drawing time.}
 
-  Participants expressed a much larger difference with the fabrication tool. Although in a familiar form factor, users still expressed hesitation (\factor{pA} $2.1 \pm 1.2$) especially with regards to understanding when to use the multimeter. The fabrication tool provided for them with much needed guidance; participants felt highly assisted with the tool $\factor{A} 4.4 \pm 0.52$. Many expressed that their own construction patterns were completely different from the tool's suggestions.
+  Participants expressed a much larger difference with the fabrication tool. Although in a familiar form factor, users still expressed hesitation (\factor{pA} $2.1 \pm 1.2$) especially with regards to understanding when to use the multimeter. The fabrication tool provided for them with much needed guidance; participants felt highly assisted with the tool \factor{A} $4.4 \pm 0.52$. Many expressed that their own construction patterns were completely different from the tool's suggestions.
   \begin{myquote}
    \vspace{-2pt}
     \participant{Participant \#???}:
@@ -484,7 +477,6 @@ We first report quantitative results and then discuss interview responses in the
 %   Many reported the modular lighting of LEDs as motivation to keep on continuing; there was a general consensus that more fanfare was needed.
   Notably, the tool segmented the fabrication steps into modules, where an additional LED would light up at the end of each module. For many, this was not only incentive to continue on with their design, but also a source of confidence.
   
-
   \begin{myquote}
    \vspace{-2pt}
     \participant{Participant \#???}:
@@ -500,16 +492,11 @@ We first report quantitative results and then discuss interview responses in the
     \quoted{ Whoa. I realize my circuit is super complex. I'd hate to spend all this time drawing my detailed illustration and not know which line is important to the circuit. When I clicked this [highlighting of the path], it takes away that need for me to visually trace the path to the battery. }
     \vspace{-2pt}
   \end{myquote}
-
-
-
-
   % Given an overall \factor{AGENCY PRE-} of , we observed an increase in agency after using the tool with an \factor{AGENCY POST- (WITH TOOL)} of $4 \pm 1.73$ and an 
 % 
   % In both the fabrication and design steps, we observe strong increases in both agency metrics, suggesting that the tool successfully enabled users with various backgrounds in circuit design to create circuits with a high degree of agency.
   
   The qualitative data begin to describe more general user experiences with the tool. Below, we extract some notable trends in how participants chose to navigate a constrained design space. 
-
 \subsection{Aesthetic and Electrical Planning}
   As Ellustrate was designed to facilitate the visual aesthetics of circuits, it was important to observe how users balanced electrical requirements, electronic layout, and  aesthetic considerations. Notably, ease of routing was a big factor that drove many designs, which was to be expected for people with no background in circuit design. However, the way in which participants reacted to routing issues varied.
   
@@ -520,15 +507,22 @@ We first report quantitative results and then discuss interview responses in the
   \participant{Participant \#335}: 
   \quoted{I didn't understand that the wires don't need to be hidden. Now that I know, I am going to make them into twinkle lights that tie to the LED.}
 
-  We distinguished three types of marks that characterize how participants navigated around circuit rules to create their visual design, as detailed below: 
+  We distinguished three types of marks that characterize how participants navigated around circuit rules to create their visual design, as detailed below:
+  
+  \begin{figure}[h]
+\centering
+  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_artwork}
+  \caption{\jasper{Retake this figure to match refs below}Sketched circuits made by users}~\label{fig:user-artwork}
+  \vspace{-20pt}
+\end{figure}
 
   \textbf{Functionalist:} While all participants tended to position LED footprints in semiotically relevant places (e.g. matching the triangular shape of the LED footprint with the candle flames), participants with more prior circuit experience were more constrained to a functionalist aesthetic, drawing lines that minimized distance and distractors. Often, they drew over the design in search of a shortest path. These participants desired the ability to mask portions of the line using a paper mask.
 
 
   \textbf{Mimetic:}
-  These designs adhere to the design language of the existing SVG, but that are not completely constrained to shortest paths. A common pattern was using the contour of the sun as aesthetic scaffolding to connect LEDs positioned in the rays of the sun. A more extreme case is how \textbf{Figure 8???} displays mimicking the texture of the star field SVG. Their design features additional stars that she drew, and this emulates the existing texturing of the SVG. In these scenarios, because participans mimic the existing design language, the choice of SVG highly influences participants' final designs.
+  These designs adhere to the design language of the existing SVG, but that are not completely constrained to shortest paths. A common pattern was using the contour of the sun as aesthetic scaffolding to connect LEDs positioned in the rays of the sun. A more extreme case is how Figure \ref{fig:user-artwork}b displays mimicking the texture of the star field SVG. Their design features additional stars that she drew, and this emulates the existing texturing of the SVG. In these scenarios, because participans mimic the existing design language, the choice of SVG highly influences participants' final designs.
   
-  \textbf{Constructive:} In contrast to functionalist and mimetic lines, some participants drew objects wholly outside of existing SVG scaffolding. Notably, in \textbf{Figure 8c} the main circuit as a tree, given only the bird SVG. They saw a clear correspondence between the bird and the tree, a semantic correspondence with branching of wire (a concept from electrical engineering) with branches of a tree.
+  \textbf{Constructive:} In contrast to functionalist and mimetic lines, some participants drew objects wholly outside of existing SVG scaffolding. Notably, Figure \ref{fig:user-artwork}c has the main circuit as a tree, given only the bird SVG. Interestingly, the participant drew a graphic correspondence between then bird and tree branches, as well as a semantic correspondence with branching wire (a concept from electrical engineering) the tree branches.
 
   \begin{myquote}
   \vspace{-2pt}
@@ -537,7 +531,7 @@ We first report quantitative results and then discuss interview responses in the
     \vspace{-2pt}
   \end{myquote}
   
-  \textbf{Symbolic:} Some participants used to tool to go beyond lines as a means of connecting wires, but instead as a means of ascribing meaning to lines. \textbf{Figure 8b} illustrates this with a ``yin-yang'' formed by the two birds, and then all other traces and footprints conform to the meaning ascribed to traces. With metaphorical lines, participants satisfied not just two criteria: a) functional requirements of a trace in a circuit and b) aesthetic considerations but also c) developing a ``language'' or a system of meaning based on the traces.
+  \textbf{Symbolic:} Some participants used to tool to go beyond lines as a means of connecting wires, but instead as a means of ascribing meaning to lines. Figure \ref{fig:user-artwork}d illustrates this with a ``yin-yang'' formed by the two birds. Other traces and footprints then conform to the meaning established by the birds. With metaphorical lines, participants satisfied not just two criteria: a) functional requirements of a trace in a circuit and b) aesthetic considerations, but also developed a ``language'' or a system of meaning based on the traces.
   %This is semiotics, the emergence of artistic talent in a new circuit-drawing medium. 
   This is the building blocks of narrative or \textit{electronic storytelling}, which we detail further below.
  
@@ -549,7 +543,7 @@ We first report quantitative results and then discuss interview responses in the
   Most participants came in with a basic understanding of electricity. Although our water metaphor introduction was our grounding mental model in our introduction, we noted several amalgamations of previously held mental models. Most prevalent was a ``two-pronged plug'' model, where each LED was viewed as a lightbulb with a two-pronged directional plug and the battery as a socket. We found that participants with no circuit experience relied heavily on the interface mechanisms used to convey circuit rules, adopting the visual vocabulary of the interface (e.g. ``red and black'' vs. ``positive and negative''. The construction of their mental models were so heavily reliant on the interface for some, that some participants reported a mental color synesthesia whereby subjects memorized the coloring of the traces in the digital design phase, and held that representation as they worked on their silver ink fabrication. This observation shows tremendous opportunity to use digital representations to influence how users perceive and operate in the physical world and the large ethical power of interface designers to provide a grounded model from best practices. 
 
   \subsection{Step-by-step Fabrication Can Overconstrain}
-  Although constraints are well-documented in HCI research to improve creative thinking, we found the constraint of an instruction set during the physical fabrication of participant circuits inhibited participant's ability to develop a creative mental model of the circuit. The step-by-step or ``checklist'' style fabrication pipeline was the primary reason why users reported low agency (\factor{Ap, ApT}) after completing the task with the tool. In particular, participants who self-identified as artists found that the fabrication tool restricted their sense of creativity. These participants felt more empowered without the tool, wanted to generate their own methods of making versus fall into the regimen of the machine.  
+  Although constraints are well-documented in HCI research to improve creative thinking, we found the constraint of an instruction set during the physical fabrication of participant circuits often inhibited participant's ability to develop a creative mental model for the circuit. The step-by-step or ``checklist'' style fabrication pipeline was the primary reason why users reported low agency (\factor{Ap, ApT}) after completing the task with the tool. In particular, participants who self-identified as artists found that the fabrication tool restricted their sense of creativity.
   % These participants reported a lower average \factor{AGENCY POST- (WITH TOOL)} of $1$, even though they reported an average \factor{AGENCY POST- (WITHOUT TOOL)} of $4$. When asked about what they disliked about the fabrication tool, both reported a reduced sense of agency in the artistic sense due to the constraints interface's pipeline.
   \begin{myquote}
    \vspace{-2pt}
@@ -557,31 +551,26 @@ We first report quantitative results and then discuss interview responses in the
     \quoted{There should be more options for shapes, and color as well as a grid. Validate mode is hard to get to... I kept forgetting to check the steps to complete them. It didn't exactly click for me.}
     \vspace{-2pt}
   \end{myquote}
-  The underscores that pipeline processes did not adhere to creative thinking in the holistic design process. 
+%   These participants felt more empowered without the tool, wanted to generate their own methods of making versus fall into the regimen of the machine. \jasper{However, the artists didn't realize that they totally couldn't do anything without the tool} The underscores that pipeline processes did not adhere to creative thinking in the holistic design process.
+  While these participants reported feeling more empowered without the tool, we must also consider consider that the constraints of the step-by-step also allowed participants with less circuit knowledge to implement a creative designs without worrying about implementation details.
   
-  \subsection{Enabling Tinkering and Tacit Skills}
-  While the step-by-step instructions may not have allowed some participants to fully express creative thinking, it did afford participants the ability to tinker. Because the step by step instructions created a guaranteed safety net, they were able to disregard the interface's steps and instead began to make design decisions based off of their own intuition. Once participants gained proficiency with the tool, they developed their own behaviors independent of the step-by-step instructions, such as blowing on the conductive ink while it was drying. Some commented that they thought the allotted waiting time of 60 seconds was wrong and that they knew what was best after having debugged several traces.
+  \subsection{Incentivizing Tinkering and Debugging}
+  Because the step by step instructions created a guaranteed safety net, they were able to disregard the interface's steps and instead began to make design decisions based off of their own intuition. Once participants gained proficiency with the tool, they developed their own behaviors independent of the step-by-step instructions, such as blowing on the conductive ink while it was drying. Some commented that they thought the allotted waiting time of 60 seconds was wrong and that they knew what was best after having debugged several traces.
   
   % Also users had to learn to place the probes correctly, often the probe tip went into the paper
-  The conductive ink pen itself is something that users had to tinker with. Almost all users made their traces too small in the beginning, and then went back and widened their traces later as they saw fit. Because users were prompted to debug each trace during the step-by-step instructions, they had the opportunity to try new ways of drawing traces, and thus were able to adapt their cognitive model to the pen. They knew they could experiment with the pen and thus switched over from learning from the interface into learning from their own craft. This is tacit learning.
+  The conductive ink pen itself is something that users had to tinker with. Almost all users made their traces too small in the beginning, and then went back and widened their traces later as they saw fit. Because users were prompted to debug each trace during the step-by-step instructions, they had the opportunity to try new ways of drawing traces, and thus were able to adapt their cognitive model to the pen.
+%   They knew they could experiment with the pen and thus switched over from learning from the interface into learning from their own craft. This is tacit learning.
 %   Another type of behavior was \textit{forethought}, where users anticipated future issues with their design and adapted accordingly, disobeying the interface as necessary. Many participants learned to extended trace past the LED footprints, thinking ahead of how they would later need the extended portion to continue the trace in the next step.
   In general, participants moved from wanting to plan everything out in the beginning, to wanting to be able to tinker and tweak their designs as they went along. Even thought step-by-step instructions might reduce creative agency, they introduce a favorable iterative design process that distinguishes coarse- and fine-grain.
   
-  \subsection{Ellustrate as a Stimulus for Circuit Education}
-  While participants with little circuit design background relied on the procedural nature of the tool, many participants reported the need to learn more about how their circuits functioned, but claimed to be limited by the step-by-step interface.
+%   \begin{myquote}
+%   \vspace{-2pt}
+%     \participant{Participant \#857}:
+%     \quoted{Maybe have more explanation of why the circuit should be the way it is--more details to understand why something went wrong.}
+%     \vspace{-2pt}
+%   \end{myquote}
   
-  \begin{myquote}
-   \vspace{-2pt}
-    \participant{Participant \#857}:
-    \quoted{Maybe have more explanation of why the circuit should be the way it is--more details to understand why something went wrong.}
-    \vspace{-2pt}
-  \end{myquote}
-  
-  Upon learning that the debugging steps were calculated using expert methods, users were more receptive to the steps. As discussed above, once users became established cognitive model of the interface, they were able to debug without the interface. Slight tension with the debugging steps provided by the interface motivated participates to incorporate debugging into their cognitive models and find ways of debugging that work for them. Hence, the concept of tacit skills extends to elementary debugging as well.
-  
-  Though, such user-generated methods of debugging only scratched the surface in getting participants' circuits to work. Many participates expressed interest in the behind-the-scenes, circuit theory explanation of their designs. For example, participants often did not know how to react to negative voltage readings.
-  
-%   When the researcher explained that this was a method provided by other experts for easier debugging, they were much more likely to be accepting of the guide. Some of them continued to brainstorm for a better way to fabricate such that the process is more free-flowing but still allows for easy debug. We were excited to see that users move beyond an information absorbing stage and try to synthesize ways to become more expert like. Everyone learns the process differently, so this also inspire us to enable people to post their own fabrication and debug guides.
+ Slight tension with the debugging steps provided by the interface motivated participates to incorporate debugging into their cognitive models and find ways of debugging that work for them. Though, many participates expressed interest in the behind-the-scenes, circuit theory explanation of their designs. For example, participants often did not know how to react to negative voltage readings.
   
   \begin{myquote}
    \vspace{-2pt}
