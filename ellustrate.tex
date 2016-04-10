@@ -126,10 +126,17 @@ As interactive electronics become more intimate and personal, the design of the 
 \section{Introduction}
 The landscape of electronics is rapidly changing - devices are becoming smaller and thinner exponentially, often taking on unexpected form factors. Electronic circuits are now being printed directly on the device housing to conserve internal space, and electronics on ultra-thin wearables devices are directly visible to the user. 
 The sentiment of the blending of functional and structural materials are echoed by the Radical Atoms vision, which calls for “new material design principles” that “treat objects as homogeneous entities with the ability to change their properties” (cite radiacal atoms).  In this paper, we use the term \textit{Aesthetic Electronics} to describe a class of electronics that enhance and facilitate interactive experience by taking aesthetics and electronic functions as intercorrelated design variables. A set of capacitors with shapes of interdigitated ocean waves could be used as a capacitive slider, and electrical traces that appears to be tree branches could be appreciated as an augmented painting. Modifying shapes, lengths, and material used are going to affect traditional electrical design variables such as resistance, capacitance, and inductance. Having the fluency over the affordance of materials is paramount in creating the aesthetic electronic design that addresses all the function and aesthetic requirement in a well-balanced way. 
-
+\begin{figure*}[ht]
+ \vspace{-16pt}
+\centering
+  \includegraphics[width=\linewidth]{figures/ellustrate_system.pdf}
+  \caption{The Ellustrate aesthetic circuit design, fabrication, and debugging tool flow. }~\label{fig:process_flow}
+  \vspace{-16pt}
+\end{figure*}
 In Ellustrate, we focus on the creation of a subgroup of aesthetic electronics - aesthetic circuits. We believe electrical traces to be the design element that is currently the most restricted by traditional aesthetic guideline. Aesthetic circuits can be prototyped with a process named Sketching Circuit, a design and fabrication process that enables the creation of physical circuit with craft materials first proposed by Qie el al. It is popular among makers and designers with skills in sketching and crafting but little experience with electronics, and we believe it to be the best first step to broaden the definition of electronic design~\cite{qi_sketching_2014, qi_stickers_2015}. The greatest strength of sketching lies in its natural and intuitive process shared by professional electrical engineers and artists alike - this shared charcteristic can greatly empower early learners to create function circuits. The sketching circuits process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners. Moreover, the ability to incorporate these circuits into their own craft generates unexplored design opportunities and possibilities. 
 Drawing and sketching play a critical role within the development of user interfaces. Sketching has shown to bring interesting elements to hardware prototyping, sparking creative innovations within the Maker community. 
 Although sketching circuit has many benefits in initial design and early electronic education, it is not explored by supported by many electrical digital design tools.
+
 
 
 Various research fields have taken notice of the circuit sketching trend as well, creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen~\cite{russo2011pen}. Advances in materials have enabled a new class of circuits that are ``sketchable''. While ease of use of the conductive pen, copper tape, and conductive threads, has enabled many creative crafting projects, we believe the complexity and creativity in electronic craft can be further augmented by providing two critical elements - a digital sandbox and assistance for physical creation. 
@@ -143,18 +150,12 @@ Ellustrate differs from most circuit design tools in a number of ways: a) it bal
 % \jlo{Sketching is an integral part of design - in both visual design, and software and hardware engineering design. Digital design tools that aid in physical design have been studied extensively, and their benefits to the final physical design have been well documented. (notes to be flushed out: Material exploration - the ability to think of atoms and bits as clay - traces are not just automatic connections but of varying resistance and other properties - device physics thinking...)}
 % As electronic devices become more intertwined and intimate with users, the internal making of them becomes more naked and transparent. Along with the advent of structural electronics, where circuit traces and components are printed on housing of an electronic device, and wearable electronics, where electronics and active components are part of the fashion aesthetics, the ability to inject visual design into functional electronics become increasing important.
 
-\begin{figure}[t]
-\centering
-  \includegraphics[width=\linewidth]{figures/Ellustrate_figures_process_flow.jpg}
-  \caption{A comparison of design tool features. Ellustrate provides coverage for both digital design and circuit design concerns. }~\label{fig:process_flow}
-  \vspace{-16pt}
-\end{figure}
 
 
 \section{Related Work}
 To create a digital tool that enables the physical creation of physical circuits, we based our work on established research on nontraditional circuits and electronics, as well as relevant digital tools. 
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
   \includegraphics[width=1\columnwidth]{figures/comparative_table.pdf}
   \caption{A comparison of design tool features. Ellustrate provides coverage for both digital design and circuit design concerns. }~\label{fig:comparison_table}
