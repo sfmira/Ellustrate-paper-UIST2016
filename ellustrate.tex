@@ -230,7 +230,7 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
 
 
 \subsection{Electrical Validity}
-  Circuit validation is a very large and complex field of study. In order to focus our contributions on circuit assistance design, we limit the scope of our circuit validation to deal with circuits with only LEDs, resistors, and batteries. The following design pattern can be extended to the more multi-faceted RLC (Resistance, Inductance, Capacitance) or circuits with integrated chips ~\cite{mell [Mellis].
+  Circuit validation is a very large and complex field of study. In order to focus our contributions on circuit assistance design, we limit the scope of our circuit validation to deal with circuits with only LEDs, resistors, and batteries. The following design pattern can be extended to the more multi-faceted RLC (Resistance, Inductance, Capacitance) or circuits with integrated chips ~\cite{mellis_microcontrollers_2013}.
 
   The most common task in electronic circuit design is the ability to connect components to sources of current. Most connections are modelled as perfect conductors, having a neglible resistance. As conductive materials enter this landscape, we encounter the need to represent the resistance or each connection (Equation \ref{eq:resistance}).
 
@@ -242,7 +242,7 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
         \item Electrical validity: Circuits need to be electrically valid, prevent common mistakes.
         \item Legibility: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing. 
         \item Fabricability: Circuits need to be makeable given a subset of materials. The tool needs to be aware of the materials available to the user. 
-        \item Craft: The tool should incorporate a direct manipulation feel, with mechanical processes with constant interaction with the ``material" (Diderot) with a  ``continuum of states'' (McCullough 173)
+        \item Craft: The tool should incorporate a direct manipulation feel, with mechanical processes with constant interaction with the ``material" (Diderot) with a  ``continuum of states''(McCullough 173)
         \item Expressivity: Users should be able to express their own creative styles and ideas. 
         \item Scaffolds: Designs should support users in creative thinking. 
     \end{itemize}
@@ -335,7 +335,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \caption{Illustration of region-based polarity checking. When neutral components intersect polar traces, the polarity propagate through them, increasing the area of the polarity detection region.}
 \label{fig:propagation}
 \end{figure}
-    Should such elements cross, our tool signals offending paths to the user and are removed. If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). This ensures that at any given time, no shorts exist within a circuit design.
+    Should such elements cross, our tool signals offending paths to the user and are removed. If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). This ensures that at any given time, no electrical shorts exist within a circuit design.
 
 
 
@@ -364,15 +364,15 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \item \factor{CONNECTION CHECK}. For all LEDs, verify that there exists a path to ground and a path to power.
                 \item \factor{POWER CHECK}. For each path from \code{PWR} to \code{GND}, extract the LEDs along the path. Sum the associated voltage-drops of each LED. Check that the voltage drop is not greater the \code{PWR}.
                 \item \factor{RESISTANCE CHECK}. For each path, verify that the resistance is below a threshold. 
-                \item \factor{FAB CHECK}. For each path, verify against fabrication-specific constraints (e.g. length of trace for silver-ink will be difficult to make).
+                \item \factor{FAB CHECK}. For each path, verify against fabrication-specific constraints (e.g. a warning for long traces might cause a higher chance for fabrication error).
             \end{itemize}
          Clicking on a validation error or warning highlights appropriate elements in the design (Figure ?). 
     
 \section{Fabrication Tool}
-    Once a circuit has passed digital validation, we provide a set of design-specific fabrication instructions and schematics. For clarity, we describe the fabrication system with respect to silver-ink as the conductive material, but detail which portions of this process is portable to other materials. 
+    Once a circuit has passed digital validation, we provide a set of design-specific fabrication instructions and schematics. For clarity, we describe the fabrication system with respect to silver-ink as the conductive material, but detail which portions of this process was applied to other materials as well. 
 
     \subsection{Design schematics}
-        The Ellustrate design tool outputs a to-scale version of the circuit as an SVG file, which is then printed or transfered onto a circuit substrate (e.g. paper, tattoo paper, etc.). Conductive paths are denoted with dashed magenta lines to indicate where traces should be drawn.
+        The Ellustrate design tool outputs a to-scale version of the circuit as an SVG file, which is then printed or transfered onto a circuit substrate (e.g. paper, fabric, etc.). Conductive paths are denoted with dashed magenta lines to indicate where traces should be drawn.
         Each component footprint is outlined and labeled. Lastly, a printable bill-of-materials (BOM) is produced to aid with planning and record-keeping.
     \subsection{Design-specific fabrication instructions}
         To prevent common fabrication mistakes and to lay out an easy-to-debug circuit, Ellustrate generates instructions that encourage modular fabrication. To decompose the circuit graph, we query our scene graph for all LEDs on the canvas. We then extract the shortest (least resistant) path to power (\code{CVTB}) and to ground (\code{CGTB}) for each LED, and order these paths by length, which we term \textit{branches}. By fabricating each branch in sequence, a user can modularly test each branch in isolation. We arrived at the following fabrication procedure for circuit building through several pilot iterations with target users. For each instruction, our tool highlighted relevant parts of traces and components. For instructions that required the use of a multimeter (\code{MULT}), our tool displayed an image of the multimeter with the correct dial placement and visually-annotated where multimeter probes should be placed on the circuit. 
@@ -388,12 +388,13 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \begin{enumerate}
                       \item {[}Draw{]} the initial portion of all traces originating from the battery. [Dry].
                       \item Add the battery.
-                      \item Power Check: For each power-ground path, check that a voltage greater than 3.3 V is observed. (\code{MULT})
+                      \item Power Check: For each power-ground path, check that a voltage of approximately 3 V is observed. (\code{MULT})
                 \end{enumerate}
             }%
         }
 
-        We then append steps for each branch to the instruction set. Certain steps require confirmation from the user to proceed, and, in the case of a negative confirmation, a debugging step is added to the instruction set and removed once resolved. In addition, material-specific instructions can be generated to aid with fabrication. For instance, in the case of silver-ink, drying time is unpredictable and wet ink has a higher resistance which might impede circuit function. Utilizing our modeled conductivity, we can provide users an idea of what type of resistance they should expect, as well as a simple countdown timer to take the guesswork out of dried ink.
+        We then append steps for each branch to the instruction set. Certain steps require confirmation from the user to proceed, and, in the case of a negative confirmation, a debugging step is added to the instruction set and removed once resolved. In addition, material-specific instructions are generated to aid with fabrication. For instance, in the case of silver-ink, drying time is affected by the amount of ink deposited by user and can vary from user to user. A drying time of 60 seconds is recommended (indicated by a countdown timer), which is long enough for most cases. Since wet ink has a higher resistance (which might impede circuit function), we also instruct users to test the trace resistance before proceeding. 
+        %Utilizing our modeled conductivity, we can provide users an idea of what type of resistance they should expect, as well as a simple countdown timer to aid in determining the necessary time for the conductive ink to dry.
         
         \fbox{%
             \parbox{0.465\textwidth}{%
@@ -413,7 +414,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
         
         Similar instructions are substituted or added for using and debugging different materials, such as:
         \begin{itemize}   
-          \item {[}Dry{]} Material-specific drying times (e.g. graphite ink takes longer to dry than silver ink). 
+          \item {[}Dry{]} Material-specific drying times (e.g. BareConductive graphite ink takes longer to dry than CircuitScribe silver ink). 
           \item {[}Widen{]} Thickening traces for higher resistance. 
           \item {[}Handling{]} For circuit stickers, ensuring that adhesive pads are ink-free, avoiding removing stickers from paper, not touching adhesive side. % Copper tarnishes from hand oils; wash your hands. 
           \item {[}Continuity{]} A continuity issue results when a trace is not fabricated correctly; a break in this trace will result in an interrupted connection preventing the flow of electricity. Use the multimeter in continuity mode and place both probes at [start]. Move one probe towards [end], checking that the trace is continuous (beep throughout).  
