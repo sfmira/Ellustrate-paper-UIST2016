@@ -194,14 +194,12 @@ As much as these creative forms of circuits enable early exploration of the circ
 To learn about opportunities for supporting circuit sketching and fabrication with a digital design tool, we interviewed three circuit educators and seven potential users. 
 
 Educators were experienced in teaching students with no prior electronic design knowledge from different domains: an introductory circuits Massive Open Online Course (MOOC), Maker Faire workshops, and circuit sketching workshops. 
-Potential users were recruited university students with little to no circuits background, but with varying level of design experience. Utilizing a think-outloud protocol, we asked four interviewees to design a circuit with regular pens on pencil to study possible aesthetics, and three interviewees to design and fabricate simple three LED\footnote{Chibitronics LED stickers} circuit with copper tape (eliciting help from the interviewer as needed) to study potential fabrication and debugging problems.
+Potential users were recruited university students with little to no circuits background, but with varying level of design experience. Utilizing a think-outloud protocol, we asked four interviewees to design a circuit with regular pens on pencil to study possible aesthetics, and three interviewees to design and fabricate simple three LED\footnote{Chibitronics LED stickers} circuit with copper tape (eliciting help from the interviewer as needed) to study potential fabrication and debugging problems. We discovered two major observations that informed the design of our system detailed below.
 
-We discovered two major observations that informed the design of our system:
-
-\subsection{Immediate Feedback and Validation}
+\subsubsection{Immediate Feedback and Validation}
 In hardware design, there are two main types of error that user could encounter - one is electronic design rule violations (i.e. electrical shorting), and one is functional errors (i.e. parallel LED's routed as series). They are closely analgous to the classifications of syntax and semantic errors in software. Digital tools are immensely useful when it comes to catching syntax errors within a circuit design, but there are few hardware design tools that provide design feedback in a way that is accessible to early learners. All experts we interviewed agreed that a electrical design check as immediate feedback during the design process would greatly benefit early learners. Their opinions were well supported by exisitng literature - according to ~\cite{Hattie:2007gi,Epstein:2002ur}, providing specific immediate feedback is crucial in early learning. Our circuit learners reported to have more confidence in their subsequence design decisions if positive and negative feedback were given immediately, especailly in the beginning of the design process. Although Ellustrate is not structured as a tool specific for learning, it does aim to build lasting good electrical design habits. During the circuit sketching process, we observed that the design rule that most users have trouble with was keeping track of the ground and power pads and traces and making sure that they do not short out. 
 
-\subsection{Expert Knowledge and Guidance in Fabrication and Debugging}
+\subsubsection{Expert Knowledge and Guidance}
 During our interviews, we learned from our early circuit learners that the result of the fabrication step could be most rewarding if successful, but the most demoralizing and frustrating if not. Unfortunately, assistance in fabrication and circuit debugging are not provided in most circuit design tool, and instructions in this realm remain mostly restricted to in-person classroom/workshop setting~\cite{Klemmer:2004ul}. We feel that providing a debugging and fabrication guide is crucial to achieving our goal of empowering designers. One major difference in fabrication that we observed in experts and entry level circuit makers was the ability to separate the circuit into small sections, and they fabricate and test each section individually in a way that minimize the chances of error propagation. We formulated expert advice into rational steps that users can follow to fabricate their design. More detailed and in depth information and debugging suggestions can be accessed as desired by the user.  
 % the benefits of templates/examples in the early learning process of non-experts
 % static template and their potential shortcoming 
@@ -214,8 +212,10 @@ During our interviews, we learned from our early circuit learners that the resul
   \vspace{-16pt}
 \end{figure}
 
-\section{Critical Elements for an Aesthetic Circuit Design Tool}
-The design of Aesthetic Circuits faces a few challenges since the requires careful considerations and balance of electrical, material, and visual aesthetic designs. There are four major features that a digital tool for aesthetic tool needs to include: 
+% \section{Critical Elements for an Aesthetic Circuit Design Tool}
+\section{Aesthetic Circuit Design Objectives}
+
+The design of Aesthetic Circuits faces key challenges due to the careful considerations and balance of electrical, material, and visual design principles. There are four major features that a digital tool for aesthetic tool needs to include: 
 
 \subsection{Freeform Circuit Drawing Tool}
 The design of electrical traces that possess both electrical function and aesthetic value is possibility the most critical task in creating aesthetic circuits. In traditional circuit design tools, routing assistance is done in the form of auto trace - a algorithm driven process that determines the shortest and most efficient paths to connect electronic components on a given circuit board~\cite{Fisk:1965tk}. Autotrace creates routing that minimizes board space and noise, but does not provide any aesthetic freedom. On the other hand, the design of aesthetic circuits, although needs to be functional, has less concern over board space and noise compared to a traditional electronic circuit board. Therefore, a digital tool for aesthetic circuit design needs to provide the freedom of creating artistic drawing but provide enough restrains to ensure electrical function at the same time.  Sketching circuits, especially when combine with visual design, can become a complex circuit routing puzzle. When the electronic components are placed in a nonlinear fashion, powering all of them without shorting the circuit or creating excessively long traces become difficult. In Qi el al, a paper template is provided to workshop participants to guide them in placement of the copper tape~\cite{Qi:2014bg}. While this method is highly effective in aiding participants in creating functional circuits, it limits creativity in visual design ~\cite{Qi:2014bg}.  Within Ellustrate, users are encouraged to explore and iterate different placements of electronics components and traces to optimize the balance between visual design and circuit functionality.
@@ -234,15 +234,13 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
 
   The most common task in electronic circuit design is the ability to connect components to sources of current. Most connections are modelled as perfect conductors, having a neglible resistance. As conductive materials enter this landscape, we encounter the need to represent the resistance or each connection (Equation \ref{eq:resistance}).
 
-
-\section{Design Objectives}
   We synthesize the aesthetic circuit design landscape into the following objectives for a design tool. 
     
     \begin{itemize}
         \item Electrical validity: Circuits need to be electrically valid, prevent common mistakes.
         \item Legibility: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing. 
         \item Fabricability: Circuits need to be makeable given a subset of materials. The tool needs to be aware of the materials available to the user. 
-        \item Craft: The tool should incorporate a direct manipulation feel, with mechanical processes with constant interaction with the ``material" (Diderot) with a  ``continuum of states''(McCullough 173)
+        \item Craft: The tool should incorporate a direct manipulation feel, with mechanical processes with constant interaction with the ``material" (Diderot) with a ``continuum of states''(McCullough 173)
         \item Expressivity: Users should be able to express their own creative styles and ideas. 
         \item Scaffolds: Designs should support users in creative thinking. 
     \end{itemize}
@@ -269,10 +267,11 @@ The structure of Ellustrate follows the model-control-representation (physical a
         The N\textbar G\textbar V selector designates the accepted polarity of the mark (neutral, ground, or powered). The P\textbar B selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The TB suffix is used to mark voltage sources.
     \end{itemize}
 
-    This representation allows us to create custom components with accurate footprints and logic specification from off-the-shelf SVG editing software.We can readily export and import representations without affecting the operation of the artwork. 
+    This representation allows us to create custom components with accurate footprints and logic specification from off-the-shelf SVG editing software.
+    We can readily export and import representations without affecting the operation of the artwork. 
 
     \subsection{Circuit representation}
-      One of the largest challenges of extracting a circuit representation is the visual complexity from a simple sketch. Human visual-processing does an excellent job of grouping elements together, however if we extract a graph true-to-the-form of the digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\~30ms). As such, we capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in our graph (Figure \ref{fig:gestalt}). 
+      One of the largest challenges of extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together, however if we extract a graph true-to-the-form of the digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\texttildelow 30 ms). As such, we capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in our graph (Figure \ref{fig:gestalt}). 
 
       \begin{figure}[t]
         \centering
@@ -284,7 +283,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
 
       \textit{Graph Extraction}.
       At the point when a user finishes drawing their Ellustrate circuit, we have an unconstrained number of SVG paths $p$. 
-      Through a set of post-processing steps, we extract an undirected graph representation of the circuit using an adjacency list $\langle V, E \rangle$. However, because the direction of electric current takes the path of least resistance, we must first decompose intersecting paths.
+      Through a set of post-processing steps, we extract an undirected graph representation of the circuit as an adjacency list $\langle V, E \rangle$. However, because the direction of electric current takes the path of least resistance, we must first decompose intersecting paths.
     %   % (e.g. loops $\ell$, crosses)
     %   For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at that intersection yielding $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear.
     %   For each blob intersection $b$, we draw a line from the blob center to the intersection point on the blob boundary yielding $b$ new paths.
@@ -292,12 +291,18 @@ The structure of Ellustrate follows the model-control-representation (physical a
       % TOTAL VERTICES V = 4(s+t) + 2p + 2b
       % AFTER OPTIMIZATION V = s + t + b + 2p
       
-    We represent the start and end of each path as a vertex on the graph, and encode each vertex with its position on the canvas. An edge is defined as a connection where two vertices are collinear on a path or intersect another vertex; each edge is encoded with its material composition and cross-sectional area. For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at that intersection yielding $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear. For each blob intersection $b$, we draw a line from the blob center to the intersection point on the blob boundary yielding $b$ new paths. We then construct the adjacency list with $|V| = 4(s + t) + 2p + 2b $ and $|E|$ dependent on the drawing.
+    For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at the intersection point yielding $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear. For each blob intersection $b$, we draw a line from the blob center to the intersection point on the blob boundary yielding $b$ new paths. 
+    
+     We then populate the adjacency matrix using the start and end of each path as a vertex, encoding each vertex with its position on the canvas. An edge is defined as a connection where two vertices are members of the same path or intersect with another vertex; each edge is encoded with its material composition and cross-sectional area.
+     
+     Dependent on  a user's drawing style, the adjacency matrix contains $|V| = 4(s + t) + 2p + 2b $ and an unconstrained $|E|$.
+ 
+   
 
-      \textit{Optimization step}. We uses the physical proximity of each vertex to simplify the graph. Vertices which are close together are joined as shown in Figure \ref{fig:gestalt}) are joined and duplicate or self-referential edges are removed, reducing the total number of vertices by at most $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. To contextualize this information with respectice to sketching, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a (b = 32, s = 9, t = 17, p = 14) compared to a 196 vertex graph.
+    \textit{Optimization step}. We uses the physical proximity of each vertex to simplify the graph. Vertices which are close together are joined as shown in Figure \ref{fig:gestalt}) are joined and duplicate or self-referential edges are removed, reducing the total number of vertices by at most $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. To contextualize this information with respectice to sketching, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a (b = 32, s = 9, t = 17, p = 14) compared to a 196 vertex graph.
 
       
-     \textit{Calculating Path Resistance} To provide a more accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. Once this graph is extracted, we use breadth-first traversal to enumerate all paths between two points, then calculate path resistances. Sheet resistance $R_s$ is the measure of resistance of thin films with uniform thickness; conductivity is modeled as the ratio of cross-sectional area and the length of the path. Thus, a path consists of a collection of edges $E$, where each edge $e$ has an associated material sheet resistivity $\rho_e$ and a sheet thickness $t_e$, which is simplified to sheet resistance $R_s = \frac{\rho_e}{t_e}$. We derive the resistance $R$ of a set of edges $E$ as:
+    \textit{Calculating Path Resistance}. To provide a more accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. Once this graph is extracted, we use breadth-first traversal to enumerate all paths between two points, then calculate path resistances. Sheet resistance $R_s$ is the measure of resistance of thin films with uniform thickness; conductivity is modeled as the ratio of cross-sectional area and the length of the path. Thus, a path consists of a collection of edges $E$, where each edge $e$ has an associated material sheet resistivity $\rho_e$ and a sheet thickness $t_e$, which is simplified to sheet resistance $R_s = \frac{\rho_e}{t_e}$. We derive the resistance $R$ of a set of edges $E$ as:
         \begin{equation}
             R =  \sum^{e \in E} R_s \int_{i=0}^{n}  \frac{1}{w_i} dl
         \label{eq:resistance}
@@ -332,7 +337,8 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\columnwidth]{figures/propagation.pdf}
-\caption{Illustration of region-based polarity checking. When neutral components intersect polar traces, the polarity propagate through them, increasing the area of the polarity detection region.}
+\caption{When a user draws a stroke, the polarity of the stroke is propagated to all neutral strokes. Polarity detection regions keep track of polar areas of the graph in real-time so as to prevent electrically invalid shorts.}
+
 \label{fig:propagation}
 \end{figure}
     Should such elements cross, our tool signals offending paths to the user and are removed. If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). This ensures that at any given time, no electrical shorts exist within a circuit design.
@@ -353,11 +359,11 @@ The structure of Ellustrate follows the model-control-representation (physical a
         
         \textit{Thinning}. Although not an issue with thin-stroke mediums, some line weights (e.g., copper tape) occlude electrical connections. In the connection view illustrated in Figure \ref{fig:design_tool}, design traces are thinned to hairline width and a visual marker is placed on all intersections of the design.
         
-\section{Validation}
+\subsection{Validation}
     Validation of the design is presented to the user during the design process, and once the design has been completed. % This was mainly to minimize the intrusion the digital assistance coach. 
-    \subsection{Real-time validation}
+    \subsubsection{Real-time validation}
         For efficient checking of polarity collision, we implemented real-time polarity collision detection via polarity regions on the canvas (Figure \ref{fig:propagation}). Polarity regions are represented as a set of polygons constructed as a union of previously added paths (in expanded form) and SVG elements encoded with a polarity. During drawing time, if the user draws a new opposite-poliarity segment inside a polarity region, a dialog modal alerts the user to the error, and visually indicates appropriate offending elements.
-    \subsection{Post-design validation}
+    \subsubsection{Post-design validation}
         We run a set of simple validation rules against the extracted circuit graph. These checks produced with error, warning, or success indicators in a validation side panel. (Figure \ref{ellustrate_system}). 
             \begin{itemize}
                 \item \factor{BATTERY CHECK}. Verify that a voltage source exists.
@@ -430,13 +436,14 @@ The structure of Ellustrate follows the model-control-representation (physical a
     We recruited 10 participants (avg. 28 years, 7F, 3M) well-versed in visual design, but with no prior experience with circuit design. Proficiency was self-reported in a preliminary survey. Participants were recruited from a mailing list of Architecture, Art, and Design students at our institution and from the surrounding community via Craigslist.
 
 \subsection{Materials}
-    We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor to have analogous tangible input with the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: 5 Chibitronics LED stickers, and a single CR2032 coin-cell battery.We also exposed a set of SVG graphics with different layout compositions (figurative, linear, radial, and random placement) in order to evaluate how users navigate circuit rules with spatial constraints. 
+    We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor that is a tangible analogous tangible input to the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: 5 Chibitronics LED stickers, and a single CR2032 coin-cell battery.We also exposed a set of SVG graphics with different layout compositions (figurative, linear, radial, and random placement) in order to evaluate how users navigate circuit rules with spatial constraints. 
 
 \subsection{Study Design}
 
-    Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a warm-up tutorial, a digital design task, a physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to reflect out-loud their reflections on tools and design process, specifically vocalizing their design choices and shifts, as they went through the workshop. Due to the visual complexity of the circuits, the experimenters aided with interface and fabrication issues when they arose. We report such occurrences for future work to support a larger corpus of visual styles.
+    Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a circuit and tool tutorial, a digital design task, a physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to reflect out-loud their reflections on tools and design process, specifically vocalizing their design choices and shifts, as they went through the workshop. 
+    %Due to the visual complexity of the circuits, the experimenters aided with interface and fabrication issues when they arose. We report such occurrences for future work to support a larger corpus of visual styles.
     
-    \begin{figure}[h]
+    \begin{figure}[t]
     \centering
       \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_in_action}
       \caption{During the formal user study, users a) sketched their circuit ideas with the design tool, b) fabricated the circuit, c) checked circuit validity using a multimeter and, d) debugged their circuits by pressing on components.}~\label{fig:users-in-action}
@@ -471,22 +478,19 @@ We first report quantitative results and then discuss interview responses in the
 \vspace{-20pt}
 \end{figure}
 
-  At the onset, participants expressed uncertainty and apprehension when asked to produce a visual circuit design (\factor{A} $2.4 \pm 1.26$), specifically noting \cesar{the large amount of information presented to them created a large cognitive block to what they were going to draw}
-  \begin{myquote}
-   \vspace{-2pt}
-    \participant{Participant \#???}:
-    \quoted{ I wish I could say I could make that circuit. But with all those constraints, its hard for me to even think creatively. I'd rather try to make a simple circuit, get that working, and alter my design little by little from my known threshold of skill.}
-    \vspace{-2pt}
-  \end{myquote}
+  At the onset, participants expressed uncertainty and apprehension when asked to produce a visual circuit design (\factor{A} $2.4 \pm 1.26$), specifically noting 
+  
+  %\cesar{the large amount of information presented to them created a large cognitive block to what they were going to draw}
+%   \begin{myquote}
+%   \vspace{-2pt}
+%     \participant{Participant \#???}:
+%     \quoted{ I wish I could say I could make that circuit. But with all those constraints, its hard for me to even think creatively. I'd rather try to make a simple circuit, get that working, and alter my design little by little from my known threshold of skill.}
+%     \vspace{-2pt}
+%   \end{myquote}
  % \cesar{Jasper: verify the below} \jasper{No support found :(}
   All participants reported feeling that the design interface assisted them in creating the design (\factor{A} $4.2 \pm 0.42$). They felt the assistance non-intruding, citing the visual rules as fun and interesting. 
 %   Many participants expressed that they wanted to design using the black and red as design elements in their visual compositions and noted that the constraint of color opened their compositions to be more explorative. 
-%     \begin{myquote}
-%   \vspace{-2pt}
-%     \participant{Participant \#???}:
-%     \quoted{ I know that the red and black are electrically important, but I just like how they look in my composition.}
-%     \vspace{-2pt}
-%   \end{myquote}
+
 %   Participants expressed a heightened caution from accidentally overlapping colored paths; few participants triggered the warning. Those who did expressed surprise and immediate recognition of their error. 
 %   \begin{myquote}
 %   \vspace{-2pt}
@@ -494,9 +498,19 @@ We first report quantitative results and then discuss interview responses in the
 %     \quoted{ I dozed off, but its okay. I know exactly what I did wrong; I realize I have to keep these elements on separate sides of the page. It causes my to think and plan, but I find that interesting and stimulating.}
 %     \vspace{-2pt}
 %   \end{myquote}
-  Many felt the tool empowered them to visually create their own circuits (\factor{ApT} $4.0 \pm 1.22$). Several expressed agency to even create designs without the tool (\factor{Ap} of $3.4 \pm 1.27$), noting the simple coloring scheme as the most valuable in aiding their visual design practice.
+  Many felt the tool empowered them to visually create their own circuits (\factor{ApT} $4.0 \pm 1.22$). Several expressed agency to even create designs without the tool (\factor{Ap} of $3.4 \pm 1.27$). 
+  
+  We observed that users who created functionalist designs that mainly focus on connecting the components report a higher Ap rating (more capable of creating future designs without the tool), and users who created designs that are more visually complex and require extensive iterations of moving and erasing traces and components report a lower rating of Ap (less capable of creating future design without the tool). 
+  %noting the simple coloring scheme as the most valuable in aiding their visual design practice.
+  
+%     \begin{myquote}
+%   \vspace{-2pt}
+%     \participant{Participant \#335}:
+%     \quoted{ }
+%     \vspace{-2pt}
+%   \end{myquote}
 
-  \cesar{Some note about validation and them going back to fix designs. Insert fatal errors here. People are too *** creative.... Number of vertices on a design was v= 10000000, compared to its stale circuit equivalent of v=8, e=30. Optimization steps need to be taken to prune the electrical tree during drawing time.}
+%   \cesar{Some note about validation and them going back to fix designs. Insert fatal errors here. People are too *** creative.... Number of vertices on a design was v= 10000000, compared to its stale circuit equivalent of v=8, e=30. Optimization steps need to be taken to prune the electrical tree during drawing time.}
 
   Participants expressed a much larger difference with the fabrication tool. Although in a familiar form factor, users still expressed hesitation (\factor{pA} $2.1 \pm 1.2$) especially with regards to understanding when to use the multimeter. The fabrication tool provided for them with much needed guidance; participants felt highly assisted with the tool \factor{A} $4.4 \pm 0.52$. Many expressed that their own construction patterns were completely different from the tool's suggestions.
   \begin{myquote}
@@ -548,10 +562,10 @@ We first report quantitative results and then discuss interview responses in the
 
   We distinguished three types of marks that characterize how participants navigated around circuit rules to create their visual design, as detailed below:
   
-  \begin{figure}[h]
+  \begin{figure}[t]
 \centering
-  \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_artwork}
-  \caption{\jasper{Retake this figure to match refs below} Completed circuits from the user study drawn in silver ink on paper. Circuit designs show examples of a) functionalist, b) mimetic, c) constructive, and d) metaphorical marks.}~\label{fig:user-artwork}
+  \includegraphics[width=1\columnwidth]{figures/users_final_des}
+  \caption{Completed circuits from the user study drawn in silver ink on paper. Circuit designs show examples of a) functionalist, b) mimetic, c) constructive, and d) metaphorical marks. Note that b) did not validate.}~\label{fig:user-artwork}
   \vspace{-20pt}
 \end{figure}
 
