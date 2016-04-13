@@ -102,7 +102,7 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-As interactive electronics become increasingly intimate and personal, the design of the circuitry has developed a more playful and creative aesthetic as well. Circuit sketching and design is a multidimensional activity combining the arts, crafts, and engineering that broadens participation of electronic creation to include makers of diverse backgrounds. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design of electronic circuits with multiple conductive and dielectric materials. Ellustrate guides users through the fabrication and debugging process, easing the task of practical circuit creation while supporting designers' aesthetic decisions throughout the circuit authoring workflow. In a formal user study, we demonstrate how Ellustrate enables a new electronic design conversation that combines electronics, materials, and visual aesthetic considerations. 
+As interactive electronics become increasingly intimate and personal, the design of the circuitry is correspondingly developing a more playful and creative aesthetic. Circuit sketching and design is a multidimensional activity combining the arts, crafts, and engineering that broadens participation of electronic creation to include makers of diverse backgrounds. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design of electronic circuits with multiple conductive and dielectric materials. Ellustrate guides users through the fabrication and debugging process, easing the task of practical circuit creation while supporting designers' aesthetic decisions throughout the circuit authoring workflow. In a formal user study, we demonstrate how Ellustrate enables a new electronic design conversation that combines electronics, materials, and visual aesthetic considerations. 
 
 % Circuit sketching has gained traction in creative communities as a method of democratizing circuit creation, diversifying the materials and techniques used to make unique, critical artifacts. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design and fabrication of electronic circuits.
 % Ellustrate incorporates a holistic design cycle in a digital design tool which guides users through all essential steps towards realizing their electronic ideas. The tool provides designers with a digital assistive artboard which aids users with constructing electrically-valid circuits through a set of visual rules. Using a connectivity graph, we can provide step-by-step material-specific fabrication and debugging instructions for each design.
@@ -152,10 +152,10 @@ We enable Aesthetic Circuit design through Ellustrate, our digital design and fa
 
 While the usability of conductive materials has enabled many creative crafting projects, we believe the complexity and creativity in electronic craft can be further augmented by providing two critical elements -- a digital circuit-design sandbox and assistance for physical fabrication and debugging. We introduce Ellustrate, an aesthetic circuit authoring process and tool illustrated in (Figure \ref{fig:process_flow}), and contribute: 
 \begin{itemize}
-    \item a process to formalize Aesthetic Circuits fabrication and debugging best practices based on formative studies and expert surveys
-    \item a natural sketching interface and design tool which balances concerns of electronic validity and expressive visual design
-    \item a fabrication tool that aids users in developing physical skills, specifically, fabricating and debugging physical Aesthetic Circuits
-    \item a formal user evaluation that provides insights into the Aesthetic Circuit design space
+    \item a process to formalize Aesthetic Circuits fabrication and debugging best practices based on formative studies and expert surveys,
+    \item a natural sketching interface and design tool which balances concerns of electronic validity and expressive visual design,
+    \item a fabrication tool that aids users in developing physical skills, specifically, fabricating and debugging physical Aesthetic Circuits,
+    \item a formal user evaluation that provides insights into the Aesthetic Circuit design space.
 \end{itemize}
 Ellustrate differs from most circuit design tools in a number of ways summarized by Figure \ref{fig:comparison_table}, and supports Aesthetic Circuit sketching as a step towards broadening the definition of electronic design and altering the narrative of who participates in circuit making.
 
@@ -205,7 +205,7 @@ As more conductive and non-conductive materials develop, so does the complexity 
 
 
 \subsection{Digital sketching tools} 
-Since sketching is such an important element of early stage design, many digital tools have been created to facilitate this process. These tools transform sketches into prototypes of a final design by decomposing and recognizing domain-specific symbols and lines. In SILK and SATIN, Landay et al. and Hong et al. investigate sets of software support functions for sketching user interfaces, website design, and simple logic circuits~\cite{Hong:2007ta,Landay:1996wn}. The two tools generate a final design by ``cleaning up'' imperfections in the hand-drawn sketches -- short, overlapping lines are combined, strokes are straightened, and imperfect symbols of logic gates are corrected. The traces between the elements are often reduced to the the shortest straight path possible. With the goal of exploring the creative value in the sketches, Ellustrate does not correct or reduce the electrical traces (except for electrical functional reasons). 
+Since sketching is such an important element of early stage design, many digital tools have been created to facilitate this process. These tools transform sketches into prototypes of a final design by decomposing and recognizing domain-specific symbols and lines. In SILK and SATIN, Landay et al. and Hong et al. investigate sets of software support functions for sketching user interfaces, website design, and simple logic circuits~\cite{Hong:2007ta,Landay:1996wn}. The two tools generate a final design by ``cleaning up'' imperfections in the hand-drawn sketches -- short, overlapping lines are combined, strokes are straightened, and imperfect symbols of logic gates are corrected. The traces between the elements are often reduced to the the shortest straight path possible. To explore the creative value in the sketches, Ellustrate does not correct or reduce the electrical traces (except for electrical functional reasons). 
 
 
 \subsection{Digital design tools for physical designs}
@@ -260,7 +260,7 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
 
 \subsection{Design objectives}
   %We synthesize the Aesthetic Circuit design landscape into the following objectives for a design tool. 
-  To support these features an Aesthetic Circuit design tool should ensure 
+  To support these features, an Aesthetic Circuit design tool should ensure:
     \begin{itemize}
         %\item {\bf Electrical Validity}: Circuits need to be electrically valid and prevent common mistakes.
         %\item {\bf Legibility}: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing.
@@ -268,24 +268,27 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
         \item {\bf Electrical Validity}: circuits are electrically valid and prevent common mistakes;
         \item {\bf Legibility}: complex circuit designs remain legible for easy repair and sharing;
         \item {\bf Fabricability}: circuit designs are fabricable with the material palette available to the user and their electrical characteristics;
-        \item {\bf Craft}: The tool should incorporate the capacity for mechanical processes to constantly interact with a ``material"  such that the material exists in a ``continuum of [possible] states''\cite{mccullough1998abstracting}. 
-        \item {\bf Expressivity}: Users should be able to express their own creative styles and ideas and support creative thinking. 
+        %\item {\bf Craft}: The tool should incorporate the capacity for mechanical processes to constantly interact with a ``material"  such that the material exists in a ``continuum of [possible] states''\cite{mccullough1998abstracting}. 
+        %\item {\bf Expressivity}: Users should be able to express their own creative styles and ideas and support creative thinking. 
+        \item {\bf Craft}: allow mechanical processes to interact with a ``material"  \danny{Why quotes on material?} such that the material exists in a ``continuum of [possible] states''\cite{mccullough1998abstracting}; and
+        \item {\bf Expressivity}: users are able to freely express and explore their creative style and vision. 
     \end{itemize}
 We use these objectives to guide the design of Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
 
 \section{System Design}
-The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd)~\cite{ullmer2000emerging}. Ellustrate provides a digital representation of the physical system -- the circuit design and the fabrication process -- and allows users to iterate their design and modify their fabrication (e.g. debug). 
+The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd)~\cite{ullmer2000emerging}. Ellustrate provides a digital representation of the physical system -- the circuit design and the fabrication process -- and allows users to iterate their design and modify their fabrication. 
   % An overview of the tool can be seen in Figure 1. Ellustrate has three design phases \textendash Design, Fabricate, and Debug \textendash representing the three stages of physical circuit creation.
   % Within the Design cycle, users can freely explore and sketch circuits alongside the artwork that they wish to incorporate their electronics into, with Ellustrate Design providing visual clues for electrical connections and immediate feedback for electrical design errors.
   % Within Ellustrate Validate cycle, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
 
 % \ep{sure but make it clear that it is somewhat hardware independent since it is broswer based}
-    The Ellustrate tool was designed as a web application portable to several form factors; our work used an Apple iPad Pro and Apple Pencil, chosen to emulate a pen and paper design environment. Ellustrate provides common vector editing operations; this was intended to expose a common vocabulary to our target users, who are expected to be familiar with vector graphics. The tool is built using the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} and follows noun-verb drawing application conventions (i.e. click on action icon, carry out action). At a high level, the tool allows users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials.
+    The Ellustrate tool was designed as a web application portable to several form factors; %our work used 
+    we use an Apple iPad Pro and Apple Pencil, chosen to emulate a pen and paper design environment. Ellustrate provides common vector editing operations; this was intended to expose a common vocabulary to our target users, who are expected to be familiar with vector graphics. The tool is built using the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} and follows noun-verb drawing application conventions (i.e., click on action icon, carry out action). At a high level, the tool allows users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials.
 
     We chose to restrict vector operations to path drawing and affine transformations of objects. This was largely motivated by an interest in reducing the tool's complexity and exposing the hand-drawn line, as opposed to ``perfect'' machine curves, to achieve a sketching-with-pen feel.
 
     \subsection{SVG representation}
-    All elements on the canvas were encoded as Scalable Vector Graphics (SVG), where the hierarchical structure was used to denote the following encoding scheme by adding a prefix to element names.
+    Canvas elements are encoded as Scalable Vector Graphics (SVG), encoding the element name with a specialized prefix denoted by the following hierarchical scheme:
     \begin{itemize}
         \item \textbf{1\degree~Ellustrate Header} (\code{EL}): Used to demarcate the topmost layers of an SVG file that should be processed.
         \item \textbf{2\degree~Material channels} (e.g. \code{SI} silver-ink) At this level, the type of material used to render marks is specified. This allows for these marks to be separated easily to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
@@ -321,7 +324,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     We then populate the adjacency matrix using the start and end of each path as a vertex, encoding each vertex with its position on the canvas. An edge is defined as a connection where two vertices are members of the same path or intersect with another vertex; each edge is encoded with its material composition and cross-sectional area.
      Dependent on  a user's drawing style, the adjacency matrix contains $|V| = 4(s + t) + 2p + 2b $ and an unconstrained $|E|$.
  
-    \textit{Optimization step}. We use the physical proximity of each vertex to simplify the graph. Vertices which are close together are joined as shown in Figure \ref{fig:gestalt}, while duplicate or self-referential edges are removed, reducing the total number of vertices by at least $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. To contextualize this information with respect to sketching, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a ($b$ = 32, $s$ = 9, $t$ = 17, $p$ = 14) compared to a 196 vertex graph.
+    \textit{Optimization step}. We use the physical proximity of each vertex to simplify the graph. Vertices which are close together are joined as shown in Figure \ref{fig:gestalt}, while duplicate or self-referential edges are removed, reducing the total number of vertices by at least $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. Contextualizing with respect to sketching, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a ($b$ = 32, $s$ = 9, $t$ = 17, $p$ = 14) compared to a 196 vertex graph.
 
       
     \textit{Calculating Path Resistance}. To provide an accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. In order to determine the resistance of a path between to vertices on a the graph, we use breadth-first traversal to enumerate all paths.
@@ -330,7 +333,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     
     We derive the resistance $R$ of a set of edges $Q$ by traversing the edges and summing resistance as derived from cross-sectional area, which follows:
         \begin{equation}
-            R =  \sum^{e \in Q} R_s \int_{i=0}^{n}  \frac{1}{w_i} dl
+            R =  \sum_{e \in Q} R_s \int_{i=0}^{n}  \frac{1}{w_i} dl
         \label{eq:resistance}
         \end{equation}
       where $n$ is the euclidean length of an edge, and $w_i$ is the width of the path at offset $i$. Under this model, a uniform line \SI{2}{\milli\metre} thick and \SI{20}{\milli\metre} in length made with silver ink ($R_s = 0.5$) has a resistance of \SI{5}{\ohm} whereas a similar mark made with conductive thread (W = \SI{15}{\micro\metre}, $R_s = 2400$) has a resistance of \SI{1.8}{\ohm}.
@@ -365,8 +368,8 @@ The structure of Ellustrate follows the model-control-representation (physical a
 
 \label{fig:propagation}
 \end{figure}
-    If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). 
-    Our tool validates this rule in real-time, ensuring that electrically-incompatible elements do not exist during draw-time, and is detailed in the following section. 
+    If a polar connection contacts a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). 
+    Our tool validates this in real-time, ensuring that electrically-incompatible elements do not exist during draw-time, detailed in the following section. 
 
     \noindent\fbox{%
     \parbox{0.465\textwidth}{%
@@ -375,7 +378,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
         }%
     }
     \subsection{Legibility}
-        In order to aid the user to parse the circuit from a visually complex design, we introduced two visual mechanisms: a) \textit{glow}, whenever an element is referenced by the tool, a ``glow" treatment is applied. Our treatment is a blue shadow with a large blur radius for validation, and a purple overlay for fabrication (Figure \ref{fig:fab_tool}); b) \textit{thinning}, although not an issue with thin-stroke mediums, some line weights (e.g., copper tape) occlude electrical connections. When triggering the connection view in Figure \ref{fig:design_tool}, design traces are thinned to hairline width and a visual marker is placed on all intersections of the design.
+        In order to aid the user in parsing the circuit of a visually complex design, we introduced two visual mechanisms: a) \textit{glow}, whenever an element is referenced by the tool, a ``glow" treatment is applied. Our treatment is a blue shadow with a large blur radius for validation, and a purple overlay for fabrication (Figure \ref{fig:fab_tool}); b) \textit{thinning}, although not an issue with thin-stroke mediums, some line weights (e.g., copper tape) occlude electrical connections. When triggering the connection view in Figure \ref{fig:design_tool}, design traces are thinned to hairline width and a visual marker is placed on all intersections of the design.
         
 \subsection{Validation}
     Validation of the design is presented to the user during the design process and once the design has been completed. % This was mainly to minimize the intrusion the digital assistance coach. 
@@ -391,12 +394,12 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \item \factor{RESISTANCE CHECK}. For each path, verify that the resistance is below a threshold. 
                 \item \factor{FAB CHECK}. For each path, verify against fabrication-specific constraints (e.g. a warning for long traces might cause a higher chance for fabrication error).
             \end{itemize}
-        These checks produce error, warning, or success indicators in a validation side panel (Figure \ref{fig:process_flow}, center); selecting a validation error or warning highlights appropriate elements in the design. 
+        These checks produce error, warning, or success indicators in a validation panel (Figure \ref{fig:process_flow}, center); selecting a validation error or warning highlights appropriate elements in the design. 
     
     \begin{figure}[t]
     \centering
     \includegraphics[width=1.0\columnwidth]{figures/fabtool.pdf}
-    \caption{Fabrication phase of Ellustrate, produces design-specific instructions that decomposes a design into a modular fabrication routine. Visual markers indicate processes such as checking resistance. Conditional instructions allow for users to verify step, or receive debugging assistance.}
+    \caption{Fabrication phase of Ellustrate, produces design-specific instructions that decomposes a design into a modular fabrication routine. Markers indicate processes such as checking resistance. Conditional instructions allow for users to verify step, or receive debugging assistance.}
     \label{fig:fab_tool}
     \vspace{-10pt}
     \end{figure}
@@ -406,7 +409,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     Once a circuit has passed digital validation, we provide a set of design-specific fabrication instructions and schematics. For clarity, we describe the fabrication system with respect to silver-ink as the conductive material, but detail which portions of this process was applied to other materials as well. 
 
     \subsection{Design schematics}
-        The Ellustrate design tool outputs a to-scale version of the circuit as an SVG file, which is then printed or transfered onto a circuit substrate (e.g. paper, fabric, etc.). Conductive paths are denoted with dashed magenta lines to indicate where traces should be drawn, while each component footprint is outlined and labeled. Lastly, a printable bill-of-materials (BOM) is produced to aid with planning and record-keeping.
+        The Ellustrate design tool outputs a to-scale version of the circuit as an SVG file, which is then printed or transfered onto a circuit substrate (e.g. paper, fabric, etc.). Conductive paths are denoted with dashed magenta lines to indicate where traces should be drawn, while each component footprint is outlined. Lastly, a printable bill-of-materials (BOM) is produced to aid with planning and record-keeping.
     \subsection{Design-specific fabrication instructions}
         To prevent common fabrication mistakes and to lay out an easy-to-debug circuit, Ellustrate generates instructions that encourage modular fabrication. To decompose the circuit graph, we query our scene graph for all LEDs on the canvas. We then extract the shortest (least resistant) path to power (\code{CVTB}) and to ground (\code{CGTB}) for each LED, and order these paths by length, which we term \textit{branches}. By fabricating each branch in sequence, a user can modularly test each branch in isolation. We arrived at the following fabrication procedure for circuit building through several pilot iterations with target users. For each instruction, our tool highlighted relevant parts of traces and components. For instructions that required the use of a multimeter (\code{MULT}), our tool displayed an image of the multimeter with the correct dial placement and visually-annotated where multimeter probes should be placed on the circuit (Figure \ref{fig:process_flow}, right). 
 
@@ -424,7 +427,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \end{enumerate}
         \end{framed}        
 
-        We then append steps for each branch to the instruction set. Certain steps require confirmation from the user to proceed, and, in the case of a negative confirmation, a debugging step is added to the instruction set and removed once resolved (Figure \ref{fig:fab_tool}). In addition, material-specific instructions are generated to aid with fabrication. For instance, in the case of silver-ink, drying time is affected by the amount of ink deposited by user and can vary from user to user. A drying time of 60 seconds is recommended (indicated by a countdown timer), which is long enough for most cases. Since wet ink has a higher resistance (which might impede circuit function), we also instruct users to test the trace resistance before proceeding. 
+        We then append steps for each branch to the instruction set. Certain steps require confirmation from the user to proceed, and, in the case of a negative confirmation, a debugging step is added to the instruction set and removed once resolved (Figure \ref{fig:fab_tool}). In addition, material-specific instructions are generated to aid with fabrication. In the case of silver-ink, drying time is affected by the amount of ink deposited by user and can vary from user to user. A drying time of 60 seconds is recommended (indicated by a countdown timer), which is long enough for most cases. Since wet ink has a higher resistance (which might impede circuit function), we also instruct users to test the trace resistance before proceeding. 
         %Utilizing our modeled conductivity, we can provide users an idea of what type of resistance they should expect, as well as a simple countdown timer to aid in determining the necessary time for the conductive ink to dry.
         
             \begin{framed}
@@ -433,22 +436,22 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \end{center}
                 \vspace{5pt}
               \begin{enumerate}  
-                  \item {[}Draw{]} both positive and negative traces in branch, [dry].
-                  \item Check resistance of positive trace is about 2X [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
-                  \item Check resistance of negative trace is about 2X [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
+                  \item {[}Draw{]} positive and negative traces in branch, [dry].
+                  \item Check resistance of positive trace $\approx$ 2X [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
+                  \item Check resistance of negative trace $\approx$ 2X [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
                   \item Place LED, pay attention to orientation; [handling].
-                  \item Check if LED turns on. If not, [press down, go to step 2]
+                  \item Check if LED turns on. If not, [press down, goto \#2]
               \end{enumerate}
             \end{framed}
      
         Similar instructions are substituted or added for using and debugging different materials, such as:
         \begin{itemize}   
-          \item {[}Dry{]} Material-specific drying times (e.g. BareConductive graphite ink takes longer to dry than CircuitScribe silver ink). 
+          \item {[}Dry{]} Material-specific drying times (e.g. BareConductive graphite ink takes longer than CircuitScribe silver ink). 
           \item {[}Widen{]} Thickening traces for higher resistance. 
           \item {[}Handling{]} For circuit stickers, ensuring that adhesive pads are ink-free, avoiding removing stickers from paper, not touching adhesive side. % Copper tarnishes from hand oils; wash your hands. 
           \item {[}Continuity{]} A continuity issue results when a trace is not fabricated correctly; a break in this trace will result in an interrupted connection preventing the flow of electricity. Use the multimeter in continuity mode and place both probes at [start]. Move one probe towards [end], checking that the trace is continuous (beep throughout).  
           % \item {[} Polarity Check {]} A user is provided with this template circuit which connects two traces to the a battery. A user can place the component of interest, such as an LED, and check the polarity of the component by placing it on the traces and observing changes in behavior. Should a user experience a non-working LED, they are encouraged to verify that the orientation of the LED be correct. Although we don't foresee these issues being of major concern since LEDs are housed in perceptually-identifiable packages, we recognize polarity being a common issue and provide a simple tool to address it.
-          \item For conductive thread, larger patches need to be sewn for connection terminals; single strands may not be conductive enough. 
+          \item For conductive thread, sew larger patches for connection pads; single strands may not be conductive enough. 
           \item For copper tape, a common debugging technique is to lay additional copper over problem areas. A rule of thumb is to use continuous pieces of tape. To reduce connection errors and make copper tape more aesthetic, one can use a bone knife to press-down, reduce tarnish, and smooth copper tape. 
         \end{itemize}
 
@@ -489,7 +492,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
 
 \section{Results}
 All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}. 
-We first report quantitative results and then discuss interview responses in the context of specific observations and insights from the study.
+We first report quantitative results and then discuss interview responses in the context of observations and insights from the study.
 
 \begin{figure}[t]
 \centering
