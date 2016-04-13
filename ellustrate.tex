@@ -127,7 +127,7 @@ As interactive electronics become increasingly intimate and personal, the design
 \section{Introduction}
 
 % \mira{I am a fan of intros that include a list of contributions. Also I feel the current intro is heavy on philosophy and light on describing what we actually did. Can we balance the two?}
-The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' that unify these design variables in order to``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}.
+The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' that unify these design variables in order to``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}. \jasper{Leaving alone}
 % \mira{I don't understand this last sentence and what it's trying to say. How does this relate to  blending structural and functional design?}
 
 In this paper, we introduce the term \textit{Aesthetic Electronics} to describe a class of electronics that foregrounds both functional electronics and visual aesthetics interrelated design variables. In such electronics, design principles (e.g. form and symmetry) affect how designers choose materials and make marks; in tandem, these choices affect electrical design variables (e.g. resistance, capacitance, and inductance). In practice, Aesthetic Electronics can enhance the making experience to engage various crafting and art practices and contextualize circuit designs (Figure \ref{fig:teaser}).
@@ -145,7 +145,7 @@ Contrasted with the broader field of Aesthetic Electronics, where active physica
 Traces are currently one of the most restricted design element in circuit design tools, resulting in circuit layouts with rectilinear, efficiency-focused designs.
 While circuit authoring tools such as 123D Circuits and Fritzing~\cite{_autodesk123d_2016} provide creative handles through the large and well-documented library of electronic components, even these entry-level tools still favor the traditional straight-line aesthetic for drawing the final printed circuit board layout.
 While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed as something pedantic instead of creative. 
-Despite the tremendous benefits brought to electronic circuit creation, these tools and processes have remained restricted to a physical classroom setting ~\cite{qi_stickers_2015,qi_sketching_2014}.   
+Despite the tremendous benefits brought to circuit creation, these tools have remained restricted to a physical classroom setting ~\cite{qi_stickers_2015,qi_sketching_2014}.   
     
 Creating Aesthetic Electronic designs requires a unique fluency over the affordances and electrical properties of materials.
 We enable Aesthetic Circuit design through Ellustrate, our digital design and fabrication assistance tool (Figure \ref{fig:process_flow}). Ellustrate, leverages a process known as ``sketching circuits", a design and fabrication process that enables the creation of physical circuit with craft materials~\cite{qi_sketching_2014}. As a natural and intuitive process, sketching is a shared skill amongst professional engineers, designers, makers and artists. Moreover, the circuit sketching process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners~\cite{qi_stickers_2015}. Various research fields have taken notice of the circuit sketching trend as well, creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen~\cite{russo2011pen,Anonymous:ojhPyGTN}. 
@@ -262,9 +262,12 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
   %We synthesize the Aesthetic Circuit design landscape into the following objectives for a design tool. 
   To support these features an Aesthetic Circuit design tool should ensure 
     \begin{itemize}
-        \item {\bf Electrical Validity}: Circuits need to be electrically valid and prevent common mistakes.
-        \item {\bf Legibility}: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing.
-        \item {\bf Fabricability}: Circuits need to be makeable given a set of materials. The tool needs to be aware of the materials available to the user and their electrical charateristics. 
+        %\item {\bf Electrical Validity}: Circuits need to be electrically valid and prevent common mistakes.
+        %\item {\bf Legibility}: Circuits need to be able to reach complex organizations, but remain legible for easy repair and sharing.
+        %\item {\bf Fabricability}: Circuits need to be makeable given a set of materials. The tool needs to be aware of the materials available to the user and their electrical charateristics. 
+        \item {\bf Electrical Validity}: circuits are electrically valid and prevent common mistakes;
+        \item {\bf Legibility}: complex circuit designs remain legible for easy repair and sharing;
+        \item {\bf Fabricability}: circuit designs are fabricable with the material palette available to the user and their electrical characteristics;
         \item {\bf Craft}: The tool should incorporate the capacity for mechanical processes to constantly interact with a ``material"  such that the material exists in a ``continuum of [possible] states''\cite{mccullough1998abstracting}. 
         \item {\bf Expressivity}: Users should be able to express their own creative styles and ideas and support creative thinking. 
     \end{itemize}
