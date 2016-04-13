@@ -234,7 +234,7 @@ During our interviews, we quickly learned from our early circuit learners that t
 \begin{figure}
 \centering
   \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_formative_user_design}
-  \caption{Circuit designs from the formative study drawn with non-conductive ink pens on paper. Red lines represent power and blue line represent ground. With either a sun and clouds (a-d) or a birthday cake (e-h) as an artistic scaffold, the complexity of the interviewees' circuits varied considerably }~\label{fig:formative_user_design}
+  \caption{Designs from the formative study drawn with non-conductive ink pens on paper, with red lines for power and blue line for ground. Using either a sun and clouds (a-d) or a birthday cake (e-h) as an artistic scaffold, the complexity of the interviewees' circuits varied considerably }~\label{fig:formative_user_design}
   \vspace{-20pt}
 \end{figure}
 \newpage
@@ -273,7 +273,7 @@ Footprint and electronic properties (i.e. turn on voltage, maximum current) are 
         \item {\bf Craft}: allow mechanical processes to interact with a ``material"  \danny{Why quotes on material?} such that the material exists in a ``continuum of [possible] states''\cite{mccullough1998abstracting}; and
         \item {\bf Expressivity}: users are able to freely express and explore their creative style and vision. 
     \end{itemize}
-We use these objectives to guide the design of Ellustrate, a web-based design tool that provides users with a suite of materials and components common to circuit sketching and guidance to design and fabricate a physical circuit.
+These objectives provide users with a suite of components and guidance to design and fabricate a physical circuit.
 
 \section{System Design}
 The structure of Ellustrate follows the model-control-representation (physical and digital) (MCRpd)~\cite{ullmer2000emerging}. Ellustrate provides a digital representation of the physical system -- the circuit design and the fabrication process -- and allows users to iterate their design and modify their fabrication. 
@@ -300,7 +300,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     This representation allows us to use off-the-shelf SVG editing software to create custom components with accurate footprints and logic specifications. Furthermore, we can readily export and import representations without affecting the operation of the artwork.
 
     \subsection{Circuit representation}
-      One of the largest challenges of extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together, however if we extract a true-to-the-form graph of the digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\texttildelow 30 ms). We capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in our graph (Figure \ref{fig:gestalt}). 
+      One of the largest challenges to extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together; however, if we extract a true-to-form graph of a digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\texttildelow 30 ms). We capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in the graph (Figure \ref{fig:gestalt}). 
 
       \begin{figure}[t]
         \centering
