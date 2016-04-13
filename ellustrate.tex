@@ -126,10 +126,9 @@ As interactive electronics become more intimate and personal, the design of the 
 
 \section{Introduction}
 
-\mira{I am a fan of intros that include a list of contributions. Also I feel the current intro is heavy on philosophy and light on describing what we actually did. Can we balance the two?}
-
-The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' to be created that ``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}.
-\mira{I don't understand this last sentence and what it's trying to say. How does this relate to  blending structural and functional design?}
+% \mira{I am a fan of intros that include a list of contributions. Also I feel the current intro is heavy on philosophy and light on describing what we actually did. Can we balance the two?}
+The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' that unify these design variables in order to``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}.
+% \mira{I don't understand this last sentence and what it's trying to say. How does this relate to  blending structural and functional design?}
 
 In this paper, we introduce the term \textit{Aesthetic Electronics} to describe a class of electronics that foregrounds both functional electronics and visual aesthetics interrelated design variables. In such electronics, design principles (e.g. form and symmetry) affect how designers choose materials and make marks; in tandem, these choices affect electrical design variables (e.g. resistance, capacitance, and inductance). In practice, Aesthetic Electronics can enhance the making experience to engage various crafting and art practices and contextualize circuit designs (Figure \ref{fig:teaser}).
 \begin{figure*}[ht]
@@ -142,15 +141,13 @@ In this paper, we introduce the term \textit{Aesthetic Electronics} to describe 
 
 This work focuses on the creation of a subset of Aesthetic Electronics - \textit{Aesthetic Circuits} which explores electrical traces as a site of creativity.
 Contrasted with the broader field of Aesthetic Electronics, where active physical devices (i.e. capacitors, strain gauges, speakers) can be made with aesthetic value, Aesthetic Circuits focuses on the design of the passive electrical traces. 
-Traces are currently one of the most restricted design element in circuit design tools, resulting in circuit layouts with rectilinear, efficiency-focused designs. \mira{what are design elements that are not restricted? If traces are the most restricted, what are the least resticted elements?}
-Even in design tools that focus on entry-level circuit making, such as 123D Circuits and Fritzing, the tools for drawing the final printed circuit board layout still favor the traditional straight-line aesthetic~\cite{_autodesk123d_2016}, which is limited.
-%While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed as something pedantic instead of creative. 
-%Despite the tremendous benefits brought to electronic circuit creation, these tools and processes have remained restricted to a physical classroom setting ~\cite{qi_stickers_2015,qi_sketching_2014}.   
+Traces are currently one of the most restricted design element in circuit design tools, resulting in circuit layouts with rectilinear, efficiency-focused designs.
+While circuit authoring tools such as 123D Circuits and Fritzing~\cite{_autodesk123d_2016} provide creative handles through the large and well-documented library of electronic components, even these entry-level tools still favor the traditional straight-line aesthetic for drawing the final printed circuit board layout.
+While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed as something pedantic instead of creative. 
+Despite the tremendous benefits brought to electronic circuit creation, these tools and processes have remained restricted to a physical classroom setting ~\cite{qi_stickers_2015,qi_sketching_2014}.   
     
-
-
 Creating Aesthetic Electronic designs requires a unique fluency over the affordances and electrical properties of materials.
-We enable Aesthetic Circuit design through Ellustrate, our digital design and fabrication asssitance tool (Figure \ref{fig:process_flow}). Ellustrate, leverages a process known as ``sketching circuits", a design and fabrication process that enables the creation of physical circuit with craft materials~\cite{qi_sketching_2014, qi_stickers_2015}. As a natural and intuitive process, sketching is a shared skill amongst professional engineers, designers, makers and artists. Moreover, the circuit sketching process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners~\cite{qi_stickers_2015}. Various research fields have taken notice of the circuit sketching trend as well, creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen~\cite{russo2011pen,Anonymous:ojhPyGTN}. We see supporting Aesthetic Circuit sketching as a step towards broadening the definition of electronic design and altering the narrative of who participates in circuit making. 
+We enable Aesthetic Circuit design through Ellustrate, our digital design and fabrication asssitance tool (Figure \ref{fig:process_flow}). Ellustrate, leverages a process known as ``sketching circuits", a design and fabrication process that enables the creation of physical circuit with craft materials~\cite{qi_sketching_2014}. As a natural and intuitive process, sketching is a shared skill amongst professional engineers, designers, makers and artists. Moreover, the circuit sketching process has shown to be increase participation of electronic design from diverse population, remove negative stigma associated with circuits, and motivate early learners~\cite{qi_stickers_2015}. Various research fields have taken notice of the circuit sketching trend as well, creating various conductive materials (i.e silver, graphite, copper) that can be applied on paper in ways similar to a regular pen~\cite{russo2011pen,Anonymous:ojhPyGTN}. We see supporting Aesthetic Circuit sketching as a step towards broadening the definition of electronic design and altering the narrative of who participates in circuit making. 
 
 While the usability of conductive materials has enabled many creative crafting projects, we believe the complexity and creativity in electronic craft can be further augmented by providing two critical elements -- a digital circuit-design sandbox and assistance for physical fabrication and debugging. Ellustrate provides a natural sketching interface on a tablet, electronic design validation, and fabrication and debugging guidance (Figure \ref{fig:process_flow}). 
 %\ep{these are key parts of the contribution...you may want to put them much earlier or call them out as distinctly novel more prominently.}
@@ -180,9 +177,9 @@ Ellustrate differs from most circuit design tools in a number of ways summarized
 
 
 \section{Related Work}
-To create a digital tool that enables the physical creation of physical circuits, we based our work on established research on nontraditional circuits and electronics, as well as relevant digital tools. 
+We base our work on established research on nontraditional circuits and electronics, as well as relevant digital tools. 
 
-\mira{this paragraph can get cut. We only need the last sentence - we support a wide variety of materials. }
+% \mira{this paragraph can get cut. We only need the last sentence - we support a wide variety of materials. }
 \subsection{Sketching electronics on familiar materials}
 By fabricating electronics on a familiar material, like paper, users can explore electronic design using a previously held skill set.  Augmenting such common everyday materials with power, lights, and motions has been shown to introduce a sense of wonder that resonates with people of diverse ages and backgrounds~\cite{karagozler_paper_2013,Qi:2010tp,qi_stickers_2015,qi_sketching_2014} Crafting have shown to be a powerful technique in STEM education that encourages interdisciplinary participation and further democratizes making and science education~\cite{qi_sketching_2014}.
 Furthermore, the role of these materials in everyday life has been shown to be a natural platform for story-telling with electronics~\cite{Jacoby:2013cq}. As such, incorporating familiar materials in circuits has altered the design landscape leading to more natural, organic, and novel circuit layouts.
@@ -447,7 +444,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \subsection{Materials}
     We constrained our evaluation to a single circuit building material --- silver ink was chosen due to it's user-friendly pen form factor that is a tangible analogous to the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: 5 Chibitronics LED stickers, and a single CR2032 coin-cell battery. We also exposed a set of SVG graphics shown in Figure \ref{fig:design_tool} with different layout compositions (figurative, linear, radial, and random placement) in order to evaluate how users navigate circuit rules with spatial constraints. 
 
-\subsection{Study Design}
+\subsection{Study design}
     Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a circuit and tool tutorial, a digital design and physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to think out-loud their reflections on tools and design process specifically vocalizing their design choices and shifts as they went through the workshop. 
     %Due to the visual complexity of the circuits, the experimenters aided with interface and fabrication issues when they arose. We report such occurrences for future work to support a larger corpus of visual styles.
 
@@ -497,7 +494,7 @@ For both the design and fabrication tool, users felt that the tool had helped th
   
 It was interesting to note that users with more visually complex designs that require multiple trial-and-error iterations to balance the visual design and electronic routing were more likely to report higher reliance on designing Aesthetic Circuits without the tool in the future (lower \factor{Ap}). In future work, we would like to investigate features that could further encourage users to create complex designs through iterations.
   
- \subsection{Design Classifications}
+ \subsection{Design classifications}
 
  We distinguished three types of marks that characterize how participants navigated around circuit rules to create their visual design, as detailed below:
   
@@ -538,7 +535,7 @@ It was interesting to note that users with more visually complex designs that re
 \section{Observations and Insights}
 In the following section, we report important insights derived from the user studies.
 
-  \subsection{Translation Between Digital and Physcial Mental Models}
+  \subsection{Translation between digital and physcial mental models}
   We found that participants with no circuit experience relied heavily on the interface mechanisms used to convey circuit rules, adopting the visual vocabulary of the circuit design interface (e.g. ``red and black'' vs. ``positive and negative'').
   \begin{myquote}
    \vspace{-2pt}
@@ -561,7 +558,7 @@ In the following section, we report important insights derived from the user stu
 %   These participants felt more empowered without the tool, wanted to generate their own methods of making versus fall into the regimen of the machine. \jasper{However, the artists didn't realize that they totally couldn't do anything without the tool} The underscores that pipeline processes did not adhere to creative thinking in the holistic design process.
 %   While these participants reported feeling more empowered without the tool, we must also consider consider that the constraints of the step-by-step also allowed participants with less circuit knowledge to implement a creative designs without worrying about implementation details.
 
-\subsection{Templating, Learning, and Improvising}
+\subsection{Templating, learning, and improvising}
 We were encouraged to find that participants developed a sense of agency and early form of material and electronic fluency during the study sessions. When they first started fabricating the circuits, participants find comfort and safety in the step-by-step fabrication guide. The format of a list, with additional debugging tips as an expandable-list feature, were particularly appreciated. 
   \begin{myquote}
   \vspace{-2pt}
@@ -639,9 +636,9 @@ However, as they progress through the process, some find the format too rigid an
 \section{Limitations}
 While we have highlighted the contributions of Ellustrate to the development of Aesthetic Circuits, there are several limitations to the current state of the design tool. 
 
-\subsection{Electronic and Material Library}
+\subsection{Electronic and material library}
 We chose to focus on including several basic electronic and materials in our currently. We included Chibitronics CircuitStickers and LED's of various packages in the electronic library, and silver ink, grahite ink, and copper tape in the material libary. These components and materials were chosen because they were commonly used in circuit craft making, but they do not come close to being an exhaustive list of the electronics that can be used in an Aesthetic Circuits. If Ellustrate can successfully promote a literacy in creating Aesthetic Electronics, we imagine the library would have to greatly expand. The footprint of a wide variety of interactive electronics, such as pressure sensors, microphones, IR sensors, could be included. Moreover, some physical electronics that can be created directly with conductive painting, such as capacitors, paper speakers, and strain gauges, could be included in the library as well (where their electronic properties can be simluated dynamically with the design). 
-\subsection{Circuit Drawing Capability}
+\subsection{Circuit drawing capability}
 The circuit drawing capability of Ellustrate could be improved on both the aesthetic drawing and circuit simulation front. Currently, the digital form factor, although more fluid than expected, left much to be desired from pen and paper, citing resolution and accidental markings (from digital artifacts). The number of drawing features within the tool was also significant fewer than visual designers are used to having. Circuit decomposition also faces unqiue problems as Aesthetic Circuits often contains a high number of trace intersections that are common in a paint-brush like drawing action. Ellustrate currently has difficulty validating circuits that contain a high number of intersections, which limits the copmlexity of artwork taht could be created with the program. 
 
 \newpage
@@ -657,11 +654,11 @@ Technological fluency, defined as ``the ability to understand, use, and assess t
 
 % \subsection{Resistance as a site for design}
 %     There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches.
-\subsection{Online Community}
+\subsection{Online community}
 Ellustrate could have great impact on the hardware sketching practice as we develop an online community for users. Users could submit their designs and fabricated circuits to a share with the community. Moreoever, the community could contribute the fabrication and debug process, as well as tips and questions tagging specific steps. The framework of the digital tool - design, fabricate, and debug - accompanied with electronic properties analysis that are usually invisible to users could be expanded to include other Aesthetic Electronic input and output elements that are common to interaction design (i.e. capacitive sensors, strain gauges) as well. We envision the Ellustrate community to be capable of supporting users with richly diverse aesthetic styles, electronic experiences, and learning and teaching styles .
 
 \section {Conclusion}
-In this paper, we presented Ellustrate, a digital tool for designing and fabrication Aesthetic Circuits. We demonstrated its capability to assist in creating circuits with different conductive and non-conductive materials - silver pen, graphite paint, conductive thread, fabric, and paper. We detailed algorithms specially designed to decompose and analyze, and extract relevent traces for circuit analysis. Ellustrate was designed based on formative interviews of experts and pilot studies with visual designers in order to address common challenges Aesthetic Circuit designs. We also performed formal user studies to evaluate the designs and fabrication enabled by the design tool. We hope that Ellustrate will be adopted by practitioners from diverse fields and inspire a suite of creative Aesthetic Circuit designs.\cesar{I think this paragraph has the word Aesthetic Circuit 10 times}
+In this paper, we presented Ellustrate, a digital tool for designing and fabrication Aesthetic Circuits. We demonstrated its capability to assist in creating circuits with different conductive and non-conductive materials - silver pen, graphite paint, conductive thread, fabric, and paper. We detailed algorithms specially designed to decompose and analyze, and extract relevent traces for circuit analysis. Ellustrate was designed based on formative interviews of experts and pilot studies with visual designers in order to address common challenges with Aesthetic Circuit designs. We also performed formal user studies to evaluate the designs and fabrication enabled by the design tool. We hope that Ellustrate will be adopted by practitioners from diverse fields and inspire a suite of creative Aesthetic Circuit designs.\cesar{I think this paragraph has the word Aesthetic Circuit 10 times}
 
 \balance
 
