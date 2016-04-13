@@ -291,13 +291,13 @@ The structure of Ellustrate follows the model-control-representation (physical a
     Canvas elements are encoded as Scalable Vector Graphics (SVG), encoding the element name with a specialized prefix denoted by the following hierarchical scheme:
     \begin{itemize}
         \item \textbf{1\degree~Ellustrate Header} (\code{EL}): Used to demarcate the topmost layers of an SVG file that should be processed.
-        \item \textbf{2\degree~Material channels} (e.g. \code{SI} silver-ink) At this level, the type of material used to render marks is specified. This allows for these marks to be separated easily to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
+        \item \textbf{2\degree~Material channels} (e.g. \code{SI} silver-ink) Used to specify the material used to render marks. Allows for marks to be separable to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
         \item \textbf{3\degree~Components} (\code{CP}) Specifies a set of elements that are conceptually grouped (e.g. LED, $\pm$ terminals, footprint).
         \item \textbf{4\degree~Elementary components} \code{C(N\textbar G\textbar V)(P\textbar B)[T], NC}.
         The N\textbar G\textbar V selector designates the accepted polarity of the mark (neutral, ground, or powered). The T selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The T suffix is used to mark voltage sources. NC represents non-conductive elements.
     \end{itemize}
 
-    This representation allows us to use off-the-shelf SVG editing software to create custom components with accurate footprints and logic specifications. Furthermore, we can readily export and import representations without affecting the operation of the artwork.
+    This representation allows us to use off-the-shelf SVG editing software to create custom, accurate component footprints and logic specifications. Furthermore, we can readily export/import representations without affecting the artwork.
 
     \subsection{Circuit representation}
       One of the largest challenges to extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together; however, if we extract a true-to-form graph of a digital sketch, we quickly surpass processing quotas for graph traversal for interactive applications (\texttildelow 30 ms). We capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in the graph (Figure \ref{fig:gestalt}). 
@@ -307,7 +307,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
         \includegraphics[width=1.0\columnwidth]{figures/gestalt.pdf}
         \caption{The complexity of a simple drawing, such as a scribble, adds significant computational complexity to a graph representation of a circuit. Ellustrate groups physically-close clusters of vertices together, reducing the complexity of the graph. }
         \label{fig:gestalt}
-        \vspace{-20pt}
+        \vspace{-28pt}
       \end{figure}
 
       \textit{Graph Extraction}.
@@ -365,7 +365,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \centering
 \includegraphics[width=1.0\columnwidth]{figures/propagation.pdf}
 \caption{When a user's stroke intersects existing neutral conductive elements, the polarity of the stroke is propagated and coloring is updated. Polarity detection regions keep track of polar areas of the graph in real-time so as to detect shorts.}
-
+\vspace{-12pt}
 \label{fig:propagation}
 \end{figure}
     If a polar connection contacts a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). 
@@ -454,7 +454,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
           \item For conductive thread, sew larger patches for connection pads; single strands may not be conductive enough. 
           \item For copper tape, a common debugging technique is to lay additional copper over problem areas. A rule of thumb is to use continuous pieces of tape. To reduce connection errors and make copper tape more aesthetic, one can use a bone knife to press-down, reduce tarnish, and smooth copper tape. 
         \end{itemize}
-
+\newpage
 \section{EVALUATION}
     The goal of our formal user study was to conduct a usability evaluation of the tool, specifically observing how circuit design contraints influence the visual aesthetic and how fabrication assistance influences agency. 
 
