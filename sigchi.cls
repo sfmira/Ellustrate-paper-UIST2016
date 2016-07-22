@@ -291,6 +291,7 @@
 \gdef\additionalauthors#1{\addauthors={#1}}
 
 \gdef\numberofauthors#1{\global\aucount=#1
+
 \ifnum\aucount>3\global\originalaucount=\aucount \global\aucount=3\fi%
 \global\auskipcount=\aucount\global\advance\auskipcount by -1 % [jdf] fix
 \global\multiply\auskipcount by 2
@@ -300,11 +301,13 @@
 \global\advance\auwidth by -5pt} % [jdf] tabular add some horizontal space
 
 % \and was modified to count the number of authors.  GKMT 12 Aug 1999
+
 \def\alignauthor{%                  % \begin{tabular}
   \end{tabular} %
   \hskip 1pt % [jdf] allow break for more than 3 authors
   \begin{tabular}[t]{p{\auwidth}}%
     \centering\baselineskip 13pt}% [jdf] added more vertical spacing
+
 
 %  *** NOTE *** NOTE *** NOTE *** NOTE ***
 %  If you have 'font problems' then you may need
@@ -773,17 +776,29 @@
  \null
 % \setbox\@acmtitlebox\vbox{   % [jdf] box not used
 %\baselineskip 20pt            % [jdf] no skip
-  \vskip 1em                   % [jdf] removed Vertical space above title.
+%  \vskip 1em                   % [jdf] removed Vertical space above title.
    \begin{center}
     {\ttlfnt \@title\par}       % Title set in 18pt Helvetica (Arial) bold size.
-    \vskip 0.5ex                % [jdf] Vertical space after title.
+    \vskip -3ex                % [jdf] Vertical space after title.
 %This should be the subtitle.
 {\subttlfnt \the\subtitletext\par}\vskip 0.7ex%\fi [jdf] less vertical space
     {\baselineskip 16pt\aufnt   % each author set in \12 pt Arial, in a
      \lineskip .5em             % tabular environment
      \begin{tabular}[t]{c}\@author
-     \end{tabular}\par}
-    \vskip 1em                  % [jdf] reduced Vertical space after author.
+     \end{tabular}
+     \begin{tabular}[t]{c}
+      \affaddr{\textsuperscript{\textdagger}Electrical Engineering and Computer Sciences}\\
+      \affaddr{ University of California, Berkeley}\\
+      \email{\{jlo, cearto, isabelyang, j.oleary, paulos\}@berkeley.edu}\\
+     \end{tabular}
+      \begin{tabular}[t]{c}
+          \affaddr{\textsuperscript{\textasteriskcentered}Adobe Research}\\
+          \affaddr{601 Townsend St., San Francisco, CA, USA}\\
+          \email{\{kaufman, wilmotli, mirad\}@adobe.com}
+     \end{tabular}
+     \par}
+    
+    \vskip 1.5em                  % [jdf] reduced Vertical space after author.
    \end{center}%                % [jdf] begin add teaser
    \ifx\chi@teaser\chi@empty \else%
     \begingroup%

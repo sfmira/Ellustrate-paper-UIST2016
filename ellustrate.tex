@@ -30,6 +30,15 @@
 \usepackage{mathtools}
 \usepackage[valuemode=math,unitmode=math]{siunitx}
 \usepackage{framed}
+\usepackage[symbol*]{footmisc}
+\DefineFNsymbolsTM{myfnsymbols}{% def. from footmisc.sty "bringhurst" symbols
+  \textasteriskcentered *
+  \textdagger    \dagger
+  \textdaggerdbl \ddagger
+  \textsection   \mathsection
+  \textbardbl    \|%
+  \textparagraph \mathparagraph
+}%
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -72,9 +81,9 @@ breaklinks=true,
 \input{macros}
 
 % Enable shared affiliations for authors
-\def\sharedaffiliation{%
-\end{tabular}
-\begin{tabular}{c}}
+% \def\sharedaffiliation{%
+% \end{tabular}
+% \begin{tabular}{c}}
 %
 
 % End of preamble. Here it comes the document.
@@ -82,16 +91,58 @@ breaklinks=true,
 
 \title{Aesthetic Electronics: Designing, Sketching, and Fabricating through Digital Exploration}
 
-\numberofauthors{8}
-\author{
-  \makebox[\linewidth][c]{Joanne Lo, Cesar Torres, Isabel Yang, Jasper O'Leary, Danny Kaufman}\\
-  \vspace{10pt}
-  \makebox[\linewidth][c]{Wilmot Li, Mira Dontcheva, Eric Paulos}\\
-  \affaddr{University of California, Berkeley}\\
-  \affaddr{Creative Technologies Lab, Adobe Systems, USA}\\
-  \email{\{jlo, cearto, isabelyang, j.oleary, paulos\}@berkeley.edu}\\
-  \email{\{kaufman, wilmotli, mirad\}@adobe.com}
-}
+% \numberofauthors{8}
+% \author{
+%   \makebox[\linewidth][c]{Joanne Lo, Cesar Torres, Isabel Yang, Jasper O'Leary, Danny Kaufman}\\
+%   \vspace{10pt}
+%   \makebox[\linewidth][c]{Wilmot Li, Mira Dontcheva, Eric Paulos}\\
+%   \affaddr{University of California, Berkeley}\\
+%   \affaddr{Creative Technologies Lab, Adobe Systems, USA}\\
+%   \email{\{jlo, cearto, isabelyang, j.oleary, paulos\}@berkeley.edu}\\
+%   \email{\{kaufman, wilmotli, mirad\}@adobe.com}
+% }
+
+
+
+\numberofauthors{1}
+  \author{
+  % \alignauthor{}
+     \alignauthor{Joanne Lo\textsuperscript{\textdagger\textasteriskcentered}, Cesar Torres\textsuperscript{\textdagger\textasteriskcentered}, Isabel Yang\textsuperscript{\textdagger}, Jasper O'Leary\textsuperscript{\textdagger}, \\Danny Kaufman\textsuperscript{\textasteriskcentered}, Wilmot Li\textsuperscript{\textasteriskcentered}, Mira Dontcheva\textsuperscript{\textasteriskcentered}, Eric Paulos\textsuperscript{\textdagger}}
+     % \alignauthor{Joanne Lo$^{1,2}$, Cesar Torres$^{1,2}$, Isabel Yang$^{1}$, Jasper O'Leary$^{1}$, Danny Kaufman$^{2}$, Wilmot Li$^{2}$, Mira Dontcheva$^{2}$, Eric Paulos$^{1}$}
+     % \and
+     % \alignauthor{}
+  }
+
+% \numberofauthors{1}
+%   \author{
+%   % \alignauthor{}
+%     \alignauthor{
+%         \affaddr{$^1$Electrical Engineering and Computer Sciences}\\
+%         \affaddr{ University of California, Berkeley}\\
+%         \email{\{cearto, paulos\}@berkeley.edu}
+%       }
+%      \alignauthor{
+%        \affaddr{$^2$Adobe Research}\\
+%         \affaddr{601 Townsend St.}\\
+%         \affaddr{ San Francisco, CA, USA}\\
+%         \email{wilmotli@adobe.com}
+%       }
+%      % \alignauthor{}
+% }
+
+
+    % \alignauthor{
+    %     \affaddr{$^1$Electrical Engineering and Computer Sciences}\\
+    %     \affaddr{ University of California, Berkeley}\\
+    %     \email{\{cearto, paulos\}@berkeley.edu}
+    %   }
+    %  \alignauthor{
+    %    \affaddr{$^2$Adobe Research}\\
+    %     \affaddr{601 Townsend St.}\\
+    %     \affaddr{ San Francisco, CA, USA}\\
+    %     \email{wilmotli@adobe.com}
+    %   }
+
 
 % \numberofauthors{8}
 % \author{%
