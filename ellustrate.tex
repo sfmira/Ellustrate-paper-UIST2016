@@ -557,7 +557,7 @@ It was interesting to note that users with more visually complex designs that re
   \end{myquote}
 
 \section{Observations and Insights}
-In the following section, we report important insights derived from the user studies.
+In the following section, we report important insights derived from our user study.
 
   \subsection{Translation between digital and physical mental models}
   We found that participants with no circuit experience relied heavily on the interface mechanisms used to convey circuit rules, adopting the visual vocabulary of the circuit design interface (e.g. ``red and black'' vs. ``positive and negative'').
@@ -567,7 +567,7 @@ In the following section, we report important insights derived from the user stu
     \quoted{I know there two silver traces can't cross - they are red and black and I need to be careful to not draw them too close to each other. }
     \vspace{-2pt}
   \end{myquote}
- Some users memorized the colors of the traces in their designs, and transferred that representation to their physical circuit fabrication. This observation shows opportunities in injecting more important circuit design concepts as visual representations, such as current as river water, within the digital design tool.
+ Some users memorized the colors of the traces in their designs, and transferred that representation to their physical circuit fabrication. This observation shows opportunities in injecting more important circuit design concepts as visual representations, such as current as flowing water, within the digital design tool.
   
 
 %  \subsection{Step-by-step Fabrication Can Overconstrain}
@@ -583,14 +583,14 @@ In the following section, we report important insights derived from the user stu
 %   While these participants reported feeling more empowered without the tool, we must also consider consider that the constraints of the step-by-step also allowed participants with less circuit knowledge to implement a creative designs without worrying about implementation details.
 
 \subsection{Templating, learning, and improvising}
-We were encouraged to find that participants developed a sense of agency and early form of material and electronic fluency during the study sessions. When they first started fabricating the circuits, participants find comfort and safety in the step-by-step fabrication guide. The format of a list, with additional debugging tips as an expandable-list feature, were particularly appreciated. 
+We were encouraged to find that participants developed a sense of agency and formed early material fluency and electronic fluency during the study sessions. When first fabricating circuits, participants found comfort and safety in the step-by-step fabrication guide. The format of a list, with additional debugging tips as an expandable-list feature, were particularly appreciated. 
   \begin{myquote}
   \vspace{-2pt}
     \participant{Participant \#081}:
     \quoted{I like that the list of steps is very clear, and the debugging tips are tucked away until you indicate that you have a circuit problem.}
     \vspace{-2pt}
   \end{myquote}
-However, as they progress through the process, some find the format too rigid and wish to learn more about the rationale behind the guided steps. 
+However, as they progress through the process, some found the format too rigid and wished to learn more about the rationale behind the guided steps. 
 
   \begin{myquote}
   \vspace{-2pt}
@@ -599,7 +599,7 @@ However, as they progress through the process, some find the format too rigid an
     \vspace{-2pt}
   \end{myquote}
   
-  Some participants improvised new ways to fabricate and debug by relying on their own intuitions in order to bypass a certain step within the guide. For example, most users dislike waiting 60 seconds for the silver ink to dry, so some started blowing on the ink to get it to dry faster and move the paper around to see if there is a color difference between dry and wet ink. Users who triggered an error message regarding high resistance within the digital design portion drew the silver traces during the fabrication step more carefully in order to prevent breaks or high resistance. In-depth learning and improving occurred at different point of the process for each participant. We were encouraged by the diversity of learning styles and the early development of fluency, and we see this as an opportunity to create more customizable instructions and learning materials for users in the future. 
+  This friction behind hidden rationales caused some participants to improvise new ways to fabricate and debug by relying on their own intuitions and bypass certain steps within the guide. For example, most users dislike waiting 60 seconds for the silver ink to dry, so some started blowing on the ink to get the ink to dry faster or moved the paper around to distinguish color differences between dry and wet ink. Users who triggered an error message regarding high resistance while digitally designing drew the silver traces during fabrication with greater care in order to prevent breaks or high resistance. In-depth learning occurred at different points of the process for each participant. We were encouraged by the diversity of learning styles and the early development of fluency, and we see this as an opportunity to create more customizable instructions and learning materials for users in the future. 
 
   
 %   \subsection{Incentivizing Tinkering and Debugging}
@@ -658,13 +658,14 @@ However, as they progress through the process, some find the format too rigid an
 %     In the initial stages, users based everything around a plan. In the design step, they thought of their circuit in terms of a plan and were able to abstract away many non-essential practical considerations, and this proved useful for enabling participants to quickly develop a prototype without worrying about the implementation details.
 
 \section{Limitations}
-While we have highlighted the contributions of Ellustrate to the development of Aesthetic Circuits, there are several limitations to the current state of the design tool. 
+While we have highlighted the contributions of Ellustrate in the development of Aesthetic Circuits, there are several limitations to the current state of the design tool. 
 
 
 \subsection{Electronic and material library}
-We chose to focus on including several basic electronic and materials in our currently. We included Chibitronics CircuitStickers and LED's of various packages in the electronic library, and silver ink, grahite ink, and copper tape in the material libary. These components and materials were chosen because they were commonly used in circuit craft making, but they do not come close to being an exhaustive list of the electronics that can be used in an Aesthetic Circuits. If Ellustrate can successfully promote a literacy in creating Aesthetic Electronics, we imagine the library would have to greatly expand. The footprint of a wide variety of interactive electronics, such as pressure sensors, microphones, IR sensors, could be included. Moreover, some physical electronics that can be created directly with conductive painting, such as capacitors, paper speakers, and strain gauges, could be included in the library as well (where their electronic properties can be simluated dynamically with the design). 
+We chose to focus on including several basic electronics and materials in our current tool. We included Chibitronics CircuitStickers and LEDs of various packages in the electronics library, and silver ink, graphite ink, and copper tape in the material libary. These components and materials were chosen because they were commonly used in circuit craft making, but they are far from being an exhaustive list of electronics that can be used in an Aesthetic Circuits. If Ellustrate can successfully promote a literacy in creating Aesthetic Electronics, we imagine the library would have to greatly expand. The footprint of a wide variety of interactive electronics, such as pressure sensors, microphones, IR sensors, could be included. Moreover, some physical electronics that can be created directly with conductive painting, such as capacitors, paper speakers, and strain gauges, could be included in the library as well (where their electronic properties can be simulated dynamically with the design). 
+
 \subsection{Circuit drawing capability}
-The circuit drawing capability of Ellustrate could be improved on both the aesthetic drawing and circuit simulation front. Currently, the digital form factor, although more fluid than expected, left much to be desired from pen and paper, citing resolution and accidental markings (from digital artifacts). The number of drawing features within the tool was also significant fewer than visual designers are used to having. Circuit decomposition also faces unique problems as Aesthetic Circuits often contains a high number of trace intersections that are common in a paint-brush like drawing action. Ellustrate currently has difficulty validating circuits that contain a high number of intersections, which limits the copmlexity of artwork that could be created with the program. 
+The circuit drawing capability of Ellustrate could be improved on both the aesthetic drawing and circuit simulation front. Currently, the digital form factor, although more fluid than expected, left much to be desired from pen and paper. Users cited resolution and accidental markings (from digital artifacts) as major concerns. The number of drawing features within the tool was also significantly fewer than what is available in a visual designer's repertoire. Circuit decomposition also faces unique problems as Aesthetic Circuits often contains a high number of trace intersections that are common drawing techniques such as cross-hatching. Ellustrate currently has difficulty validating circuits that contain a high number of intersections, which limits the complexity of artwork that could be created with the program. 
 
 
 % \newpage
