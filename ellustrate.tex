@@ -245,7 +245,7 @@ Unfortunately, assistance fabricating or debugging circuits is not provided in m
 \section{Aesthetic Circuit Design Objectives}
 %With careful considerations and balance of electrical, material, and visual design principles, we identified four major features that a digital tool for Aesthetic Circuit design needs to include:
 Our formative interviews and preliminary investigations identify four primary features that an Aesthetic Circuit design tool should include in order to balance electrical, material, and visual design principles:
-
+\newpage
 \subsection{1. Freeform circuit drawing tool}
 The design of electrical traces that possess both electrical function and aesthetic properties is possibly the most critical task in creating Aesthetic Circuits. In traditional circuit design tools, routing of simple circuits can be assisted by autotrace -- a algorithm-driven process that determines the shortest and most efficient paths to connect electronic components on a given circuit board~\cite{Fisk:1965tk}. Autotrace creates routing that minimizes board space and noise, but does not provide any aesthetic freedom. On the other hand, the design of Aesthetic Circuits, although still retaining the need for functionality, has less of a concern in minimizing board space and noise. Therefore, a digital tool for Aesthetic Circuit design needs to provide the freedom of creating artistic drawing but provide enough restraints to simultaneously ensure electrical function. Just as breadboarding results in ``wire nests", sketching circuits can quickly become a complex circuit routing puzzle especially when combined with visual design.
 When the electronic components are placed in a nonlinear fashion, powering all of them without shorting the circuit or creating excessively long traces becomes difficult. In Qi el al, a paper template is provided to workshop participants to guide them in placing copper tape~\cite{qi_sketching_2014}. While this method is highly effective in aiding participants in creating functional circuits, it limits creativity in visual design ~\cite{qi_sketching_2014}. Within Ellustrate, users are encouraged to explore and iterate different placements of electronic components and traces to optimize the balance between visual design and circuit functionality.
@@ -366,13 +366,6 @@ The structure of Ellustrate follows the model-control-representation (physical a
     }
     \\
     \\
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.0\columnwidth]{figures/propagation.pdf}
-\caption{When a user's stroke intersects existing neutral conductive elements, the polarity of the stroke is propagated and coloring is updated. Polarity detection regions keep track of polar areas of the graph in real-time so as to detect shorts.}
-\vspace{-12pt}
-\label{fig:propagation}
-\end{figure}
     If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}).
     Our tool validates this in real-time (detailed in the next section) ensuring that electrically incompatible elements do not exist during draw-time.
 
@@ -384,7 +377,13 @@ The structure of Ellustrate follows the model-control-representation (physical a
     }
     \subsection{Legibility}
         In order to aid the user in parsing the circuit of a visually complex design, we introduced two visual mechanisms: a) \textit{glow}, whenever an element is referenced by the tool, a ``glow" treatment is applied. Our treatment is a blue shadow with a large blur radius for validation, and a purple overlay for fabrication (Figure \ref{fig:fab_tool}); b) \textit{thinning}, although not an issue with thin-stroke mediums, some line weights (e.g., copper tape) occlude electrical connections. When triggering the connection view in Figure \ref{fig:design_tool}, design traces are thinned to hairline width and a visual marker is placed on all intersections of the design.
-
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.0\columnwidth]{figures/propagation.pdf}
+\caption{When a user's stroke intersects existing neutral conductive elements, the polarity of the stroke is propagated and coloring is updated. Polarity detection regions keep track of polar areas of the graph in real-time so as to detect shorts.}
+\vspace{-12pt}
+\label{fig:propagation}
+\end{figure}
 \subsection{Validation}
     Validation of the design is presented to users during the design process and once the design has been completed. % This was mainly to minimize the intrusion the digital assistance coach.
     \subsubsection{Real-time validation}
@@ -468,6 +467,12 @@ The structure of Ellustrate follows the model-control-representation (physical a
 
 \subsection{Materials}
     We constrained our evaluation to a single circuit building material --- silver ink pen was chosen due to its user-friendly pen form factor that is a tangible analog to the Apple Pencil. For the study, our electronics library was constrained to fixed set of finger-sized manipulatives: 5 Chibitronics LED stickers, and a single CR2032 coin-cell battery. We also exposed a set of SVG graphics shown in Figure \ref{fig:design_tool} with different layout compositions (figurative, linear, radial, and random placement) in order to evaluate how users navigate circuit rules with spatial constraints.
+     \begin{figure}[t]
+    \centering
+      \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_in_action}
+      \caption{During the formal user study, users a) sketched their circuit ideas with the design tool, b) fabricated the circuit, c) checked circuit validity using a multimeter and, d) debugged their circuits by pressing on components.}~\label{fig:users-in-action}
+      \vspace{-25pt}
+    \end{figure}
 
 \subsection{Study design}
     Each participant was invited to individually meet with us in our studio space. Participants were paid \$20/hr; each session lasted two hours and consisted of a circuit and tool tutorial, a digital design and physical hand-fabrication task. We also conducted interviews before and after each session. Participants were also asked to think out-loud their reflections on tools and design process specifically vocalizing their design choices and shifts as they went through the workshop.
@@ -488,12 +493,6 @@ The structure of Ellustrate follows the model-control-representation (physical a
       \item \factor{Post-Agency without Tool (Ap)}: I feel capable of [designing/fabricating] future circuits without the tool.
     \end{itemize}
     In particular, \factor{ApT} describes the experience of designing a circuit with Ellustrate, while \factor{Ap} generalizes to how Ellustrate may serve as a tool that enables lasting skills in Aesthetic Electronics design and fabrication.
-     \begin{figure}[t]
-    \centering
-      \includegraphics[width=1\columnwidth]{figures/Ellustrate_figures_Users_in_action}
-      \caption{During the formal user study, users a) sketched their circuit ideas with the design tool, b) fabricated the circuit, c) checked circuit validity using a multimeter and, d) debugged their circuits by pressing on components.}~\label{fig:users-in-action}
-      \vspace{-25pt}
-    \end{figure}
 
 \section{Results}
 All participants successfully completed their designs; some designs are represented here in Figure \ref{fig:user-artwork}.
