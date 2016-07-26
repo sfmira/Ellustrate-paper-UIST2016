@@ -77,107 +77,34 @@ breaklinks=true,
 
 % create a shortcut to typeset table headings
 \newcommand\tabhead[1]{\small\textbf{#1}}
-
 \input{macros}
-
-% Enable shared affiliations for authors
-% \def\sharedaffiliation{%
-% \end{tabular}
-% \begin{tabular}{c}}
-%
 
 % End of preamble. Here it comes the document.
 \begin{document}
 
 \title{Aesthetic Electronics: Designing, Sketching, and Fabricating through Digital Exploration}
 
-% \numberofauthors{8}
-% \author{
-%   \makebox[\linewidth][c]{Joanne Lo, Cesar Torres, Isabel Yang, Jasper O'Leary, Danny Kaufman}\\
-%   \vspace{10pt}
-%   \makebox[\linewidth][c]{Wilmot Li, Mira Dontcheva, Eric Paulos}\\
-%   \affaddr{University of California, Berkeley}\\
-%   \affaddr{Creative Technologies Lab, Adobe Systems, USA}\\
-%   \email{\{jlo, cearto, isabelyang, j.oleary, paulos\}@berkeley.edu}\\
-%   \email{\{kaufman, wilmotli, mirad\}@adobe.com}
-% }
-
-
-
 \numberofauthors{1}
   \author{
-  % \alignauthor{}
      \alignauthor{Joanne Lo\textsuperscript{\textdagger\textasteriskcentered}, Cesar Torres\textsuperscript{\textdagger\textasteriskcentered}, Isabel Yang\textsuperscript{\textdagger}, Jasper O'Leary\textsuperscript{\textdagger}, \\Danny Kaufman\textsuperscript{\textasteriskcentered}, Wilmot Li\textsuperscript{\textasteriskcentered}, Mira Dontcheva\textsuperscript{\textasteriskcentered}, Eric Paulos\textsuperscript{\textdagger}}
-     % \alignauthor{Joanne Lo$^{1,2}$, Cesar Torres$^{1,2}$, Isabel Yang$^{1}$, Jasper O'Leary$^{1}$, Danny Kaufman$^{2}$, Wilmot Li$^{2}$, Mira Dontcheva$^{2}$, Eric Paulos$^{1}$}
-     % \and
-     % \alignauthor{}
+    % AUTHOR AFFILICATIONS IN THE .CLS FILE
   }
 
-% \numberofauthors{1}
-%   \author{
-%   % \alignauthor{}
-%     \alignauthor{
-%         \affaddr{$^1$Electrical Engineering and Computer Sciences}\\
-%         \affaddr{ University of California, Berkeley}\\
-%         \email{\{cearto, paulos\}@berkeley.edu}
-%       }
-%      \alignauthor{
-%        \affaddr{$^2$Adobe Research}\\
-%         \affaddr{601 Townsend St.}\\
-%         \affaddr{ San Francisco, CA, USA}\\
-%         \email{wilmotli@adobe.com}
-%       }
-%      % \alignauthor{}
-% }
-
-
-    % \alignauthor{
-    %     \affaddr{$^1$Electrical Engineering and Computer Sciences}\\
-    %     \affaddr{ University of California, Berkeley}\\
-    %     \email{\{cearto, paulos\}@berkeley.edu}
-    %   }
-    %  \alignauthor{
-    %    \affaddr{$^2$Adobe Research}\\
-    %     \affaddr{601 Townsend St.}\\
-    %     \affaddr{ San Francisco, CA, USA}\\
-    %     \email{wilmotli@adobe.com}
-    %   }
-
-
-% \numberofauthors{8}
-% \author{%
-%   \alignauthor{Joanne Lo, Cesar Torres, Isabel Yang, Jasper O'Leary\\
-%     \affaddr{for Submission}\\
-%     \affaddr{City, Country}\\
-%     \email{e-mail address}}\\
-%   \alignauthor{Danny Kaufman, Wilmot Li, Mira Dontcheva, Eric Paulos\\
-%     \affaddr{for Submission}\\
-%     \affaddr{City, Country}\\
-%     \email{e-mail address}}\\
-% }
-
-% \numberofauthors{8}
-% \author{
-%   \alignauthor Joanne Lo, Cesar Torres, Isabel Yang, Jasper O'Leary, Danny Kaufman, Wilmot Li, Mira Dontcheva, Eric Paulos\\
-%     \affaddr{...}\\
-%     \affaddr{...}\\
-%     \email{...}
-% }
 \teaser{
-  \vspace{-5pt}
+  \vspace{-1pt}
   \centering
   \includegraphics[width=\linewidth]{figures/teaser.pdf}
   \caption{
     Sketched digital circuits (top), and fabricated circuits (bottom) created through various craft mediums: a) copper tape painting on paper, b) sewn conductive thread on fabric, c) painted graphite ink as interative illustration, and d) decorative silver ink to ornament physical objects.
   }
-    \vspace{-8pt}
+    \vspace{-1pt}
   \label{fig:teaser}
 }
 
 \maketitle
 
 \begin{abstract}
-As interactive electronics become increasingly intimate and personal, the design of the circuitry is correspondingly developing a more playful and creative aesthetic. Circuit sketching and design is a multidimensional activity combining the arts, crafts, and engineering that broadens participation of electronic creation to include makers of diverse backgrounds. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design of electronic circuits with multiple conductive and dielectric materials. Ellustrate guides users through the fabrication and debugging process, easing the task of practical circuit creation while supporting designers' aesthetic decisions throughout the circuit authoring workflow. In a formal user study, we demonstrate how Ellustrate enables a new electronic design conversation that combines electronics, materials, and visual aesthetic considerations. 
+As interactive electronics become increasingly intimate and personal, the design of circuitry is correspondingly developing a more playful and creative aesthetic. Circuit sketching and design is a multidimensional activity which combines the arts, crafts, and engineering broadening participation of electronic creation to include makers of diverse backgrounds. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design of electronic circuits with multiple conductive and dielectric materials. Ellustrate guides users through the fabrication and debugging process, easing the task of practical circuit creation while supporting designers' aesthetic decisions throughout the circuit authoring workflow. In a formal user study, we demonstrate how Ellustrate enables a new electronic design conversation that combines electronics, materials, and visual aesthetic concerns. 
 
 % Circuit sketching has gained traction in creative communities as a method of democratizing circuit creation, diversifying the materials and techniques used to make unique, critical artifacts. In order to support this design ecology, we present Ellustrate, a digital design tool that enables the functional and aesthetic design and fabrication of electronic circuits.
 % Ellustrate incorporates a holistic design cycle in a digital design tool which guides users through all essential steps towards realizing their electronic ideas. The tool provides designers with a digital assistive artboard which aids users with constructing electrically-valid circuits through a set of visual rules. Using a connectivity graph, we can provide step-by-step material-specific fabrication and debugging instructions for each design.
@@ -202,10 +129,10 @@ As interactive electronics become increasingly intimate and personal, the design
 \section{Introduction}
 
 % \mira{I am a fan of intros that include a list of contributions. Also I feel the current intro is heavy on philosophy and light on describing what we actually did. Can we balance the two?}
-The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' that unify these design variables in order to``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}. \jasper{Leaving alone}
+The landscape of electronics is rapidly changing. Devices are becoming exponentially smaller, requiring electronic circuits to be printed directly on the device housing and on ultra-thin wearables~\cite{MacDonald:2014ju,Kim:2014iq}. As such, new designs must blend functional and structural design variables. Echoing the Radical Atoms vision, such designs compel ``new material design principles'' that unify these design variables in order to``treat objects as homogeneous entities with the ability to change their properties''~\cite{Ishii:2012fg}. 
 % \mira{I don't understand this last sentence and what it's trying to say. How does this relate to  blending structural and functional design?}
 
-In this paper, we introduce the term \textit{Aesthetic Electronics} to describe a class of electronics that foregrounds both functional electronics and visual aesthetics interrelated design variables. In such electronics, design principles (e.g. form and symmetry) affect how designers choose materials and make marks; in tandem, these choices affect electrical design variables (e.g. resistance, capacitance, and inductance). In practice, Aesthetic Electronics can enhance the making experience to engage various crafting and art practices and contextualize circuit designs (Figure \ref{fig:teaser}).
+In this paper, we introduce the term \textit{Aesthetic Electronics} to describe a class of electronics that foregrounds both functional electronics and visual aesthetics as interrelated design variables. In such electronics, design principles (e.g. form and symmetry) affect how designers choose materials and make marks; in tandem, these choices affect electrical design variables (e.g. resistance, capacitance, and inductance). In practice, Aesthetic Electronics can enhance the making experience to engage various crafting and art practices and contextualize circuit designs (Figure \ref{fig:teaser}).
 \begin{figure*}[ht]
  \vspace{-16pt}
 \centering
@@ -218,7 +145,7 @@ This work focuses on the creation of a subset of Aesthetic Electronics - \textit
 Contrasted with the broader field of Aesthetic Electronics, where active physical devices (i.e. capacitors, strain gauges, speakers) can be made with aesthetic value, Aesthetic Circuits focuses on the design of the passive electrical traces. 
 \danny{I was wondering about this before: ought we to define traces here or are we ok with assuming this background?}
 Traces are currently one of the most restricted design element in circuit design tools, resulting in circuit layouts with rectilinear, efficiency-focused designs.
-While circuit authoring tools such as 123D Circuits and Fritzing~\cite{_autodesk123d_2016} provide creative handles through the large and well-documented library of electronic components, even these entry-level tools still favor the traditional straight-line aesthetic for drawing the final printed circuit board layout.
+While circuit authoring tools such as 123D Circuits and Fritzing~\cite{_autodesk123d_2016} provide creative handles through the large and well-documented library of electronic components, even these entry-level tools still favor the traditional straight-line aesthetic for routing the final printed circuit board layout.
 While this tried-and-true layout method is extremely valuable, it also limits how electronics and circuits are viewed as something pedantic instead of creative. 
 Despite the tremendous benefits brought to circuit creation, these tools have remained restricted to a physical classroom setting ~\cite{qi_stickers_2015,qi_sketching_2014}.   
     
@@ -319,7 +246,7 @@ During our interviews, we quickly learned from our early circuit learners that t
 Our formative interviews and preliminary investigations identify four primary features that an Aesthetic Circuit design tool should include in order to balance electrical, material, and visual design principles:
 
 \subsection{1. Freeform circuit drawing tool}
-The design of electrical traces that possess both electrical function and aesthetic properties is possibily the most critical task in creating Aesthetic Circuits. In traditional circuit design tools, routing assistance is done in the form of auto trace -- a algorithm-driven process that determines the shortest and most efficient paths to connect electronic components on a given circuit board~\cite{Fisk:1965tk}. Autotrace creates routing that minimizes board space and noise, but does not provide any aesthetic freedom. On the other hand, the design of Aesthetic Circuits, although still retaining the need for functionality, has less of a concern in minimizing board space and noise. Therefore, a digital tool for Aesthetic Circuit design needs to provide the freedom of creating artistic drawing but provide enough restraints to simultaneously ensure electrical function. Just as breadboarding results in ``wire nests", sketching circuits can quickly become a complex circuit routing puzzle especially when combined with visual design.
+The design of electrical traces that possess both electrical function and aesthetic properties is possibily the most critical task in creating Aesthetic Circuits. In traditional circuit design tools, routing of simple circuits can be assisted by autotrace -- a algorithm-driven process that determines the shortest and most efficient paths to connect electronic components on a given circuit board~\cite{Fisk:1965tk}. Autotrace creates routing that minimizes board space and noise, but does not provide any aesthetic freedom. On the other hand, the design of Aesthetic Circuits, although still retaining the need for functionality, has less of a concern in minimizing board space and noise. Therefore, a digital tool for Aesthetic Circuit design needs to provide the freedom of creating artistic drawing but provide enough restraints to simultaneously ensure electrical function. Just as breadboarding results in ``wire nests", sketching circuits can quickly become a complex circuit routing puzzle especially when combined with visual design.
 When the electronic components are placed in a nonlinear fashion, powering all of them without shorting the circuit or creating excessively long traces becomes difficult. In Qi el al, a paper template is provided to workshop participants to guide them in placing copper tape~\cite{Qi:2014bg}. While this method is highly effective in aiding participants in creating functional circuits, it limits creativity in visual design ~\cite{Qi:2014bg}. Within Ellustrate, users are encouraged to explore and iterate different placements of electronic components and traces to optimize the balance between visual design and circuit functionality. 
 %\ep{figure 4 shows teh creative diversity for routing (but not placement)}
 
@@ -357,8 +284,8 @@ The structure of Ellustrate follows the model-control-representation (physical a
   % Within Ellustrate Validate cycle, the digital tool not only checks for traditional mistakes such as misplaced ground connections, but also problems that are unique to sketched circuits, such as overly long and thin traces made with the relatively less conductive crafting materials (i.e. silver, graphite, conductive threads). After the circuit design is validated, Ellustrate Fabricate mode will provide users with step-by-step instructions on fabricating the circuit and debugging problems as they arise. 
 
 % \ep{sure but make it clear that it is somewhat hardware independent since it is broswer based}
-    The Ellustrate tool was designed as a web application portable to several form factors; %our work used 
-    we use an Apple iPad Pro and Apple Pencil, chosen to emulate a pen and paper design environment. Ellustrate provides common vector editing operations; this was intended to expose a common vocabulary to our target users, who are expected to be familiar with vector graphics. The tool is built using the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} and follows noun-verb drawing application conventions (i.e., click on action icon, carry out action). At a high level, the tool allows users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials.
+    The Ellustrate tool was designed for users with familiarity with vector graphics and built as a web application portable to several form factors; %our work used 
+    we use an Apple iPad Pro and Apple Pencil, chosen to emulate a pen and paper design environment. Ellustrate uses the paper.js vector graphics scripting framework~\cite{lehni_paperjs_2011} which enables common vector editing operations and  backwards compatability with vector graphics applications. Interactions followed noun-verb drawing application conventions (i.e., click on action icon, carry out action). At a high level, the tool exposes to users two operations: the ability to lay down components, and the ability to make marks representing different conductive materials to connect components.
 
     We chose to restrict vector operations to path drawing and affine transformations of objects. This was largely motivated by an interest in reducing the tool's complexity and exposing the hand-drawn line, as opposed to ``perfect'' machine curves, to achieve a sketching-with-pen feel.
 
@@ -366,43 +293,44 @@ The structure of Ellustrate follows the model-control-representation (physical a
     Canvas elements are encoded as Scalable Vector Graphics (SVG), encoding the element name with a specialized prefix denoted by the following hierarchical scheme:
     \begin{itemize}
         \item \textbf{1\degree~Ellustrate Header} (\code{EL}): Used to demarcate the topmost layers of an SVG file that should be processed.
-        \item \textbf{2\degree~Material channels} (e.g. \code{SI} silver-ink) Used to specify the material used to render marks. Allows for marks to be separable to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
+        \item \textbf{2\degree~Material channels} (e.g. \code{SI} silver-ink) Used to specify the material used to render marks; this allows marks to be separable to aid with respective fabrication techniques (similar to CMYK channel separation for offset printing).
         \item \textbf{3\degree~Components} (\code{CP}) Specifies a set of elements that are conceptually grouped (e.g. LED, $\pm$ terminals, footprint).
         \item \textbf{4\degree~Elementary components} \code{C(N\textbar G\textbar V)(P\textbar B)[T], NC}.
-        The N\textbar G\textbar V selector designates the accepted polarity of the mark (neutral, ground, or powered). The T selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The T suffix is used to mark voltage sources. NC represents non-conductive elements.
+        The \code{(N\textbar G\textbar V)} selector designates the accepted polarity of the mark (neutral, ground, or powered). The \code{(P\textbar B)} selector specifies whether the conductive element is being modeled as a path or as a blob (closed path). The T suffix is used to mark voltage sources. NC represents non-conductive elements.
     \end{itemize}
 
     This representation allows us to use off-the-shelf SVG editing software to create custom, accurate component footprints and logic specifications. Furthermore, we can readily export/import representations without affecting the artwork.
 
     \subsection{Circuit representation}
-      One of the largest challenges to extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together; however, if we extract a true-to-form graph of a digital sketch, we quickly surpass processing quotas for graph traversal in interactive applications (\texttildelow 30 ms). We capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in the graph (Figure \ref{fig:gestalt}). 
+      One of the largest challenges to extracting a circuit representation is the visual complexity of a simple sketch. Human visual-processing does an excellent job of grouping elements together; however, if we extract a true-to-form graph of a digital sketch, we quickly surpass processing quotas for graph traversal in interactive applications (\texttildelow 30 ms). 
+      We capture some of these visual Gestalt mechanisms in our graph extraction procedure using closeness as a grouping criteria to reduce the number of vertices in the graph (Figure \ref{fig:gestalt}). 
 
-      \begin{figure}[t]
+      \begin{figure}[t!]
+        \vspace{-10pt}
         \centering
         \includegraphics[width=1.0\columnwidth]{figures/gestalt.pdf}
-        \caption{The complexity of a simple drawing, such as a scribble, adds significant computational complexity to a graph representation of a circuit. Ellustrate groups physically-close clusters of vertices together, reducing the complexity of the graph. }
+        \caption{The complexity of a simple scribble adds significant computational complexity to a graph representation of a circuit. Ellustrate reduces this complexity by clustering physically-close vertices together. }
         \label{fig:gestalt}
-        \vspace{-28pt}
+        \vspace{-15pt}
       \end{figure}
 
       \textit{Graph Extraction}.
       At the point when a user finishes drawing their Ellustrate circuit, we have an unconstrained number of SVG paths $p$. 
       Through a set of post-processing steps, we extract an undirected graph representation of the circuit as an adjacency list $\langle V, E \rangle$. However, because the direction of electric current takes the path of least resistance, we must first decompose intersecting paths.
-    %   % (e.g. loops $\ell$, crosses)
-    %   For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at that intersection yielding $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear.
-    %   For each blob intersection $b$, we draw a line from the blob center to the intersection point on the blob boundary yielding $b$ new paths.
-    %   We then build an undirected $G$ using an adjacency list $\langle V, E \rangle$. We represent the start and end of each path as a vertex on the graph ($v = 4(s + t) + 2p + 2b $), and encode each vertex with its position on the canvas. An edge is defined as a connection where two vertices are collinear on a path or intersect another vertex; each edge is encoded with its material composition and cross-sectional area.
-      % TOTAL VERTICES V = 4(s+t) + 2p + 2b
-      % AFTER OPTIMIZATION V = s + t + b + 2p
-    Let $t$ represent the number of path intersections, $s$ the number of self-intersections, and $b$ the number of blob intersections in an unprocessed design. For each path-intersection and self-intersection, we slice associated paths at their intersection point, yielding at least $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear. For each blob intersection, we draw a new path from the associated intersection point on a blob boundary to the blob center, yielding $b$ new paths. 
+            %   % (e.g. loops $\ell$, crosses)
+            %   For each path intersection $s$ and self-intersection $t$, relevant paths are sliced at that intersection yielding $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear.
+            %   For each blob intersection $b$, we draw a line from the blob center to the intersection point on the blob boundary yielding $b$ new paths.
+            %   We then build an undirected $G$ using an adjacency list $\langle V, E \rangle$. We represent the start and end of each path as a vertex on the graph ($v = 4(s + t) + 2p + 2b $), and encode each vertex with its position on the canvas. An edge is defined as a connection where two vertices are collinear on a path or intersect another vertex; each edge is encoded with its material composition and cross-sectional area.
+              % TOTAL VERTICES V = 4(s+t) + 2p + 2b
+              % AFTER OPTIMIZATION V = s + t + b + 2p
+        Let $t$ represent the number of path intersections, $s$ the number of self-intersections, and $b$ the number of blob intersections in an unprocessed design. For each path-intersection and self-intersection, we slice associated paths at their intersection point, yielding at least $2(s + t)$ new paths. Intersections are disregarded if they occur at the start or end of the path, or if the two paths in question are collinear. For each blob intersection, we draw a new path from the associated intersection point on a blob boundary to the blob center, yielding $b$ new paths. 
     
-    We then populate the adjacency matrix using the start and end of each path as a vertex, encoding each vertex with its position on the canvas. An edge is defined as a connection where two vertices are members of the same path or intersect with another vertex; each edge is encoded with its material composition and cross-sectional area.
-     Dependent on  a user's drawing style, the adjacency matrix contains $|V| = 4(s + t) + 2p + 2b $ and an unconstrained $|E|$.
+        We then populate the adjacency matrix using the start and end of each path as a vertex, encoding each vertex with its position on the canvas. An edge is defined as a connection where two vertices are members of the same path or intersect with another vertex; each edge is encoded with its material composition and cross-sectional area.
+    Dependent on  a user's drawing style, the adjacency matrix contains $|V| = 4(s + t) + 2p + 2b $ and an unconstrained $|E|$.
  
     \textit{Optimization step}. We use the physical proximity of each vertex to simplify the graph. Vertices which are close together are joined as shown in Figure \ref{fig:gestalt}, while duplicate or self-referential edges are removed, reducing the total number of vertices by at least $3(s + t) + b$. This optimization reduces the number of vertices to $s + t + b + 2p$. Contextualizing with respect to sketching, this optimization allows us to work with a 86 vertex graph of the octopus in Figure \ref{fig:teaser}a ($b$ = 32, $s$ = 9, $t$ = 17, $p$ = 14) compared to a 196 vertex graph.
 
-      
-    \textit{Calculating Path Resistance}. To provide an accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. In order to determine the resistance of a path between to vertices on a the graph, we use breadth-first traversal to enumerate all paths.
+    \textit{Calculating Path Resistance}. To provide an accurate model of conductivity for each of these paths, we derive a model from a set of basic electronic rules. In order to determine the resistance of a path between two vertices on a graph, we use breadth-first traversal to enumerate all paths.
     We collect the traveled edges into a set $Q$. 
     Each edge $e$ has a previously encoded associated material sheet resistivity $\rho_e$ and sheet thickness $t_e$, which is simplified to sheet resistance\footnote{Sheet resistance $R_s$ is the measure of resistance of thin films with uniform thickness; conductivity is modeled as the ratio of cross-sectional area and the length of the path.} $R_s = \frac{\rho_e}{t_e}$.
     
@@ -426,7 +354,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
     In this section we detail how Ellustrate addresses common concerns of traditional circuit design with simple visual rules.
 
     \subsubsection{Preventing shorts}
-    Connections must have an adequate resistance to prevent electrical shorts. As such, paths that originate from the voltage source (\nt{PWR}) cannot make contact with paths connected to ground (\nt{GND}). As encoded within the SVG, we color-code paths, pads, and other conductive elements with respect to their polarity using conventional color schemes: red (positive), black (negative), or gray(neutral). To prevent shorts, we establish the following visual rule:
+    Connections must have an adequate resistance to prevent electrical shorts. As such, paths that originate from the voltage source (\nt{PWR}) cannot make contact with paths connected to ground (\nt{GND}). As encoded within the SVG, we color-code paths, pads, and other conductive elements with respect to their polarity using conventional color schemes: red (positive), black (negative), or gray (neutral). To prevent shorts, we establish the following visual rule:
     \\
     \\
     \noindent\fbox{%
@@ -444,8 +372,8 @@ The structure of Ellustrate follows the model-control-representation (physical a
 \vspace{-12pt}
 \label{fig:propagation}
 \end{figure}
-    If a polar connection contacts a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). 
-    Our tool validates this in real-time, ensuring that electrically-incompatible elements do not exist during draw-time, detailed in the following section. 
+    If a polar connection makes contact with a neutral element, the polarity is propagated to all elements touching the neutral element (Figure \ref{fig:propagation}). 
+    Our tool validates this in real-time (detailed in the next section) ensuring that electrically-incompatible elements do not exist during draw-time.
 
     \noindent\fbox{%
     \parbox{0.465\textwidth}{%
@@ -457,12 +385,12 @@ The structure of Ellustrate follows the model-control-representation (physical a
         In order to aid the user in parsing the circuit of a visually complex design, we introduced two visual mechanisms: a) \textit{glow}, whenever an element is referenced by the tool, a ``glow" treatment is applied. Our treatment is a blue shadow with a large blur radius for validation, and a purple overlay for fabrication (Figure \ref{fig:fab_tool}); b) \textit{thinning}, although not an issue with thin-stroke mediums, some line weights (e.g., copper tape) occlude electrical connections. When triggering the connection view in Figure \ref{fig:design_tool}, design traces are thinned to hairline width and a visual marker is placed on all intersections of the design.
         
 \subsection{Validation}
-    Validation of the design is presented to the user during the design process and once the design has been completed. % This was mainly to minimize the intrusion the digital assistance coach. 
+    Validation of the design is presented to users during the design process and once the design has been completed. % This was mainly to minimize the intrusion the digital assistance coach. 
     \subsubsection{Real-time validation}
         To detect when users accidentally ``cross wires," we implemented real-time polarity collision detection by keeping a map of polar regions on the canvas (Figure \ref{fig:propagation}). This map is represented as a set of polygons constructed from the union of previously added conductive elements (in expanded form).
         If the user draws an electrically incompatible segment inside a polar region, a dialog alerts the user to the error, visually indicates and removes appropriate offending elements (Figure \ref{fig:process_flow}, center).
     \subsubsection{Post-design validation}
-        We run a set of validation rules against the extracted circuit graph to provide users with feedback on the electrical validity and fabricability of her or his design. 
+        We run a set of validation rules against the extracted circuit graph to provide users with feedback on the electrical validity and fabricability of their design. 
             \begin{itemize}
                 \item \factor{BATTERY CHECK}. Verify that a voltage source exists.
                 \item \factor{CONNECTION CHECK}. For all LEDs, verify that there exists a path to ground and a path to power.
@@ -495,7 +423,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \begin{center}
                 \textbf{\textit{Battery Instruction Set}}
                 \end{center}
-                \vspace{5pt}
+                \vspace{1pt}
                 \begin{enumerate}
                       \item {[}Draw{]} the initial portion of all traces originating from the battery. [Dry].
                       \item Add the battery.
@@ -510,13 +438,13 @@ The structure of Ellustrate follows the model-control-representation (physical a
                 \begin{center}
                 \textbf{\textit{Branch Instruction Set}}
                 \end{center}
-                \vspace{5pt}
+                \vspace{1pt}
               \begin{enumerate}  
                   \item {[}Draw{]} positive and negative traces in branch, [dry].
                   \item Check resistance of positive trace $\approx 2\times$ [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
                   \item Check resistance of negative trace $\approx 2\times$ [calculated resistance]. If not, [dry, widen, continuity]. (\code{MULT})
                   \item Place LED, pay attention to orientation; [handling].
-                  \item Check if LED turns on. If not, [press down, goto \#2]
+                  \item Check if LED turns on. If not, [press down, go to \#2]
               \end{enumerate}
             \end{framed}
      
@@ -530,7 +458,7 @@ The structure of Ellustrate follows the model-control-representation (physical a
           \item For conductive thread, sew larger patches for connection pads; single strands may not be conductive enough. 
           \item For copper tape, a common debugging technique is to lay additional copper over problem areas. A rule of thumb is to use continuous pieces of tape. To reduce connection errors and make copper tape more aesthetic, one can use a bone knife to press-down, reduce tarnish, and smooth copper tape. 
         \end{itemize}
-\newpage
+% \newpage
 \section{EVALUATION}
     The goal of our formal user study was to conduct a usability evaluation of the tool, specifically observing how circuit design contraints influence the visual aesthetic and how fabrication assistance influences agency. 
 
@@ -671,7 +599,7 @@ However, as they progress through the process, some find the format too rigid an
     \vspace{-2pt}
   \end{myquote}
   
-  Some participants improvised new ways to fabricate and debug by relying on their own intuitions in order to bypass a certain step within the guide. For example, most users dislike waiting 60 seconds for the silver ink to dry, so some started blowing on the ink to get it to dry faster and move the paper around to see if there is a color difference between dry and wet ink. In-depth learning and improving occurred at different point of the process for each participant. We were encouraged by the diversity of learning styles and the early development of fluency, and we see this as an opportunity to create more customizable instructions and learning materials for users in the future. 
+  Some participants improvised new ways to fabricate and debug by relying on their own intuitions in order to bypass a certain step within the guide. For example, most users dislike waiting 60 seconds for the silver ink to dry, so some started blowing on the ink to get it to dry faster and move the paper around to see if there is a color difference between dry and wet ink. Users who triggered an error message regarding high resistance within the digital design portion drew the silver traces during the fabrication step more carefully in order to prevent breaks or high resistance. In-depth learning and improving occurred at different point of the process for each participant. We were encouraged by the diversity of learning styles and the early development of fluency, and we see this as an opportunity to create more customizable instructions and learning materials for users in the future. 
 
   
 %   \subsection{Incentivizing Tinkering and Debugging}
@@ -739,25 +667,30 @@ We chose to focus on including several basic electronic and materials in our cur
 The circuit drawing capability of Ellustrate could be improved on both the aesthetic drawing and circuit simulation front. Currently, the digital form factor, although more fluid than expected, left much to be desired from pen and paper, citing resolution and accidental markings (from digital artifacts). The number of drawing features within the tool was also significant fewer than visual designers are used to having. Circuit decomposition also faces unique problems as Aesthetic Circuits often contains a high number of trace intersections that are common in a paint-brush like drawing action. Ellustrate currently has difficulty validating circuits that contain a high number of intersections, which limits the copmlexity of artwork that could be created with the program. 
 
 
-\newpage
+% \newpage
 \section {Discussion and Future Work}
 %Beyond the design and fabrication of Aesthetic Circuits, we envision Ellustrate to initiate in a broader conversation of the enablement of Aesthetic Electronics.
 
 % \ep{you also really made a strong poush for aesthetic but didn't go deeply into this term and its usage...you coudl add mroe discussion on that (but likely much earlier in paper when you intruduce the term Aesthetic Electronics}
 \subsection{Material properties for design}
-Technological fluency, defined as ``the ability to understand, use, and assess technology beyond its rote application'', is seen as one of the fundamental quality that affords creativity~\cite{Lukens:2011jl}. As the landscape of interaction designs broaden to include a wide range of materials, including living cells, polymer, and even water~\cite{Yao:2015gw,Lo:2014vw,Nakagaki:2016kf} , a fluency in material properties becomes increasing important in creating innovative tangible interactive platforms. Ellustrate aims to promote the exploration of fundamental material properties by providing a digital platform for users to explore the electrical and visual artifacts of conductive materials - something most commonly thought of as digital in function (i.e. connected vs. disconnected) by non-experts. Within Ellustrate, we have shown how users can explore the changes in resistance and visual aesthetics as they widen and lengthen conductive traces or change the material used. In the future, we envision Ellustrate to incorporate more nuanced and advanced electrical properties, such as impedance and inductance, for further electrical design exploration. Beyond understanding the nature of conductive materials, we hope to initiate a design conversation by disrupting the perception of an object that is well-defined - an electrical connection does not necessary take on the shape of a wire, but it could be something with many variables that can be manipulated. We believe that Ellustrate could be used as a tool to democratize the critical thinking about materials, enabling the exploration of the next creative tangible interface. 
+Technological fluency, defined as ``the ability to understand, use, and assess technology beyond its rote application'', is seen as one of the fundamental quality that affords creativity~\cite{Lukens:2011jl}. As the landscape of interaction designs broaden to include a wide range of materials, including living cells, polymer, and even water~\cite{Yao:2015gw,Lo:2014vw,Nakagaki:2016kf} , a fluency in material properties becomes increasing important in creating innovative tangible interactive platforms. Ellustrate aims to promote the exploration of fundamental material properties by providing a digital platform for users to explore the electrical and visual artifacts of conductive materials - something most commonly thought of as digital in function (i.e. connected vs. disconnected) by non-experts. Within Ellustrate, we have shown how users can explore the changes in resistance and visual aesthetics as they widen and lengthen conductive traces or change the material used. In the future, we envision Ellustrate to incorporate the simulations of more nuanced and advanced electrical properties (i.e. impedance and inductance), as well as trace-assist for valid electrical designs in forms of artistic stencils, in order to further the exploration of the interplay between electrical and aesthetic designs. Beyond understanding the nature of conductive materials, we hope to initiate a design conversation by disrupting the perception of an object that is well-defined - an electrical connection does not necessary take on the shape of a wire, but it could be something with many variables that can be manipulated. We believe that Ellustrate could be used as a tool to democratize the critical thinking about materials, enabling the exploration of the next creative tangible interface. 
 % \cesar{awesome about wire}
 
 
 % \subsection{Resistance as a site for design}
 %     There are several implications that arise from this model for path design: 1) branching non-connecting elements of the main trace are negligible since current does not travel through them giving users the creative freedom to be able to freeform traces without the risk of it effecting the circuit, 2) common circuit problems of having to resistive a trace and be alleviated by widening the trace either by thickening the area around the path trace or using connected branches.
 \subsection{Online community}
-Ellustrate could have great impact on the hardware sketching practice as we develop an online community for users. Users could submit their designs and fabricated circuits to a share with the community. Moreoever, the community could contribute the fabrication and debug process, as well as tips and questions tagging specific steps. The framework of the digital tool - design, fabricate, and debug - accompanied with electronic properties analysis that are usually invisible to users could be expanded to include other Aesthetic Electronic input and output elements that are common to interaction design (i.e. capacitive sensors, strain gauges) as well. We envision the Ellustrate community to be capable of supporting users with richly diverse aesthetic styles, electronic experiences, and learning and teaching styles .
+Ellustrate could have great impact on the hardware sketching practice as we develop an online community for users. Users could submit their designs and fabricated circuits to a share with the community. Moreoever, the community could contribute the fabrication and debug process, as well as tips and questions tagging specific steps. The framework of the digital tool - design, fabricate, and debug - accompanied with electronic properties analysis that are usually invisible to users could be expanded to include other Aesthetic Electronic input and output elements that are common to interaction design (i.e. capacitive sensors, strain gauges) as well. We envision the Ellustrate community to be capable of supporting users with richly diverse aesthetic styles, electronic experiences, and learning and teaching styles.
 
 \section {Conclusion}
 In this paper, we presented Ellustrate, a digital tool for designing and fabrication Aesthetic Circuits. We demonstrated its capability to assist in creating circuits with different conductive and non-conductive materials - silver pen, graphite paint, conductive thread, fabric, and paper. We detailed algorithms specially designed to decompose and extract relevent traces for circuit analysis. Ellustrate was designed based on formative interviews of experts and pilot studies with visual designers in order to address common challenges with Aesthetic Circuit designs. We also performed formal user studies to evaluate the designs and fabrication enabled by the design tool. We hope that Ellustrate will be adopted by practitioners from diverse fields and inspire a suite of creative Aesthetic Circuit designs.
 
 \balance
+
+\section {ACKNOWLEDGMENTS}
+We would like to thank the anonymous reviewers for their
+valuable feedback on this work as well as generous
+financial support provided through NSF IIS-1211047. 
 
 \bibliographystyle{acm-sigchi}
 \bibliography{ellustrate}
